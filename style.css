@@ -3,19 +3,6 @@
   color: #ffffff;
   font-family: Arial, sans-serif;
 }
-
-.forkme-button {
-  margin: 0;
-  width: 10vw;
-  height: 10vw;
-  transition-duration: 0.3s;
-}
-
-.forkme-button:hover {
-  width: 12vw;
-  height: 12vw;
-}
-
 #settings {
   position: absolute;
   /* right: 10vw; */
@@ -57,19 +44,13 @@
   display: none;
 }
 
-.fork-link {
-  padding: 0;
-  position: absolute;
-  top: 0;
-  right: 0;
-}
-
 body {
   margin: 0;
   padding: 0;
   background: #141E30;  /* fallback for old browsers */
   background: -webkit-linear-gradient(to right, #243B55, #141E30);  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  height: 100%;
 }
 
 a.icon {
@@ -91,6 +72,23 @@ header {
   padding-right: 50px;
   margin: 0;
   background-color: #0c1320;
+  position: relative;
+  z-index: 1000000000;
+}
+
+body.scrolled header {
+  position: fixed;
+  top: 0; /* Position at the top */
+  left: 0; /* Ensure it's flush with the left edge */
+  right: 0; /* Ensure it spans the full width */
+  width: 100%; /* Ensure it spans the full width */
+  /* Optional styling to create some shadow or separation */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Add some space to the top of the body content when the header is fixed */
+body.scrolled .main-content {
+  margin-top: 60px; /* Adjust this value to match the header height */
 }
 
 header a:hover{
@@ -104,8 +102,7 @@ header a:hover{
 }
 
 .icon{
-  border-radius: 40%;
-  
+  border-radius: 40%; 
 }
 
 header a {
@@ -195,6 +192,52 @@ p {
 
 #search {
   border-radius: 10px;
-  height: 20px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  height: 30px;  /* Adjust height as needed */
   color: black;
+  padding: 0 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+}
+
+.dizzy-embed-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  background-color: rgba(red, green, blue, 1);
+  padding: 10px;
+}
+
+.embed-container {
+  flex: 1;
+  overflow: visible;
+}
+
+.embed-container iframe {
+  width: 100%;
+  height: 1113px;
+  border: none;
+}
+
+.parent-container {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: flex-start; /* Align items to the top */
+  height: 100vh; /* Full viewport height */
+  padding-bottom: 40px; /* Add padding to the bottom, adjust as needed */
+  padding-top: 40px;
+  box-sizing: border-box; /* Include padding in the container's height */
+}
+
+.widget-container {
+  width: 100%; /* Full width of the viewport */
+  max-width: 100%; /* Optional: limit maximum width */
+  height: 100%; /* Adjust height to make it bigger vertically */
+  border-radius: 10px;
+  overflow: hidden;
+  background: #fff; /* White background for the container */
 }
