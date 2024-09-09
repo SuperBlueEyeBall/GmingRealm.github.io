@@ -1,120 +1,132 @@
 <!DOCTYPE html>
 <html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" type="image/x-icon" href="https://google.com/favicon.ico" />
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shorcut icon" type="x-icon" href="https://google.com/favicon.ico" />
-    <title>Google</title>
-    <style>
-      body {
-        font-family: arial;
-        color: #fff;
-        background-color: #000000;
-        background-size: cover;
-      }
-      a {
-        color: #fff;
-        padding-bottom: 10px;
-        text-decoration: none;
-      }
-       a:link {
+  <title>Google</title>
+  <style>
+    body {
+      font-family: arial;
+      color: #fff;
+      background-color: #000000;
+      background-size: cover;
+    }
+    
+    a {
+      color: #fff;
+      padding-bottom: 10px;
       text-decoration: none;
-}
-
-a:visited {
+    }
+    
+    a:link, a:visited, a:hover, a:active {
       text-decoration: none;
-}
-
-a:hover {
+    }
+    
+    * {
+      margin: auto;
+      text-align: center;
+    }
+    
+    #reason {
+      padding-top: 10%;
+      padding-bottom: 2%;
+    }
+    
+    h1 {
+      font-size: 120px;
+    }
+    
+    .button {
+      background-color: transparent;
+      border: none;
+      color: white;
+      padding: 20px;
+      text-align: center;
       text-decoration: none;
-}
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+      padding-bottom: 10px;
+      text-decoration: underline;
+    }
+    
+    /* New rule to specifically target the GitHub link */
+    #github-link {
+      color: #65ccff; /* Light blue color for the link */
+      text-decoration: underline; /* Underline to indicate it's a link */
+    }
+    
+    #github-link:hover {
+      color: #27b7ff; /* Darker blue on hover (optional) */
+    }
 
-a:active {
-      text-decoration: none;
-}
-      * {
-        margin: auto;
-        text-align: center;
+    #github-toggle {
+      color: #73ff7a;
+    }
+
+    #github-toggle:hover {
+      color: #00ff0d;
+    }
+
+  </style>
+</head>
+
+<body>
+  <h1 id="reason">404</h1>
+  <h2>
+    This page doesn't exist.<div>
+    </div>If you believe you shouldn't have gotten this
+    error,<div>
+    </div>then you should report it to the <a id="github-link" href="https://github.com/SuperBlueEyeBall/SuperBlueEyeBall.github.io/issues">Github issue tracker</a><div>
+    </div>or the <a id="github-link" href="https://docs.google.com/forms/d/e/1FAIpQLSdU1CELhxTF7WqrW2ujKs9DHI1gANNJQqzN7Ojz6i8sIe-X6A/viewform?usp=sf_link">feedback page</a>.
+  </h2>
+  <center>
+    <u>
+      <button id="github-toggle" class="button" onclick="statsForNerds()">Stats for nerds</button>
+    </u>
+  </center>
+
+  <div id="sfn" style="display: none;" class="message">
+    Please make an issue about this happening on the <a id="github-link" href="https://github.com/SuperBlueEyeBall/SuperBlueEyeBall.github.io/issues">Github issue tracker</a> or the <a id="github-link" href="https://docs.google.com/forms/d/e/1FAIpQLSdU1CELhxTF7WqrW2ujKs9DHI1gANNJQqzN7Ojz6i8sIe-X6A/viewform?usp=sf_link">feedback page</a>.
+    <div>Requested URL: <span id="full">Fetching...</span></div>
+    <div>Referrer: <span id="ref">Fetching...</span></div>
+    <div>Title: <span id="title">Fetching...</span></div>
+    <div>Screen height: <span id="height">Fetching...</span></div>
+    <div>Screen width: <span id="width">Fetching...</span></div>
+    <div>Window height: <span id="winheight">Fetching...</span></div>
+    <div>Window width: <span id="winwidth">Fetching...</span></div>
+    <div>Cookies: <span id="cookie">Fetching...</span></div>
+    <div>User agent: <span id="ua">Fetching...</span></div>
+    <div>OS platform: <span id="plat">Fetching...</span></div>
+    <div>Online: <span id="online">Fetching...</span></div>
+    <div>Error code: 404</div>
+  </div>
+
+  <script>
+    function statsForNerds() {
+      var x = document.getElementById("sfn");
+      if (x.style.display === "none") {
+        x.style.display = "block";
+        console.log("[ℹ️] Showing the stats for nerds!");
+      } else {
+        x.style.display = "none";
+        console.log("[ℹ️] Hiding the stats for nerds!");
       }
-      #reason {
-        padding-top: 20%;
-        padding-bottom: 20px;
-      }
-      h1 {
-        font-size: 120px;
-      }
-    </style>
-     <style>
-
-        .button {
-  background-color: transparent; 
-  border: none;
-  color: white;
-  padding: 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-  padding-bottom: 10px;
-  text-decoration:underline;
-           
-} 
-     </style>
-  </head>
-
-  <body>
-    <h1 id="reason">404</h1>
-    <h2>
-      This page doesn't exist. If you believe you shouldn't have gotten this
-      error, contact us, or go back to the main page below.
-    </h2>
-         <center>
-     <u>
-            <button class="button" onclick="statsForNerds()">Stats for nerds</button>
-     </u>
-    </center>
-
-    <div id="sfn" style="display: none;" class="message">
-      Please make a issue about this happening on the <a href="https://github.com/shadowgmes/shadowgmes.github.io/issues">Github issue tracker</a>. Requested URL: <span id="full">Fetching...</span><br />
-      Referrer: <span id="ref">Fetching...</span><br />
-      Title: <span id="title">Fetching...</span><br />
-      Screen height: <span id="height">Fetching...</span><br />
-      Screen width: <span id="width">Fetching...</span><br />
-      Window height: <span id="winheight">Fetching...</span><br />
-      Window width: <span id="winwidth">Fetching...</span><br />
-      Cookies: <span id="cookie">Fetching...</span><br />
-      User agent: <span id="ua">Fetching...</span><br />
-      OS platform: <span id="plat">Fetching...</span><br />
-      Online: <span id="online">Fetching...</span><br />
-      Error code: 404<br />
-    </div>
-
-    <script>
-      function statsForNerds() {
-        var x = document.getElementById("sfn");
-        if (x.style.display === "none") {
-          x.style.display = "block";
-          console.log("[ℹ️] Showing the stats for nerds!");
-        } else {
-          x.style.display = "none";
-          console.log("[ℹ️] Hiding the stats for nerds!");
-        }
-      }
-      document.getElementById("full").innerText = window.location.href;
-      document.getElementById("ref").innerHTML = document.referrer;
-      document.getElementById("title").innerText = document.title;
-      document.getElementById("height").innerHTML = screen.height + "px";
-      document.getElementById("width").innerHTML = screen.width + "px";
-      document.getElementById("winheight").innerHTML = window.innerHeight + "px";
-      document.getElementById("winwidth").innerHTML = window.innerWidth + "px";
-      document.getElementById("cookie").innerText = navigator.cookieEnabled;
-      document.getElementById("ua").innerHTML = navigator.userAgent;
-      document.getElementById("plat").innerHTML = navigator.platform;
-      document.getElementById("online").innerHTML = navigator.onLine;
-    </script>
-    <br />
-    <a href="/index.html">Home Page</a>
-  </body>
+    }
+    document.getElementById("full").innerText = window.location.href;
+    document.getElementById("ref").innerHTML = document.referrer;
+    document.getElementById("title").innerText = document.title;
+    document.getElementById("height").innerHTML = screen.height + "px";
+    document.getElementById("width").innerHTML = screen.width + "px";
+    document.getElementById("winheight").innerHTML = window.innerHeight + "px";
+    document.getElementById("winwidth").innerHTML = window.innerWidth + "px";
+    document.getElementById("cookie").innerText = navigator.cookieEnabled;
+    document.getElementById("ua").innerHTML = navigator.userAgent;
+    document.getElementById("plat").innerHTML = navigator.platform;
+    document.getElementById("online").innerHTML = navigator.onLine;
+  </script>
+  <br />
+  <a id="github-link" href="/index.html">Home Page</a>
+</body>
 </html>
