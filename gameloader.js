@@ -70,6 +70,16 @@ function gameHide(gamePath) {
 var gamesText = `{
     "games":[
         {
+            "name":"leaf browser",
+            "img":"gfiles/leafbrowser/artwork/logo/webstore-tile-1400.png",
+            "path":"gfiles/leafbrowser/"
+        },
+        {
+            "name":"roblox",
+            "img":"img/roblox.png",
+            "path":"gfiles/roblox/"
+        },
+        {
             "name":"0hh1",
             "img":"img/0hh1.png",
             "path":"gfiles/0hh1/"
