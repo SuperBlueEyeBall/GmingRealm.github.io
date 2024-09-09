@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-Mode Console</title>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3.9.5/brython.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.21.0/full/pyodide.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/pyodide/v0.26.2/full/pyodide.js"></script> -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            padding: 20px;
+            max-width: 800px;
+            width: 100%;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        textarea {
+            width: 100%;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+            resize: vertical; /* Allow resizing only on the y-axis */
+        }
+        button {
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 15px;
+            margin: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .mode-buttons {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .console {
+            border-radius: 5px;
+            background-color: #1e1e1e;
+            color: #fff;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ddd;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            white-space: pre-wrap; /* Preserve whitespace */
+            font-family: 'Courier New', monospace;
+            line-height: 1.5;
+            max-height: 300px;
+            overflow-y: auto;
+            display: none;
+            opacity: 0;
+            resize: vertical; /* Allow resizing vertically */
+        }
+        .html-output {
+            border-radius: 5px;
+            background-color: #fff;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ddd;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            display: none;
+            opacity: 0;
+            font-family: initial !important;
+            color: initial !important;
+            line-height: initial !important;
+            margin: initial !important;
+            padding: 10px !important; /* Keep padding */
+        }
+        .console span.line-number {
+            color: #00ff00; /* Green color for line numbers */
+            display: inline-block;
+            width: 40px; /* Adjust width as needed */
+            text-align: right;
+            margin-right: 10px; /* Space between line numbers and text */
+        }
+        .console span.line-text {
+            display: inline;
+        }
+        .resize-controls {
+            margin-top: 10px;
+            text-align: center;
+        }
+        .resize-controls label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .resize-controls input {
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px;
+            margin: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: auto;
+        }
+        .resize-controls input[type="number"] {
+            background-color: #f4f4f4;
+            color: #000;
+            cursor: text;
+        }
+        .resize-controls input[type="number"]::-webkit-inner-spin-button,
+        .resize-controls input[type="number"]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        .resize-controls input[type="number"] {
+            -moz-appearance: textfield;
+        }
+    </style>
+</head>
+<body onload="brython(); initializePyodide(); switchToPythonMode();">
+    <div class="container">
+        <h1>Multi-Mode Console</h1>
+        
+        <textarea id="code-area" rows="10" cols="50">
+print("Hello, world!")
+        </textarea><br>
+
+        <div class="mode-buttons">
+            <button id="brython-button" onclick="runBrythonCode()">Run Python (Brython)</button>
+            <button id="pyodide-button" onclick="runPyodideCode()">Run Python (Pyodide)</button>
+            <button id="js-button" onclick="runJavaScriptCode()">Run JavaScript</button>
+            <button id="html-button" style="display:none;" onclick="loadHTMLPage()">Load HTML Page</button>
+        </div>
+
+        <div class="mode-buttons">
+            <button onclick="switchToPythonMode()">Python Mode</button>
+            <button onclick="switchToJavaScriptMode()">JavaScript Mode</button>
+            <button onclick="switchToHTMLMode()">HTML Mode</button>
+        </div>
+
+        <div class="resize-controls">
+            <label for="console-font-size">Console Font Size:</label>
+            <input type="number" id="console-font-size" value="16" onchange="updateConsoleFontSize()" />
+            
+            <label for="code-font-size">Code Font Size:</label>
+            <input type="number" id="code-font-size" value="16" onchange="updateCodeFontSize()" />
+        </div>
+
+        <pre id="console" class="console"></pre>
+        <div id="html-output" class="html-output"></div>
+    </div>
+
+    <script type="text/python">
+        from browser import document, window
+
+        def runBrythonCode():
+            code = document['code-area'].value
+            try:
+                exec(code)
+            except Exception as e:
+                console.log(str(e))
+
+        window.runBrythonCode = runBrythonCode
+    </script>
+
+    <script>
+        let pyodideReady = false;
+        async function initializePyodide() {
+            window.pyodide = await loadPyodide();
+            pyodideReady = true;
+        }
+
+        async function runPyodideCode() {
+            if (!pyodideReady) {
+                console.log("Pyodide is still loading...");
+                return;
+            }
+            let code = document.getElementById("code-area").value;
+            try {
+                let result = await pyodide.runPythonAsync(code);
+                console.log(result);
+            } catch (err) {
+                console.log(err);
+            }
+        }
+
+        function runJavaScriptCode() {
+            let code = document.getElementById("code-area").value;
+            try {
+                let result = eval(code);
+                console.log(result);
+            } catch (err) {
+                console.log(err);
+            }
+        }
+
+        function switchToPythonMode() {
+            document.getElementById("console").style.display = "block";
+            document.getElementById("html-output").style.display = "none";
+            document.getElementById("brython-button").style.display = "inline-block";
+            document.getElementById("pyodide-button").style.display = "inline-block";
+            document.getElementById("js-button").style.display = "none";
+            document.getElementById("html-button").style.display = "none";
+            document.getElementById("console").style.opacity = "1";
+            document.getElementById("html-output").style.opacity = "0";
+            document.getElementById("code-area").value = `print("Hello, world!")`;
+        }
+
+        function switchToJavaScriptMode() {
+            document.getElementById("console").style.display = "block";
+            document.getElementById("html-output").style.display = "none";
+            document.getElementById("brython-button").style.display = "none";
+            document.getElementById("pyodide-button").style.display = "none";
+            document.getElementById("js-button").style.display = "inline-block";
+            document.getElementById("html-button").style.display = "none";
+            document.getElementById("console").style.opacity = "1";
+            document.getElementById("html-output").style.opacity = "0";
+            document.getElementById("code-area").value = `console.log("Hello, world!")`;
+        }
+
+        function switchToHTMLMode() {
+            document.getElementById("html-output").style.display = "block";
+            document.getElementById("console").style.display = "none";
+            document.getElementById("brython-button").style.display = "none";
+            document.getElementById("pyodide-button").style.display = "none";
+            document.getElementById("js-button").style.display = "none";
+            document.getElementById("html-button").style.display = "inline-block";
+            document.getElementById("console").style.opacity = "0";
+            document.getElementById("html-output").style.opacity = "1";
+        }
+
+        function loadHTMLPage() {
+            let htmlContent = `
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example HTML Page</title>
+</head>
+<body>
+    <p>Example content</p>
+</body>
+</html>
+            `;
+            document.getElementById("html-output").innerHTML = htmlContent;
+        }
+
+        function updateConsoleFontSize() {
+            let fontSize = document.getElementById("console-font-size").value + "px";
+            document.getElementById("console").style.fontSize = fontSize;
+        }
+
+        function updateCodeFontSize() {
+            let fontSize = document.getElementById("code-font-size").value + "px";
+            document.getElementById("code-area").style.fontSize = fontSize;
+        }
+        
+        // Console handling
+        (function () {
+            let oldConsoleLog = console.log;
+            let lineNumber = 1;
+            let output = '';
+            console.log = function (message) {
+                if (message !== undefined) {
+                    if (typeof message === 'object') {
+                        message = JSON.stringify(message, null, 4);
+                    }
+                    output += `<span class="line-number">${lineNumber++}</span><span class="line-text">${message}</span><br>`;
+                    document.getElementById("console").innerHTML = output;
+                }
+                oldConsoleLog.apply(console, arguments);
+            };
+        })();
+    </script>
+</body>
+</html>
