@@ -70,8 +70,8 @@ function gameHide(gamePath) {
 var gamesText = `{
     "games":[
         {
-            "name":"Scary Text To Speech (better-sam)",
-            "img":"img/bettersam.jpg",
+            "name":"Better S.A.M. (TTS)",
+            "img":"img/bettersam.png",
             "path":"gfiles/better-sam/"
         },
         {

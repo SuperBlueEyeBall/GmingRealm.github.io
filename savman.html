@@ -1,84 +1,319 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-NLXBK4W1TX"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta property="og:title" content="Gming Realm Reborn" />
+  <meta property="og:description" content="The best place to procrastinate!" />
+  <meta property="og:url" content="https://superblueeyeball.github.io" />
+  <link rel="shortcut icon" href="https://google.com/favicon.ico" type="image/x-icon" />
+  <title>Google</title>
+  <link rel="stylesheet" href="style.css" />
+  <meta name="keywords" content="games,unblocked,unblocked games,school,school bypass,tab hider,tab cloaker,school games,hidden games,best unblocked games,superblueeyeball,SuperBlueEyeBall,superblueeyeball.github.io," />
+  <meta name="description" content="The most educational site on opposite day" />
+  <link rel="manifest" href="manifest.json" />
+  <style>
+    body {
+      transition: background-color 0.5s, color 0.5s;
+      text-align: center;
+    }
+    .settings-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      border: 2px solid #ddd;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .hiddenUpload {
+      display: none;
+    }
+    .button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      background-color: #007bff;
+      color: #fff;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    .button:hover {
+      background-color: #0056b3;
+    }
+    .preset-backgrounds img {
+      width: 100px;
+      height: 100px;
+      cursor: pointer;
+      margin: 5px;
+      border: 2px solid transparent;
+    }
+    .preset-backgrounds img.selected {
+      border-color: #000;
+    }
+    input[type="color"], input[type="text"] {
+      padding: 5px;
+      border-radius: 5px;
+      border: 1px solid #ddd;
+      margin: 5px;
+    }
+    .gradient-input {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .gradient-input input {
+      margin: 0 5px;
+    }
+    #backgroundImageUrl {
+      width: 300px;
+    }
+  </style>
+</head>
+<body>
+  <p id="desc">
+    The most educational site on opposite day! This site contains tons of things to do in your free time, with my vast collection of gam- I mean uh boredness reducers!
+  </p>
+  <header>
+    <a href="/" class="icon"><img src="icon.gif" class="icon" /></a>
+    <a class="linkmenu" href="/">Gming Realm</a>
+    <a class="linkmenu" href="https://sites.google.com/students.nisd.net/classy/home?authuser=1">Google Site</a>
+    <a class="linkmenu" href="dizzy.html">Discord</a>
+    <a class="linkmenu" onclick="hidey()">Hide Tab</a>
+    <a class="linkmenu" href="savman.html">Settings</a>
+    <a class="linkmenu" href="feedback.html">Feedback/Requests</a>
+    <a class="linkmenu" href="sites.html">Sites</a>
+    <button class="linkmenu" id="plus-button" onclick="handlePlusClick()">+</button>
+  </header>
+  <h1 class="title">Gming Realm | Settings</h1>
+  
+  <div class="settings-container">
+    <h2>Background Settings</h2>
+    <p>Upload Background Image:</p>
+    <input id="backgroundUpload" type="file" accept="image/*" class="button" />
+    <p>Or Enter Background Image URL:</p>
+    <input type="text" id="backgroundImageUrl" placeholder="Enter image URL" class="button" />
+    <button class="button" onclick="setBackgroundFromUrl()">Set Background from URL</button>
 
-  gtag('config', 'G-NLXBK4W1TX');
-</script>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2945759928209064"
-     crossorigin="anonymous"></script>
-     <meta charset="UTF-8" />
-     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-     <meta property="og:title" content="Gming Realm Reborn" />
-     <meta
-       property="og:description"
-       content="The best place to procrastinate!" />
-     <meta property="og:url" content="https://superblueeyeball.github.io" />
-     <link
-       rel="shortcut icon"
-       href="https://google.com/favicon.ico"
-       type="image/x-icon" />
-     <title>Google</title>
-     <link rel="stylesheet" href="style.css" />
-     <meta
-       name="keywords"
-       content="games,unblocked,unblocked games,school,school bypass,tab hider,tab cloaker,school games,hidden games,best unblocked games,superblueyeball,SuperBlueEyeBall,superblueeyeball.github.io," />
-     <meta name="description" content="The most educational site on opposite day" />
-     <link rel="manifest" href="manifest.json" />
-     <!-- <script src="hidey.js"></script> -->
-   </head>
-   <body>
-     <p id="desc">
-       The most educational site on opposite day! This site contains tons of things to do in your free time, with my vast collection of gam- I mean uh boredness reducers! 
-     </p>
-     <header>
-       <a href="/" class="icon"><img src="icon.gif" class="icon" /></a>
-       <a class="linkmenu" href="/">Gming Realm</a>
-       <a class="linkmenu" href="https://sites.google.com/students.nisd.net/classy/home?authuser=1">Google Site</a>
-       <a class="linkmenu" href="dizzy.html">Discord</a>
-       <a class="linkmenu" onclick="hidey()">Hide Tab</a>
-       <a class="linkmenu" href="savman.html">Settings</a>
-       <a class="linkmenu" href="feedback.html">Feedback/Requests</a>
-       <a class="linkmenu" href="sites.html">Sites</a>
-       <a class="linkmenu" href="all.html">+</a>
-     </header>
-     <h1 class="title">Gming Realm | Settings</h1>
-     <div class="game-container">
-       <div class="game-select" id="gameSelect"></div>
-     </div>
-     <div class="dizzy-embed-container">
-       <script src="https://cdn.jsdelivr.net/npm/@widgetbot/crate@3" async defer>
-           new Crate({
-               server: '1237829235998064651', // Class Y
-               channel: '1237829235998064654' // #general
-           });
-       </script>
-     </div>
-    <!-- <script src="apploader.js"></script> -->
-    <div class="saveContainer">
-    <p>Download Save:</p>
-    <button class="button" onclick="downloadMainSave()">Download Save</button>
-    <p>Upload Save:</p>
-    <input class="hiddenUpload" type="file" accept=".save" />
-    <p>e</p>
-    <div class="uploadResult"></div>
-    <script src="savman.js"></script>
+    <p>Choose a Preset Background:</p>
+    <div class="preset-backgrounds">
+      <img src="img/mariobg.png" onclick="setBackground('img/mariobg.png')" />
+      <img src="img/mariobg.png" onclick="setBackground('img/mariobg.png')" />
+      <img src="img/mariobg.png" onclick="setBackground('img/mariobg.png')" />
     </div>
-    <!-- JavaScript to handle header fixed positioning on scroll -->
-    <script>
-      window.addEventListener('scroll', function() {
-        if (window.scrollY > 0) {
-          document.body.classList.add('scrolled');
-        } else {
-          document.body.classList.remove('scrolled');
-        }
-      });
-    </script>
-  </body>
-</html>
+    
+    <h2>Color Settings</h2>
+    <label for="headerColor">Header Color:</label>
+    <input type="color" id="headerColor" onchange="setHeaderColor(event)" />
+    
+    <label for="textColor">Text Color:</label>
+    <input type="color" id="textColor" onchange="setTextColor(event)" />
+    
+    <h2>Background Color</h2>
+    <label for="backgroundColor">Background Color:</label>
+    <input type="color" id="backgroundColor" onchange="setBackgroundColor(event)" />
+    
+    <h2>Background Gradient</h2>
+    <label for="backgroundColor1">Background Color 1:</label>
+    <input type="color" id="backgroundColor1" onchange="setBackgroundGradient(event)" />
+    
+    <label for="backgroundColor2">Background Color 2:</label>
+    <input type="color" id="backgroundColor2" onchange="setBackgroundGradient(event)" />
+    
+    <div class="saveContainer">
+      <p>Download Settings:</p>
+      <button class="button" onclick="exportSettings()">Download Settings</button>
+      <p>Upload Settings:</p>
+      <input id="importSettingsInput" class="hiddenUpload" type="file" accept=".settings📃" />
+      <button class="button" onclick="document.getElementById('importSettingsInput').click()">Import Settings</button>
+      <button class="button" onclick="resetToDefault()">Reset to Default Settings</button>
+      <div class="uploadResult"></div>
+    </div>
+</div>
+
+
+  <!-- JavaScript to handle settings -->
+  <script>
+
+function setBackgroundFromUrl() {
+  const url = document.getElementById('backgroundImageUrl').value;
+  if (url) {
+    document.body.style.backgroundImage = `url('${url}')`;
+    localStorage.setItem('backgroundImage', url);
+  }
+}
+
+function setBackgroundColor(event) {
+  document.body.style.backgroundColor = event.target.value;
+  localStorage.setItem('backgroundColor', event.target.value);
+}
+
+function setBackgroundGradient(event) {
+  const color1 = document.getElementById('backgroundColor1').value;
+  const color2 = document.getElementById('backgroundColor2').value;
+  if (color1 && color2) {
+    document.body.style.background = `linear-gradient(${color1}, ${color2})`;
+    localStorage.setItem('backgroundGradient', `linear-gradient(${color1}, ${color2})`);
+  }
+}
+
+function resetToDefault() {
+  localStorage.removeItem('backgroundImage');
+  localStorage.removeItem('backgroundColor');
+  localStorage.removeItem('backgroundGradient');
+  localStorage.removeItem('headerColor');
+  localStorage.removeItem('textColor');
+  
+  document.body.style.backgroundImage = '';
+  document.body.style.backgroundColor = '';
+  document.body.style.background = '';
+  document.querySelector('header').style.backgroundColor = '';
+  document.body.style.color = '';
+  
+  document.getElementById('headerColor').value = '#000000'; // default color
+  document.getElementById('textColor').value = '#000000'; // default color
+  document.getElementById('backgroundColor').value = '#FFFFFF'; // default color
+  document.getElementById('backgroundColor1').value = '#FFFFFF'; // default color
+  document.getElementById('backgroundColor2').value = '#000000'; // default color
+}
+
+    function handlePlusClick() {
+      alert('Plus button clicked!');
+    }
+
+    function hidey() {
+      document.body.style.display = 'none';
+    }
+
+    function setBackground(imageUrl) {
+      document.body.style.backgroundImage = `url('${imageUrl}')`;
+      localStorage.setItem('backgroundImage', imageUrl);
+    }
+
+    function setBackgroundFromUrl() {
+      const url = document.getElementById('backgroundImageUrl').value;
+      if (url) {
+        document.body.style.backgroundImage = `url('${url}')`;
+        localStorage.setItem('backgroundImage', url);
+      }
+    }
+
+    document.getElementById('backgroundUpload').addEventListener('change', function(event) {
+      const file = event.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          document.body.style.backgroundImage = `url('${e.target.result}')`;
+          localStorage.setItem('backgroundImage', e.target.result);
+        };
+        reader.readAsDataURL(file);
+      }
+    });
+
+    function setBackgroundColor(event) {
+      document.body.style.backgroundColor = event.target.value;
+      localStorage.setItem('backgroundColor', event.target.value);
+    }
+
+    function setGradientBackground() {
+      const color1 = document.getElementById('gradientColor1').value;
+      const color2 = document.getElementById('gradientColor2').value;
+      document.body.style.background = `linear-gradient(to right, ${color1}, ${color2})`;
+      localStorage.setItem('background', `linear-gradient(to right, ${color1}, ${color2})`);
+    }
+
+    function setHeaderColor(event) {
+      document.querySelector('header').style.backgroundColor = event.target.value;
+      localStorage.setItem('headerColor', event.target.value);
+    }
+
+    function setTextColor(event) {
+      document.body.style.color = event.target.value;
+      localStorage.setItem('textColor', event.target.value);
+    }
+
+    function exportSettings() {
+      const settings = {
+        backgroundImage: localStorage.getItem('backgroundImage'),
+        backgroundColor: localStorage.getItem('backgroundColor'),
+        headerColor: localStorage.getItem('headerColor'),
+        textColor: localStorage.getItem('textColor'),
+        gradient: localStorage.getItem('background')
+      };
+
+      const settingsText = Object.entries(settings)
+        .map(([key, value]) => `${key} : !${value}i`)
+        .join(' | ');
+
+      const blob = new Blob([settingsText], { type: 'text/plain' });
+      const url = URL.createObjectURL(blob);
+
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'settings.📃';
+      document.body.appendChild(a);
+      a.click(); document.body.removeChild(a); }
+      function importSettings(event) {
+  const file = event.target.files[0];
+  if (!file) return;
+
+  const reader = new FileReader();
+  reader.onload = function(e) {
+    const settingsText = e.target.result;
+    const settings = settingsText.split(' | ').reduce((acc, item) => {
+      const [key, value] = item.split(' : !');
+      if (key && value) acc[key] = value.replace('i', '');
+      return acc;
+    }, {});
+
+    if (settings.backgroundImage) {
+      document.body.style.backgroundImage = `url('${settings.backgroundImage}')`;
+      localStorage.setItem('backgroundImage', settings.backgroundImage);
+    }
+    if (settings.backgroundColor) {
+      document.body.style.backgroundColor = settings.backgroundColor;
+      localStorage.setItem('backgroundColor', settings.backgroundColor);
+    }
+    if (settings.headerColor) {
+      document.querySelector('header').style.backgroundColor = settings.headerColor;
+      localStorage.setItem('headerColor', settings.headerColor);
+    }
+    if (settings.textColor) {
+      document.body.style.color = settings.textColor;
+      localStorage.setItem('textColor', settings.textColor);
+    }
+    if (settings.gradient) {
+      document.body.style.background = settings.gradient;
+      localStorage.setItem('background', settings.gradient);
+    }
+  };
+  reader.readAsText(file);
+}
+
+document.getElementById('importSettingsInput').addEventListener('change', importSettings);
+
+// Load settings on page load
+window.onload = function() {
+  const backgroundImage = localStorage.getItem('backgroundImage');
+  const backgroundColor = localStorage.getItem('backgroundColor');
+  const headerColor = localStorage.getItem('headerColor');
+  const textColor = localStorage.getItem('textColor');
+  const gradient = localStorage.getItem('background');
+
+  if (backgroundImage) {
+    document.body.style.backgroundImage = `url('${backgroundImage}')`;
+  }
+  if (backgroundColor) {
+    document.body.style.backgroundColor = backgroundColor;
+  }
+  if (headerColor) {
+    document.querySelector('header').style.backgroundColor = headerColor;
+  }
+  if (textColor) {
+    document.body.style.color = textColor;
+  }
+  if (gradient) {
+    document.body.style.background = gradient;
+  }
+};
+
