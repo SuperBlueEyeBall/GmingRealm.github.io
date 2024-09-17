@@ -70,7 +70,12 @@ function gameHide(gamePath) {
 var gamesText = `{
     "games":[
         {
-            "name":"leaf browser",
+            "name":"Scary Text To Speech (better-sam)",
+            "img":"img/bettersam.jpg",
+            "path":"gfiles/better-sam/"
+        },
+        {
+            "name":"leaf browser (broken)",
             "img":"gfiles/leafbrowser/artwork/logo/webstore-tile-1400.png",
             "path":"gfiles/leafbrowser/"
         },
