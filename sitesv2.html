@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Domain Checker</title>
+    <style>
+        .unblocked, .blocked, .unknown {
+            margin: 10px;
+            padding: 5px;
+            border: 1px solid #ddd;
+        }
+        .unblocked {
+            color: green;
+        }
+        .blocked {
+            color: red;
+        }
+        .unknown {
+            color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <h2>Unblocked Domains</h2>
+    <div id="unblocked-column1" class="unblocked"></div>
+    <div id="unblocked-column2" class="unblocked"></div>
+
+    <h2>Blocked Domains</h2>
+    <div id="blocked-domains" class="blocked"></div>
+
+    <h2>Unknown Domains</h2>
+    <div id="unknown-domains" class="unknown"></div>
+    <script disable-devtool-auto src='https://cdn.jsdelivr.net/npm/disable-devtool'></script>
+    <script>
+        async function isBlocked(url, mine) {
+            try {
+                if (mine) {
+                    const response = await fetch(url + "/README.md");
+                    const content = await response.text();
+                    if (content.startsWith("# GmingRealm Reborn")) {
+                        return false; // Not blocked
+                    } else {
+                        return true; // Blocked
+                    }
+                } else {
+                    // Just check if the URL can be fetched
+                    const response = await fetch(url, { method: 'HEAD' });
+                    if (response.ok) {
+                        return false; // Not blocked
+                    } else {
+                        return true; // Blocked
+                    }
+                }
+            } catch (error) {
+                return 'unknown'; // CORS issue or other errors
+            }
+        }
+
+        async function displayDomains() {
+            const domains = [
+                // Template entries
+                { name: "Example Site", url: "https://example.com", mine: false },
+                { name: "Test Site", url: "https://test.com", mine: true },
+                { name: "Demo Site", url: "https://demo.com", mine: false }
+            ];
+
+            const unblockedColumn1 = document.getElementById("unblocked-column1");
+            const unblockedColumn2 = document.getElementById("unblocked-column2");
+            const blockedDiv = document.getElementById("blocked-domains");
+            const unknownDiv = document.getElementById("unknown-domains");
+
+            let currentColumn = unblockedColumn1; // Start with column 1
+            for (let domain of domains) {
+                const result = await isBlocked(domain.url, domain.mine);
+                const domainSpan = document.createElement("span");
+                const domainLink = document.createElement("a");
+                domainLink.href = domain.url;
+                domainLink.textContent = domain.name;
+                domainLink.classList.add("button", "bt"); // Add the button class to the link element
+
+                if (result === true) {
+                    domainSpan.style.color = "red";
+                    blockedDiv.appendChild(domainSpan);
+                } else if (result === false) {
+                    domainSpan.style.color = "green";
+                    currentColumn.appendChild(domainSpan);
+                    if (currentColumn === unblockedColumn1) {
+                        currentColumn = unblockedColumn2; // Move to column 2 if the current column is column 1
+                    } else {
+                        currentColumn = unblockedColumn1; // Move back to column 1 if the current column is column 2
+                    }
+                } else {
+                    domainSpan.style.color = "yellow";
+                    unknownDiv.appendChild(domainSpan);
+                }
+
+                domainSpan.appendChild(domainLink);
+                domainSpan.appendChild(document.createElement("br"));
+            }
+        }
+
+        displayDomains();
+    </script>
+</body>
+</html>
