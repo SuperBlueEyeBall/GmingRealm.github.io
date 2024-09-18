@@ -71,44 +71,44 @@ var gamesText = `{
     "games":[
         {
             "name":"Sharp Browser",
-            "img":"img/",
+            "img":"img/sharpbrowser.png",
             "path":"gfiles/sharpbrowser/"
         },
 
         {
             "name":"1v1 lol",
             "img":"img/",
-            "path":"gfiles/1v1lol/"
+            "path":"gfiles/1v1lol/1v1lol.png"
         },
         {
             "name":"House of Hazards",
-            "img":"img/",
+            "img":"img/houseofhazards.jpg",
             "path":"gfiles/houseofhazards/"
         },
         {
             "name":"Slope 2",
-            "img":"img/",
+            "img":"img/slope2.png",
             "path":"gfiles/slope2/"
         },
         {
             "name":"Subway Surfers",
-            "img":"img/",
+            "img":"img/subwaysurfers.jpg",
             "path":"gfiles/subway-surfers/"
         },
         {
             "name":"Superhot Demo",
-            "img":"img/",
+            "img":"img/superhot.jpg",
             "path":"gfiles/superhot-demo/"
         },
         {
             "name":"Time Shooter 2",
             "img":"img/",
-            "path":"gfiles/timeshooter2/"
+            "path":"gfiles/timeshooter2/timeshooter2.jpeg"
         },
         {
             "name":"Time Shooter 3",
             "img":"img/",
-            "path":"gfiles/timeshooter3/"
+            "path":"gfiles/timeshooter3/timeshooter3.jpeg"
         },
         {
             "name":"Better S.A.M. (TTS)",
