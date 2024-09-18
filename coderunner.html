@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-B9R93ESZH8"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-B9R93ESZH8"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
-  gtag('config', 'G-B9R93ESZH8');
-</script>
+        gtag('config', 'G-B9R93ESZH8');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Google</title>
@@ -26,18 +27,21 @@
             margin: 0;
             background-color: #f4f4f4;
         }
+
         .container {
             background: #fff;
             border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             padding: 20px;
             max-width: 800px;
             width: 100%;
         }
+
         h1 {
             text-align: center;
             margin-bottom: 20px;
         }
+
         textarea {
             width: 100%;
             border-radius: 5px;
@@ -45,8 +49,10 @@
             padding: 10px;
             margin-bottom: 10px;
             box-sizing: border-box;
-            resize: vertical; /* Allow resizing only on the y-axis */
+            resize: vertical;
+            /* Allow resizing only on the y-axis */
         }
+
         button {
             border: none;
             border-radius: 5px;
@@ -58,13 +64,16 @@
             font-size: 16px;
             transition: background-color 0.3s ease;
         }
+
         button:hover {
             background-color: #0056b3;
         }
+
         .mode-buttons {
             text-align: center;
             margin-bottom: 20px;
         }
+
         .console {
             border-radius: 5px;
             background-color: #1e1e1e;
@@ -72,49 +81,61 @@
             padding: 10px;
             box-sizing: border-box;
             border: 1px solid #ddd;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            white-space: pre-wrap; /* Preserve whitespace */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            white-space: pre-wrap;
+            /* Preserve whitespace */
             font-family: 'Courier New', monospace;
             line-height: 1.5;
             max-height: 300px;
             overflow-y: auto;
             display: none;
             opacity: 0;
-            resize: vertical; /* Allow resizing vertically */
+            resize: vertical;
+            /* Allow resizing vertically */
         }
+
         .html-output {
             border-radius: 5px;
             background-color: #fff;
             padding: 10px;
             box-sizing: border-box;
             border: 1px solid #ddd;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             display: none;
             opacity: 0;
             font-family: initial !important;
             color: initial !important;
             line-height: initial !important;
             margin: initial !important;
-            padding: 10px !important; /* Keep padding */
+            padding: 10px !important;
+            /* Keep padding */
         }
+
         .console span.line-number {
-            color: #00ff00; /* Green color for line numbers */
+            color: #00ff00;
+            /* Green color for line numbers */
             display: inline-block;
-            width: 40px; /* Adjust width as needed */
+            width: 40px;
+            /* Adjust width as needed */
             text-align: right;
-            margin-right: 10px; /* Space between line numbers and text */
+            margin-right: 10px;
+            /* Space between line numbers and text */
         }
+
         .console span.line-text {
             display: inline;
         }
+
         .resize-controls {
             margin-top: 10px;
             text-align: center;
         }
+
         .resize-controls label {
             display: block;
             margin-bottom: 5px;
         }
+
         .resize-controls input {
             border: none;
             border-radius: 5px;
@@ -127,25 +148,34 @@
             transition: background-color 0.3s ease;
             width: auto;
         }
+
         .resize-controls input[type="number"] {
             background-color: #f4f4f4;
             color: #000;
             cursor: text;
         }
+
         .resize-controls input[type="number"]::-webkit-inner-spin-button,
         .resize-controls input[type="number"]::-webkit-outer-spin-button {
             -webkit-appearance: none;
             margin: 0;
         }
+
         .resize-controls input[type="number"] {
+            -webkit-appearance: none;
+            /* For Safari and Chrome */
             -moz-appearance: textfield;
+            /* For older Firefox versions */
+            appearance: textfield;
+            /* Standard property */
         }
     </style>
 </head>
+
 <body onload="brython(); initializePyodide(); switchToPythonMode();">
     <div class="container">
         <h1>Multi-Mode Console</h1>
-        
+
         <textarea id="code-area" rows="10" cols="50">
 print("Hello, world!")
         </textarea><br>
@@ -166,7 +196,7 @@ print("Hello, world!")
         <div class="resize-controls">
             <label for="console-font-size">Console Font Size:</label>
             <input type="number" id="console-font-size" value="16" onchange="updateConsoleFontSize()" />
-            
+
             <label for="code-font-size">Code Font Size:</label>
             <input type="number" id="code-font-size" value="16" onchange="updateCodeFontSize()" />
         </div>
@@ -280,7 +310,7 @@ print("Hello, world!")
             let fontSize = document.getElementById("code-font-size").value + "px";
             document.getElementById("code-area").style.fontSize = fontSize;
         }
-        
+
         // Console handling
         (function () {
             let oldConsoleLog = console.log;
@@ -299,4 +329,5 @@ print("Hello, world!")
         })();
     </script>
 </body>
+
 </html>

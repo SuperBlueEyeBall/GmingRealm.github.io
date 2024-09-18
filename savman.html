@@ -1,15 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-B9R93ESZH8"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-B9R93ESZH8');
-</script>
+<head>
+  <!-- Google Tag Manager -->
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-KPPLFQP2');</script>
+  <!-- End Google Tag Manager -->
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-B9R93ESZH8"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-B9R93ESZH8');
+  </script>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -19,7 +30,8 @@
   <link rel="shortcut icon" href="https://google.com/favicon.ico" type="image/x-icon" />
   <title>Google</title>
   <link rel="stylesheet" href="style.css" />
-  <meta name="keywords" content="games,unblocked,unblocked games,school,school bypass,tab hider,tab cloaker,school games,hidden games,best unblocked games,superblueeyeball,SuperBlueEyeBall,superblueeyeball.github.io," />
+  <meta name="keywords"
+    content="games,unblocked,unblocked games,school,school bypass,tab hider,tab cloaker,school games,hidden games,best unblocked games,superblueeyeball,SuperBlueEyeBall,superblueeyeball.github.io," />
   <meta name="description" content="The most educational site on opposite day" />
   <link rel="manifest" href="manifest.json" />
   <style>
@@ -27,17 +39,20 @@
       transition: background-color 0.5s, color 0.5s;
       text-align: center;
     }
+
     .settings-container {
       max-width: 800px;
       margin: 0 auto;
       padding: 20px;
       border: 2px solid #ddd;
       border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
+
     .hiddenUpload {
       display: none;
     }
+
     .button {
       padding: 10px 20px;
       border: none;
@@ -47,9 +62,11 @@
       cursor: pointer;
       font-size: 16px;
     }
+
     .button:hover {
       background-color: #0056b3;
     }
+
     .preset-backgrounds img {
       width: 100px;
       height: 100px;
@@ -57,31 +74,39 @@
       margin: 5px;
       border: 2px solid transparent;
     }
+
     .preset-backgrounds img.selected {
       border-color: #000;
     }
-    input[type="color"], input[type="text"] {
+
+    input[type="color"],
+    input[type="text"] {
       padding: 5px;
       border-radius: 5px;
       border: 1px solid #ddd;
       margin: 5px;
     }
+
     .gradient-input {
       display: flex;
       justify-content: center;
       align-items: center;
     }
+
     .gradient-input input {
       margin: 0 5px;
     }
+
     #backgroundImageUrl {
       width: 300px;
     }
   </style>
 </head>
+
 <body>
   <p id="desc">
-    The most educational site on opposite day! This site contains tons of things to do in your free time, with my vast collection of gam- I mean uh boredness reducers!
+    The most educational site on opposite day! This site contains tons of things to do in your free time, with my vast
+    collection of gam- I mean uh boredness reducers!
   </p>
   <header>
     <a href="/" class="icon"><img src="icon.gif" class="icon" /></a>
@@ -95,7 +120,7 @@
     <button class="linkmenu" id="plus-button" onclick="handlePlusClick()">+</button>
   </header>
   <h1 class="title">Gming Realm | Settings</h1>
-  
+
   <div class="settings-container">
     <h2>Background Settings</h2>
     <p>Upload Background Image:</p>
@@ -110,25 +135,25 @@
       <img src="img/mariobg.png" onclick="setBackground('img/mariobg.png')" />
       <img src="img/mariobg.png" onclick="setBackground('img/mariobg.png')" />
     </div>
-    
+
     <h2>Color Settings</h2>
     <label for="headerColor">Header Color:</label>
     <input type="color" id="headerColor" onchange="setHeaderColor(event)" />
-    
+
     <label for="textColor">Text Color:</label>
     <input type="color" id="textColor" onchange="setTextColor(event)" />
-    
+
     <h2>Background Color</h2>
     <label for="backgroundColor">Background Color:</label>
     <input type="color" id="backgroundColor" onchange="setBackgroundColor(event)" />
-    
+
     <h2>Background Gradient</h2>
     <label for="backgroundColor1">Background Color 1:</label>
     <input type="color" id="backgroundColor1" onchange="setBackgroundGradient(event)" />
-    
+
     <label for="backgroundColor2">Background Color 2:</label>
     <input type="color" id="backgroundColor2" onchange="setBackgroundGradient(event)" />
-    
+
     <div class="saveContainer">
       <p>Download Settings:</p>
       <button class="button" onclick="exportSettings()">Download Settings</button>
@@ -138,53 +163,53 @@
       <button class="button" onclick="resetToDefault()">Reset to Default Settings</button>
       <div class="uploadResult"></div>
     </div>
-</div>
+  </div>
 
 
   <!-- JavaScript to handle settings -->
   <script>
 
-function setBackgroundFromUrl() {
-  const url = document.getElementById('backgroundImageUrl').value;
-  if (url) {
-    document.body.style.backgroundImage = `url('${url}')`;
-    localStorage.setItem('backgroundImage', url);
-  }
-}
+    function setBackgroundFromUrl() {
+      const url = document.getElementById('backgroundImageUrl').value;
+      if (url) {
+        document.body.style.backgroundImage = `url('${url}')`;
+        localStorage.setItem('backgroundImage', url);
+      }
+    }
 
-function setBackgroundColor(event) {
-  document.body.style.backgroundColor = event.target.value;
-  localStorage.setItem('backgroundColor', event.target.value);
-}
+    function setBackgroundColor(event) {
+      document.body.style.backgroundColor = event.target.value;
+      localStorage.setItem('backgroundColor', event.target.value);
+    }
 
-function setBackgroundGradient(event) {
-  const color1 = document.getElementById('backgroundColor1').value;
-  const color2 = document.getElementById('backgroundColor2').value;
-  if (color1 && color2) {
-    document.body.style.background = `linear-gradient(${color1}, ${color2})`;
-    localStorage.setItem('backgroundGradient', `linear-gradient(${color1}, ${color2})`);
-  }
-}
+    function setBackgroundGradient(event) {
+      const color1 = document.getElementById('backgroundColor1').value;
+      const color2 = document.getElementById('backgroundColor2').value;
+      if (color1 && color2) {
+        document.body.style.background = `linear-gradient(${color1}, ${color2})`;
+        localStorage.setItem('backgroundGradient', `linear-gradient(${color1}, ${color2})`);
+      }
+    }
 
-function resetToDefault() {
-  localStorage.removeItem('backgroundImage');
-  localStorage.removeItem('backgroundColor');
-  localStorage.removeItem('backgroundGradient');
-  localStorage.removeItem('headerColor');
-  localStorage.removeItem('textColor');
-  
-  document.body.style.backgroundImage = '';
-  document.body.style.backgroundColor = '';
-  document.body.style.background = '';
-  document.querySelector('header').style.backgroundColor = '';
-  document.body.style.color = '';
-  
-  document.getElementById('headerColor').value = '#000000'; // default color
-  document.getElementById('textColor').value = '#000000'; // default color
-  document.getElementById('backgroundColor').value = '#FFFFFF'; // default color
-  document.getElementById('backgroundColor1').value = '#FFFFFF'; // default color
-  document.getElementById('backgroundColor2').value = '#000000'; // default color
-}
+    function resetToDefault() {
+      localStorage.removeItem('backgroundImage');
+      localStorage.removeItem('backgroundColor');
+      localStorage.removeItem('backgroundGradient');
+      localStorage.removeItem('headerColor');
+      localStorage.removeItem('textColor');
+
+      document.body.style.backgroundImage = '';
+      document.body.style.backgroundColor = '';
+      document.body.style.background = '';
+      document.querySelector('header').style.backgroundColor = '';
+      document.body.style.color = '';
+
+      document.getElementById('headerColor').value = '#000000'; // default color
+      document.getElementById('textColor').value = '#000000'; // default color
+      document.getElementById('backgroundColor').value = '#FFFFFF'; // default color
+      document.getElementById('backgroundColor1').value = '#FFFFFF'; // default color
+      document.getElementById('backgroundColor2').value = '#000000'; // default color
+    }
 
     function handlePlusClick() {
       window.location.href = 'all.html';
@@ -207,11 +232,11 @@ function resetToDefault() {
       }
     }
 
-    document.getElementById('backgroundUpload').addEventListener('change', function(event) {
+    document.getElementById('backgroundUpload').addEventListener('change', function (event) {
       const file = event.target.files[0];
       if (file) {
         const reader = new FileReader();
-        reader.onload = function(e) {
+        reader.onload = function (e) {
           document.body.style.backgroundImage = `url('${e.target.result}')`;
           localStorage.setItem('backgroundImage', e.target.result);
         };
@@ -261,67 +286,68 @@ function resetToDefault() {
       a.href = url;
       a.download = 'settings.📃';
       document.body.appendChild(a);
-      a.click(); document.body.removeChild(a); }
-      function importSettings(event) {
-  const file = event.target.files[0];
-  if (!file) return;
-
-  const reader = new FileReader();
-  reader.onload = function(e) {
-    const settingsText = e.target.result;
-    const settings = settingsText.split(' | ').reduce((acc, item) => {
-      const [key, value] = item.split(' : !');
-      if (key && value) acc[key] = value.replace('i', '');
-      return acc;
-    }, {});
-
-    if (settings.backgroundImage) {
-      document.body.style.backgroundImage = `url('${settings.backgroundImage}')`;
-      localStorage.setItem('backgroundImage', settings.backgroundImage);
+      a.click(); document.body.removeChild(a);
     }
-    if (settings.backgroundColor) {
-      document.body.style.backgroundColor = settings.backgroundColor;
-      localStorage.setItem('backgroundColor', settings.backgroundColor);
-    }
-    if (settings.headerColor) {
-      document.querySelector('header').style.backgroundColor = settings.headerColor;
-      localStorage.setItem('headerColor', settings.headerColor);
-    }
-    if (settings.textColor) {
-      document.body.style.color = settings.textColor;
-      localStorage.setItem('textColor', settings.textColor);
-    }
-    if (settings.gradient) {
-      document.body.style.background = settings.gradient;
-      localStorage.setItem('background', settings.gradient);
-    }
-  };
-  reader.readAsText(file);
-}
+    function importSettings(event) {
+      const file = event.target.files[0];
+      if (!file) return;
 
-document.getElementById('importSettingsInput').addEventListener('change', importSettings);
+      const reader = new FileReader();
+      reader.onload = function (e) {
+        const settingsText = e.target.result;
+        const settings = settingsText.split(' | ').reduce((acc, item) => {
+          const [key, value] = item.split(' : !');
+          if (key && value) acc[key] = value.replace('i', '');
+          return acc;
+        }, {});
 
-// Load settings on page load
-window.onload = function() {
-  const backgroundImage = localStorage.getItem('backgroundImage');
-  const backgroundColor = localStorage.getItem('backgroundColor');
-  const headerColor = localStorage.getItem('headerColor');
-  const textColor = localStorage.getItem('textColor');
-  const gradient = localStorage.getItem('background');
+        if (settings.backgroundImage) {
+          document.body.style.backgroundImage = `url('${settings.backgroundImage}')`;
+          localStorage.setItem('backgroundImage', settings.backgroundImage);
+        }
+        if (settings.backgroundColor) {
+          document.body.style.backgroundColor = settings.backgroundColor;
+          localStorage.setItem('backgroundColor', settings.backgroundColor);
+        }
+        if (settings.headerColor) {
+          document.querySelector('header').style.backgroundColor = settings.headerColor;
+          localStorage.setItem('headerColor', settings.headerColor);
+        }
+        if (settings.textColor) {
+          document.body.style.color = settings.textColor;
+          localStorage.setItem('textColor', settings.textColor);
+        }
+        if (settings.gradient) {
+          document.body.style.background = settings.gradient;
+          localStorage.setItem('background', settings.gradient);
+        }
+      };
+      reader.readAsText(file);
+    }
 
-  if (backgroundImage) {
-    document.body.style.backgroundImage = `url('${backgroundImage}')`;
-  }
-  if (backgroundColor) {
-    document.body.style.backgroundColor = backgroundColor;
-  }
-  if (headerColor) {
-    document.querySelector('header').style.backgroundColor = headerColor;
-  }
-  if (textColor) {
-    document.body.style.color = textColor;
-  }
-  if (gradient) {
-    document.body.style.background = gradient;
-  }
-};
+    document.getElementById('importSettingsInput').addEventListener('change', importSettings);
+
+    // Load settings on page load
+    window.onload = function () {
+      const backgroundImage = localStorage.getItem('backgroundImage');
+      const backgroundColor = localStorage.getItem('backgroundColor');
+      const headerColor = localStorage.getItem('headerColor');
+      const textColor = localStorage.getItem('textColor');
+      const gradient = localStorage.getItem('background');
+
+      if (backgroundImage) {
+        document.body.style.backgroundImage = `url('${backgroundImage}')`;
+      }
+      if (backgroundColor) {
+        document.body.style.backgroundColor = backgroundColor;
+      }
+      if (headerColor) {
+        document.querySelector('header').style.backgroundColor = headerColor;
+      }
+      if (textColor) {
+        document.body.style.color = textColor;
+      }
+      if (gradient) {
+        document.body.style.background = gradient;
+      }
+    };
