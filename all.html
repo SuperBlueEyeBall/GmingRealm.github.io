@@ -90,6 +90,35 @@
   <div></div>
   <a class="linkmenu" href="FREEDOM.html">Shhh...</a>
   <div></div>
+  <p>Long characters:</p>
+  <p>﷽</p>
+  <p>𒐫</p>
+  <p>𒈙</p>
+  <p>꧅</p>
+  <p>ဪ</p>
+  <p>Goofy symbols:</p>
+  <p>𓀐𓂸</p>
+  <p>𓂺</p>
+  <p>𓂒𓂒</p>
+  <p>Working bl00ket h@cks</p>
+  <button id="copyButton">Copy Code</button>
+  <script>
+    document.getElementById('copyButton').addEventListener('click', async () => {
+      try {
+        // Fetch the text file
+        const response = await fetch('text.txt');
+        const text = await response.text();
+
+        // Copy the text to the clipboard
+        await navigator.clipboard.writeText(text);
+        alert('Text copied to clipboard!');
+      } catch (err) {
+        console.error('Failed to copy text: ', err);
+        alert('Failed to copy text');
+      }
+    });
+  </script>
+  <p></p>
   <!-- JavaScript to handle header fixed positioning on scroll -->
   <script>
     window.addEventListener('scroll', function () {

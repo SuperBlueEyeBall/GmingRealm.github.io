@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zalgo Text Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        .controls {
+            margin-bottom: 10px;
+        }
+
+        #output {
+            white-space: pre-wrap;
+            padding: 10px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Zalgo Text Generator</h1>
+    <div class="controls">
+        <label for="inputText">Text: </label>
+        <input type="text" id="inputText">
+        <br><br>
+
+        <label for="maxZalgo">Max Zalgo Intensity: </label>
+        <input type="range" id="maxZalgo" min="0" max="10" value="5">
+        <span id="maxZalgoValue">5</span>
+        <br>
+        <label for="zalgoMax">Set Zalgo Max Value:</label>
+        <input type="number" id="zalgoMax" value="10">
+        <br><br>
+
+        <label for="middleZalgo">Middle Zalgo Intensity: </label>
+        <input type="range" id="middleZalgo" min="0" max="10" value="5">
+        <span id="middleZalgoValue">5</span>
+        <br>
+        <label for="middleZalgoMax">Set Middle Zalgo Max Value:</label>
+        <input type="number" id="middleZalgoMax" value="10">
+        <br><br>
+
+        <label for="wideZalgo">Wide Zalgo Intensity: </label>
+        <input type="range" id="wideZalgo" min="0" max="10" value="5">
+        <span id="wideZalgoValue">5</span>
+        <br><br>
+
+        <input type="checkbox" id="tallMode"> Tall Mode
+        <br><br>
+
+        <label for="allHeights">Control Top, Middle, and Bottom Height Together: </label>
+        <input type="checkbox" id="allHeights" checked>
+        <br><br>
+
+        <input type="checkbox" id="autoZalgo" checked> Auto Zalgo
+        <br><br>
+
+        <button id="copyText">Copy to Clipboard</button>
+    </div>
+    <div id="output"></div>
+    <script>
+        const zalgo_up = ['̍', '̎', '̄', '̅', '̿', '̑', '̆', '̐', '͒', '͗', '͑', '̇', '̈', '̊', '͂', '̓', '̈', '͊', '͋', '͌', '̃', '̂', '̌', '͐', '̀', '́', '̋', '̏', '̒', '̓', '̔', '̽', '̉', 'ͣ', 'ͤ', 'ͥ', 'ͦ', 'ͧ', 'ͨ', 'ͩ', 'ͪ', 'ͫ', 'ͬ', 'ͭ', 'ͮ', 'ͯ', '̾', '͛', '͆', '̚'];
+        const zalgo_mid = ['̕', '̛', '̀', '́', '͘', '̡', '̢', '̧', '̨', '̴', '̵', '̶', '͏', '͜', '͝', '͞', '͟', '͠', '͢', '̸', '̷', '͡', '҉'];
+        const zalgo_down = ['̖', '̗', '̘', '̙', '̚', '̜', '̝', '̞', '̟', '̠', '̤', '̥', '̦', '̩', '̪', '̫', '̬', '̭', '̮', '̯', '̰', '̱', '̲', '̳', '̹', '̺', '̻', '̼', 'ͅ', '͇', '͈', '͉', '͍', '͎', '͓', '͔', '͕', '͖', '͗', '͙', '͚', '̣'];
+
+        function generateZalgo(text, maxIntensity, midIntensity, tallMode, wideIntensity) {
+            return text.split('').map(char => {
+                let zalgoText = char;
+                if (tallMode) {
+                    zalgoText += zalgo_up.join('').repeat(maxIntensity);
+                } else {
+                    for (let i = 0; i < maxIntensity; i++) {
+                        zalgoText += zalgo_up[Math.floor(Math.random() * zalgo_up.length)];
+                    }
+                    for (let i = 0; i < midIntensity; i++) {
+                        zalgoText += zalgo_mid[Math.floor(Math.random() * zalgo_mid.length)];
+                    }
+                    for (let i = 0; i < maxIntensity; i++) {
+                        zalgoText += zalgo_down[Math.floor(Math.random() * zalgo_down.length)];
+                    }
+                }
+                for (let i = 0; i < wideIntensity; i++) {
+                    zalgoText += zalgo_mid[Math.floor(Math.random() * zalgo_mid.length)];
+                }
+                return zalgoText;
+            }).join('');
+        }
+
+        function updateZalgo() {
+            const inputText = document.getElementById('inputText').value;
+            const maxZalgoValue = parseInt(document.getElementById('maxZalgo').value);
+            const middleZalgoValue = parseInt(document.getElementById('middleZalgo').value);
+            const wideZalgoValue = parseInt(document.getElementById('wideZalgo').value);
+            const tallMode = document.getElementById('tallMode').checked;
+            const output = document.getElementById('output');
+            output.textContent = generateZalgo(inputText, maxZalgoValue, middleZalgoValue, tallMode, wideZalgoValue);
+        }
+
+        document.getElementById('zalgoMax').addEventListener('input', function () {
+            document.getElementById('maxZalgo').max = this.value;
+        });
+        document.getElementById('middleZalgoMax').addEventListener('input', function () {
+            document.getElementById('middleZalgo').max = this.value;
+        });
+        document.getElementById('maxZalgo').addEventListener('input', function () {
+            document.getElementById('maxZalgoValue').textContent = this.value;
+            if (document.getElementById('autoZalgo').checked) {
+                updateZalgo();
+            }
+        });
+        document.getElementById('middleZalgo').addEventListener('input', function () {
+            document.getElementById('middleZalgoValue').textContent = this.value;
+            if (document.getElementById('autoZalgo').checked) {
+                updateZalgo();
+            }
+        });
+        document.getElementById('wideZalgo').addEventListener('input', function () {
+            document.getElementById('wideZalgoValue').textContent = this.value;
+            if (document.getElementById('autoZalgo').checked) {
+                updateZalgo();
+            }
+        });
+        document.getElementById('copyText').addEventListener('click', function () {
+            const outputText = document.getElementById('output').textContent;
+            navigator.clipboard.writeText(outputText).then(() => {
+                alert('Zalgo text copied to clipboard!');
+            });
+        });
+
+        document.getElementById('autoZalgo').checked = true;
+        document.getElementById('autoZalgo').addEventListener('click', function () {
+            updateZalgo();
+        });
+
+        updateZalgo();
+    </script>
+</body>
+
+</html>

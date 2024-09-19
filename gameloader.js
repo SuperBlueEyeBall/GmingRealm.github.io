@@ -69,16 +69,20 @@ function gameHide(gamePath) {
 
 var gamesText = `{
     "games":[
+    {
+            "name":"Sharp Browser",
+            "img":"img/sharpbrowser.png",
+            "path":"gfiles/sharpbrowser/"
+        },
         {
             "name":"Sharp Browser",
             "img":"img/sharpbrowser.png",
             "path":"gfiles/sharpbrowser/"
         },
-
         {
             "name":"1v1 lol",
-            "img":"img/",
-            "path":"gfiles/1v1lol/1v1lol.png"
+            "img":"img/1v1lol.png",
+            "path":"gfiles/1v1lol/"
         },
         {
             "name":"House of Hazards",
@@ -102,13 +106,13 @@ var gamesText = `{
         },
         {
             "name":"Time Shooter 2",
-            "img":"img/",
-            "path":"gfiles/timeshooter2/timeshooter2.jpeg"
+            "img":"img/timeshooter2.jpeg",
+            "path":"gfiles/timeshooter2/"
         },
         {
             "name":"Time Shooter 3",
-            "img":"img/",
-            "path":"gfiles/timeshooter3/timeshooter3.jpeg"
+            "img":"img/timeshooter3.jpeg",
+            "path":"gfiles/timeshooter3/"
         },
         {
             "name":"Better S.A.M. (TTS)",
