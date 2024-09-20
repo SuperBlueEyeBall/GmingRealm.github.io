@@ -69,10 +69,10 @@ function gameHide(gamePath) {
 
 var gamesText = `{
     "games":[
-    {
-            "name":"Sharp Browser",
-            "img":"img/sharpbrowser.png",
-            "path":"gfiles/sharpbrowser/"
+        {
+            "name":"Web-NES",
+            "img":"img/webnes.png",
+            "path":"gfiles/WebNES-master/project/index_app.html"
         },
         {
             "name":"Sharp Browser",
@@ -125,9 +125,9 @@ var gamesText = `{
             "path":"gfiles/leafbrowser/"
         },
         {
-            "name":"REAL roblox",
+            "name":"roblox V3",
             "img":"img/roblox.png",
-            "path":"gfiles/realroblos/"
+            "path":"roblos.html"
         },
         {
             "name":"0hh1",

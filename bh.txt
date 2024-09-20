@@ -5998,7 +5998,7 @@
 
         let iframe = document.querySelector("iframe");
 
-        iframe.contentWindow.alert("If you're seeing this, then the code has been taken down and wiped off of github. Don't worry though! Everything on this backup of the blooket cheats will work perfectly fine! This is an exact backup. For more information and updates, check out my boy 05Konz's Discord server: \nhttps://discord.gg/jHjGrrdXP6")
+        iframe.contentWindow.alert("If you're seeing this, then the code has been taken down and wiped off of github. Don't worry though! Everything on this backup of the blooket cheats will work perfectly fine! This is an exact backup (probably). For more information and updates, check out my boy 05Konz's Discord server: \nhttps://discord.gg/jHjGrrdXP6")
 
     }
 

@@ -3,6 +3,7 @@
   color: #ffffff;
   font-family: Arial, sans-serif;
 }
+
 #settings {
   position: absolute;
   /* right: 10vw; */
@@ -14,7 +15,8 @@
   margin: auto;
   max-height: 30vw;
   overflow-y: scroll;
-  display: flex; /* def flex */
+  display: flex;
+  /* def flex */
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: center;
@@ -47,9 +49,12 @@
 body {
   margin: 0;
   padding: 0;
-  background: #141E30;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #243B55, #141E30);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #141E30;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #243B55, #141E30);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #243B55, #141E30);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   height: 100%;
 }
 
@@ -78,26 +83,31 @@ header {
 
 body.scrolled header {
   position: fixed;
-  top: 0; /* Position at the top */
-  left: 0; /* Ensure it's flush with the left edge */
-  right: 0; /* Ensure it spans the full width */
-  width: 100%; /* Ensure it spans the full width */
+  top: 0;
+  /* Position at the top */
+  left: 0;
+  /* Ensure it's flush with the left edge */
+  right: 0;
+  /* Ensure it spans the full width */
+  width: 100%;
+  /* Ensure it spans the full width */
   /* Optional styling to create some shadow or separation */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 /* Add some space to the top of the body content when the header is fixed */
 body.scrolled .main-content {
-  margin-top: 60px; /* Adjust this value to match the header height */
+  margin-top: 60px;
+  /* Adjust this value to match the header height */
 }
 
-header a:hover{
+header a:hover {
   color: rgb(73, 122, 245);
   transform: scale(1.05);
   transition: .2s;
 }
 
-.linkmenu{
+.linkmenu {
   text-decoration: none;
 }
 
@@ -108,7 +118,8 @@ header a:hover{
   -moz-border-radius: 10px;
   -ms-border-radius: 10px;
   -o-border-radius: 10px;
-  height: 30px;  /* Adjust height as needed */
+  height: 30px;
+  /* Adjust height as needed */
   color: black;
   padding: 0 10px;
   font-size: 16px;
@@ -116,11 +127,12 @@ header a:hover{
 }
 
 #plus-button:hover {
-  color: #ff0000; /* Change color on hover */
+  color: #ff0000;
+  /* Change color on hover */
 }
 
-.icon{
-  border-radius: 40%; 
+.icon {
+  border-radius: 40%;
 }
 
 header a {
@@ -153,9 +165,12 @@ p {
 }
 
 .game-button {
-  background: #141E30;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #1b2c40, #0b111d);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #1b2c40, #0b111d); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #141E30;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #1b2c40, #0b111d);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #1b2c40, #0b111d);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   border-radius: 10px;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
@@ -214,7 +229,8 @@ p {
   -moz-border-radius: 10px;
   -ms-border-radius: 10px;
   -o-border-radius: 10px;
-  height: 30px;  /* Adjust height as needed */
+  height: 30px;
+  /* Adjust height as needed */
   color: black;
   padding: 0 10px;
   font-size: 16px;
@@ -243,19 +259,51 @@ p {
 
 .parent-container {
   display: flex;
-  justify-content: center; /* Center horizontally */
-  align-items: flex-start; /* Align items to the top */
-  height: 100vh; /* Full viewport height */
-  padding-bottom: 40px; /* Add padding to the bottom, adjust as needed */
+  justify-content: center;
+  /* Center horizontally */
+  align-items: flex-start;
+  /* Align items to the top */
+  height: 100vh;
+  /* Full viewport height */
+  padding-bottom: 40px;
+  /* Add padding to the bottom, adjust as needed */
   padding-top: 40px;
-  box-sizing: border-box; /* Include padding in the container's height */
+  box-sizing: border-box;
+  /* Include padding in the container's height */
 }
 
 .widget-container {
-  width: 100%; /* Full width of the viewport */
-  max-width: 100%; /* Optional: limit maximum width */
-  height: 100%; /* Adjust height to make it bigger vertically */
+  width: 100%;
+  /* Full width of the viewport */
+  max-width: 100%;
+  /* Optional: limit maximum width */
+  height: 100%;
+  /* Adjust height to make it bigger vertically */
   border-radius: 10px;
   overflow: hidden;
-  background: #fff; /* White background for the container */
+  background: #fff;
+  /* White background for the container */
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.nav-button {
+  margin: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.nav-button:hover {
+  background-color: #0056b3;
 }

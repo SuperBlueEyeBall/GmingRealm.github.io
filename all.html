@@ -44,6 +44,20 @@
     }
 
   </script>
+  <style>
+    body {
+      text-align: center;
+    }
+
+    .container {
+      display: inline-block;
+      text-align: left;
+    }
+
+    .copy-button {
+      margin-left: 10px;
+    }
+  </style>
 </head>
 
 <body>
@@ -66,47 +80,87 @@
     <a class="linkmenu" href="sites.html">Sites</a>
     <button class="linkmenu" id="plus-button" onclick="handlePlusClick()">+</button>
   </header>
-  <h1 class="title">Gming Realm | All sub-pages (besides games)</h1>
-  <div class="game-container">
-    <div class="game-select" id="gameSelect"></div>
+  <div class="container">
+    <h1 class="title">Gming Realm | All sub-pages (besides games)</h1>
+    <div class="game-container">
+      <div class="game-select" id="gameSelect"></div>
+    </div>
+    <div class="button-container">
+      <button class="nav-button" onclick="window.location.href='/'">Gming Realm</button>
+      <button class="nav-button"
+        onclick="window.location.href='https://sites.google.com/students.nisd.net/classy/home?authuser=1'">Google
+        Site</button>
+      <button class="nav-button" onclick="window.location.href='dizzy.html'">Discord</button>
+      <button class="nav-button" onclick="hidey()">Hide Tab</button>
+      <button class="nav-button" onclick="window.location.href='savman.html'">Settings</button>
+      <button class="nav-button" onclick="window.location.href='feedback.html'">Feedback/Requests</button>
+      <button class="nav-button" onclick="window.location.href='sites.html'">Sites</button>
+      <button class="nav-button" onclick="window.location.href='coderunner.html'">Code executor (python, js,
+        HTML)</button>
+      <button class="nav-button" onclick="window.location.href='credits.html'">Credits</button>
+      <button class="nav-button" onclick="window.location.href='FREEDOM.html'">Shhh...</button>
+      <button class="nav-button" onclick="window.location.href='roblos.html'">RobIox stuff</button>
+    </div>
+
+    <p>Long characters:</p>
+    <div>
+      <p>﷽ <button class="copy-button" onclick="copyText('﷽')">Copy</button></p>
+      <p>𒐫 <button class="copy-button" onclick="copyText('𒐫')">Copy</button></p>
+      <p>𒈙 <button class="copy-button" onclick="copyText('𒈙')">Copy</button></p>
+      <p>꧅ <button class="copy-button" onclick="copyText('꧅')">Copy</button></p>
+      <p>ဪ <button class="copy-button" onclick="copyText('ဪ')">Copy</button></p>
+      <p>𒅒 <button class="copy-button" onclick="copyText('𒅒')">Copy</button></p>
+      <p>𒈔 <button class="copy-button" onclick="copyText('𒈔')">Copy</button></p>
+      <p>𒇫 <button class="copy-button" onclick="copyText('𒇫')">Copy</button></p>
+      <p>𒄆 <button class="copy-button" onclick="copyText('𒄆')">Copy</button></p>
+      <p>𒀱 <button class="copy-button" onclick="copyText('𒀱')">Copy</button></p>
+      <p>Ɑ͞ ̶͞ ̶͞ ̶͞ لں͞ <button class="copy-button" onclick="copyText('Ɑ͞ ̶͞ ̶͞ ̶͞ لں͞')">Copy</button></p>
+      <p>( ͜. ㅅ ͜. ) <button class="copy-button" onclick="copyText('( ͜. ㅅ ͜. )')">Copy</button></p>
+      <p>(‿ˠ‿) <button class="copy-button" onclick="copyText('(‿ˠ‿))">Copy</button></p>
+      <p>🃜🃚🃖🃁🂭🂺 <button class="copy-button" onclick="copyText('🃜🃚🃖🃁🂭🂺')">Copy</button></p>
+      <p>☭ <button class="copy-button" onclick="copyText('☭')">Copy</button></p>
+      <p>☭ <button class="copy-button" onclick="copyText('☭')">Copy</button></p>
+      <p>⎛⎝ ≽ > ⩊ < ≼ ⎠⎞ <button class="copy-button" onclick="copyText('⎛⎝ ≽  >  ⩊   < ≼ ⎠⎞')">Copy</button></p>
+
+      <br>
+      <p>Some combining characters below (it combines with the character to a side of it (usually left))</p>
+      <p>⃟ <button class="copy-button" onclick="copyText('⃟')">Copy</button></p>
+      <p>☭ <button class="copy-button" onclick="copyText('☭')">Copy</button></p>
+
+      <p>/̵͇̿̿/’̿’̿ ̿ ̿̿ ̿̿ ̿̿ <button class="copy-button" onclick="copyText('/̵͇̿̿/’̿’̿ ̿ ̿̿ ̿̿ ̿̿')">Copy</button></p>
+      <p>☢ <button class="copy-button" onclick="copyText('☢')">Copy</button></p>
+      <p>⚛ <button class="copy-button" onclick="copyText('⚛')">Copy</button></p>
+      <p>⛆ <button class="copy-button" onclick="copyText('⛆')">Copy</button></p>
+      <p>𐐘𓍿𓂸ඞ <button class="copy-button" onclick="copyText('𐐘𓍿𓂸ඞ')">Copy</button></p>
+      <p>⚠︎ <button class="copy-button" onclick="copyText('⚠︎')">Copy</button></p>
+      <br>
+      <p>( right to left override below)</p>
+      <p>‮ <button class="copy-button" onclick="copyText('‮')">Copy</button></p>
+      <br>
+      <p>⚠︎ <button class="copy-button" onclick="copyText('⚠︎')">Copy</button></p>
+    </div>
+
+    𒅒𒈔𒅒𒇫𒄆𒀱
+
+
+    <p>Goofy symbols:</p>
+    <div>
+      <p>𓀐𓂸 <button class="copy-button" onclick="copyText('𓀐𓂸')">Copy</button></p>
+      <p>𓂺 <button class="copy-button" onclick="copyText('𓂺')">Copy</button></p>
+      <p>𓂒𓂒 <button class="copy-button" onclick="copyText('𓂒𓂒')">Copy</button></p>
+    </div>
+
+    <p>Working bl00ket h@cks</p>
+    <div class="button-container">
+      <button id="copyButton">Copy Code</button>
+    </div>
   </div>
-  <a class="linkmenu" href="/">Gming Realm</a>
-  <div></div>
-  <a class="linkmenu" href="https://sites.google.com/students.nisd.net/classy/home?authuser=1">Google Site</a>
-  <div></div>
-  <a class="linkmenu" href="dizzy.html">Discord</a>
-  <div></div>
-  <a class="linkmenu" onclick="hidey()">Hide Tab</a>
-  <div></div>
-  <a class="linkmenu" href="savman.html">Settings</a>
-  <div></div>
-  <a class="linkmenu" href="feedback.html">Feedback/Requests</a>
-  <div></div>
-  <a class="linkmenu" href="sites.html">Sites</a>
-  <div></div>
-  <a class="linkmenu" href="coderunner.html">Code executor (python, js, HTML)</a>
-  <div></div>
-  <a class="linkmenu" href="credits.html">Credits</a>
-  <div></div>
-  <a class="linkmenu" href="FREEDOM.html">Shhh...</a>
-  <div></div>
-  <p>Long characters:</p>
-  <p>﷽</p>
-  <p>𒐫</p>
-  <p>𒈙</p>
-  <p>꧅</p>
-  <p>ဪ</p>
-  <p>Goofy symbols:</p>
-  <p>𓀐𓂸</p>
-  <p>𓂺</p>
-  <p>𓂒𓂒</p>
-  <p>Working bl00ket h@cks</p>
-  <button id="copyButton">Copy Code</button>
+
   <script>
     document.getElementById('copyButton').addEventListener('click', async () => {
       try {
         // Fetch the text file
-        const response = await fetch('text.txt');
+        const response = await fetch('bh');
         const text = await response.text();
 
         // Copy the text to the clipboard
@@ -117,9 +171,16 @@
         alert('Failed to copy text');
       }
     });
+
+    function copyText(text) {
+      navigator.clipboard.writeText(text).then(() => {
+        alert('Copied: ' + text);
+      }).catch(err => {
+        console.error('Failed to copy text: ', err);
+      });
+    }
   </script>
-  <p></p>
-  <!-- JavaScript to handle header fixed positioning on scroll -->
+
   <script>
     window.addEventListener('scroll', function () {
       if (window.scrollY > 0) {
