@@ -70,34 +70,14 @@ function gameHide(gamePath) {
 var gamesText = `{
     "games":[
         {
-            "name":"leaf browser V2 (I tried fixin it)",
-            "img":"gfiles/leafbrowser/artwork/logo/webstore-tile-1400.png",
-            "path":"gfiles/leaf2/"
-        },
-        {
             "name":"Google Snake Modded",
             "img":"img/gsm1.png",
-            "path":"gfiles/gsm/"
+            "path":"gfiles/gsmV2/"
         },
         {
             "name":"BTD5 (fixed)",
             "img":"img/btd5.webp",
             "path":"gfiles/btd5fixed/"
-        },
-        {
-            "name":"Markdown Interpeter",
-            "img":"img/markdown.png",
-            "path":"gfiles/markdowninterpreter/docs/index.html"
-        },
-        {
-            "name":"Web-NES (broken)",
-            "img":"img/webnes.png",
-            "path":"gfiles/WebNES-master/project/index_app.html"
-        },
-        {
-            "name":"Sharp Browser",
-            "img":"img/sharpbrowser.png",
-            "path":"gfiles/sharpbrowser/"
         },
         {
             "name":"1v1 lol",
