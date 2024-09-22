@@ -2986,6 +2986,6 @@
         img.onerror = img.onabort = null;
         cheat();
         let iframe = document.querySelector("iframe");
-                iframe.contentWindow.alert("If you're seeing this, the original github is down, so some images wont show, but the GUI will still look nice and the cheats will still all work and load after this message. Credits to Blooket Council for the file. (Not modified, also I'm pretty sure he skidded this because it literally still has the license from 05Konz)")
+                iframe.contentWindow.alert("If you're seeing this, then the original github is down, so some images wont show, but the GUI will still look nice and the cheats will still all work and load after this message. Credits to Blooket Council for the file. (Not modified, also I'm pretty sure he skidded this because it literally still has the license from 05Konz)")
     }
 })();

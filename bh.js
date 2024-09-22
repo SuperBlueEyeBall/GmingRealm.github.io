@@ -5973,7 +5973,7 @@
 
         let iframe = document.querySelector("iframe");
 
-        iframe.contentWindow.alert("If you're seeing this, the original github is down, so some images wont show, but the GUI will still look nice and the cheats will still all work and load after this message. Credits to 05Konz for the original file. (Not modified)")
+        iframe.contentWindow.alert("If you're seeing this, then the original github is down, so some images wont show, but the GUI will still look nice and the cheats will still all work and load after this message. Credits to 05Konz for the original file. (Not modified)")
 
     }
 
