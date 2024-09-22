@@ -1,0 +1,158 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>runjavascript</title>
+  <link rel="stylesheet" href="stackedit-io.css" />
+  <style>
+    header {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding-right: 50px;
+  margin: 0;
+  background-color: #0c1320;
+  position: relative;
+  z-index: 1000000000;
+}
+
+body.scrolled header {
+  position: fixed;
+  top: 0;
+  /* Position at the top */
+  left: 0;
+  /* Ensure it's flush with the left edge */
+  right: 0;
+  /* Ensure it spans the full width */
+  width: 100%;
+  /* Ensure it spans the full width */
+  /* Optional styling to create some shadow or separation */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Add some space to the top of the body content when the header is fixed */
+body.scrolled .main-content {
+  margin-top: 60px;
+  /* Adjust this value to match the header height */
+}
+
+header a:hover {
+  color: rgb(231, 255, 95);
+  transform: scale(1.05);
+  transition: .2s;
+}
+
+.linkmenu {
+  text-decoration: none;
+}
+
+
+#plus-button {
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  height: 34px;
+  width: 35px;
+  /* Adjust height as needed */
+  color: black;
+  padding: 0 10px;
+  font-size: 20px;
+  border: none;
+  transition: color 0.3s;
+}
+
+#plus-button:hover {
+  color: rgb(178, 201, 52);
+  /* Change color on hover */
+}
+
+.icon {
+  border-radius: 40%;
+  size: auto;
+}
+
+header a {
+  padding: 0;
+  margin: 0;
+  text-decoration: underline;
+}
+
+  </style>
+</head>
+
+<body class="stackedit">
+  <header>
+    <a href="/" class="icon"><img src="icon.gif" class="icon" /></a>
+    <a class="linkmenu" href="/">Gming Realm</a>
+    <a class="linkmenu" href="https://sites.google.com/students.nisd.net/classy/home?authuser=1">Google Site</a>
+    <a class="linkmenu" href="dizzy.html">Discord</a>
+    <a class="linkmenu" onclick="hidey()">Hide Tab</a>
+    <a class="linkmenu" href="savman.html">Settings</a>
+    <a class="linkmenu" href="feedback.html">Feedback/Requests</a>
+    <a class="linkmenu" href="sites.html">Sites</a>
+    <button class="linkmenu" id="plus-button" onclick="handlePlusClick()">+</button>
+  </header>
+  <div class="stackedit__html"><h1 id="how-to-run-javascript-even-if-javascript-is-disabled-blocked">How to run javascript even if “javascript:” is disabled/ blocked</h1>
+<h5 id="though-unfortunately-it-was-too-late-for-me-as-my-school-not-only-disabled-javascript-but-disabled-literally-every-extension-and-app-in-the-chrome-web-store-i-hope-its-not-too-late-for-you">Though, unfortunately, it was too late for me, as my school not only disabled “javascript:”, BUT DISABLED LITERALLY EVERY EXTENSION AND APP IN THE CHROME WEB STORE!!! I hope it’s not too late for you!</h5>
+<h3 id="by-the-way-for-clarity-what-im-saying-is-you-can-run-code-through-the-ublock-extension-not-disabling-the-extension-if-the-extension-is-the-thing-stopping-it-from-running.">by the way, for clarity, what I’m saying is you can run code through the uBlock extension, not disabling the extension if the extension is the thing stopping it from running.</h3>
+<ul>
+<li><strong>uBlock extension Run bypasses - allows you to run bookmarklets:</strong>
+<ul>
+<li><a href="#ublock-run--able-to-run-bookmarklets-if-blocked">uBlock Run | Able to run bookmarklets if blocked</a></li>
+<li><a href="#ublock-run-2--able-to-run-bookmarklets-if-blocked">uBlock Run 2 | Able to run bookmarklets if blocked</a></li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="ublock-run--able-to-run-bookmarklets-if-blocked">uBlock Run | Able to run bookmarklets if blocked</h3>
+<ol>
+<li>You must have the uBlock Origin extension installed for this to work.</li>
+<li>Go to the extension’s settings (press the puzzle icon next to the url, press the 3 dots corresponding to the extension, and press “Manage Extension”)</li>
+<li>Under the settings tab, check the “I am an advanced user” box, then click on the small cog icon.</li>
+<li>Find “userResourcesLocation” and change it from <code>unset</code> to</li>
+</ol>
+<pre class=" language-js"><code class="prism  language-js">https<span class="token punctuation">:</span><span class="token operator">/</span><span class="token operator">/</span>raw<span class="token punctuation">.</span>githubusercontent<span class="token punctuation">.</span>com<span class="token operator">/</span>3kh0<span class="token operator">/</span>ext<span class="token operator">-</span>remover<span class="token operator">/</span>main<span class="token operator">/</span>ublockExec<span class="token punctuation">.</span>js
+</code></pre>
+<p>5.Go to the My filters tab of the settings and add the following line:</p>
+<pre class=" language-js"><code class="prism  language-js"><span class="token operator">*</span>##<span class="token operator">+</span><span class="token function">js</span><span class="token punctuation">(</span>execute_script<span class="token punctuation">.</span>js<span class="token punctuation">)</span>
+</code></pre>
+<ol start="6">
+<li>Now press ctr+alt+tilde (~) to run code on the current page, and you are done!</li>
+</ol>
+<h3 id="ublock-run-2--able-to-run-bookmarklets-if-blocked">uBlock Run 2 | Able to run bookmarklets if blocked</h3>
+<ol>
+<li>Open uBlock settings</li>
+<li>Enable advanced settings, and click the gear ⚙️ button<br>
+Caution! DON’T MODIFY ANYTHING ELSE ON THIS PAGE, if you mess up, go to the home of settings and at the bottom click reset to default settings.</li>
+<li>Add the script<br>
+Change <code>userResourcesLocation unset</code> (ctrl f it if needed)<br>
+to</li>
+</ol>
+<pre class=" language-js"><code class="prism  language-js">userResourcesLocation https<span class="token punctuation">:</span><span class="token operator">/</span><span class="token operator">/</span>inglan2<span class="token punctuation">.</span>github<span class="token punctuation">.</span>io<span class="token operator">/</span>uRun<span class="token operator">/</span>urun<span class="token punctuation">.</span>js
+</code></pre>
+<ol start="4">
+<li>After closing the advanced settings tab, go to the filters tab and add this:</li>
+</ol>
+<pre class=" language-js"><code class="prism  language-js"><span class="token operator">*</span>##<span class="token operator">+</span><span class="token function">js</span><span class="token punctuation">(</span>urun<span class="token punctuation">.</span>js<span class="token punctuation">)</span>
+</code></pre>
+<p>How to use: <br><br>
+Simply press Ctrl + Shift + ` to open the menu and from there you can run and create scripts. To add a script, press the “+” button up the top right, and enter the code you would like to add (without the javascript: part).</p>
+<p><br> <strong>Back to <a href="index.html">home page</a></strong> (Do I really need to explain it)</p>
+</div>
+<!-- JavaScript to handle header fixed positioning on scroll -->
+<script>
+  window.addEventListener('scroll', function () {
+    if (window.scrollY > 0) {
+      document.body.classList.add('scrolled');
+    } else {
+      document.body.classList.remove('scrolled');
+    }
+  });
+</script>
+</body>
+
+</html>

@@ -60,8 +60,14 @@ body {
 
 a.icon {
   margin: 0.5%;
-  padding-top: 5px;
-  width: 5% !important;
+  width: auto;
+  /* Adjust the width based on the height */
+  height: 50px;
+  /* Set a fixed height, adjust to match your header */
+  max-width: 50px;
+  /* Ensures the icon doesn't get too large */
+  object-fit: contain;
+  /* Ensures the image scales properly */
 }
 
 img.icon {
@@ -102,7 +108,7 @@ body.scrolled .main-content {
 }
 
 header a:hover {
-  color: rgb(73, 122, 245);
+  color: rgb(231, 255, 95);
   transform: scale(1.05);
   transition: .2s;
 }
@@ -118,21 +124,24 @@ header a:hover {
   -moz-border-radius: 10px;
   -ms-border-radius: 10px;
   -o-border-radius: 10px;
-  height: 30px;
+  height: 34px;
+  width: 35px;
   /* Adjust height as needed */
   color: black;
   padding: 0 10px;
-  font-size: 16px;
+  font-size: 20px;
   border: none;
+  transition: color 0.3s;
 }
 
 #plus-button:hover {
-  color: #ff0000;
+  color: rgb(178, 201, 52);
   /* Change color on hover */
 }
 
 .icon {
   border-radius: 40%;
+  size: auto;
 }
 
 header a {
@@ -242,7 +251,7 @@ p {
   bottom: 20px;
   right: 20px;
   z-index: 1000;
-  background-color: rgba(red, green, blue, 1);
+  background-color: transparent;
   padding: 10px;
 }
 
@@ -296,7 +305,7 @@ p {
   margin: 10px;
   padding: 10px 20px;
   font-size: 16px;
-  background-color: #007bff;
+  background-color: #7a7a7a;
   color: white;
   border: none;
   border-radius: 5px;
@@ -305,5 +314,5 @@ p {
 }
 
 .nav-button:hover {
-  background-color: #0056b3;
+  background-color: #a1a1a1;
 }

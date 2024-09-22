@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Bookmarks HTML Generator</title>
+    <meta name="description"
+        content="A free online tool which allows you to bulk import bookmarks from a list of urls online. Bookmark names are optionally supported.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        .send-button {
+    background: #ff6961;
+    width: 100%;
+    font-weight: 600;
+    color: #fff;
+    padding: 8px 25px;
+    margin-top: 25px;
+}
+
+.btn:hover {
+    color: #fff;
+    border-color: #4c5357;
+}
+
+.my-input {
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+    cursor: text;
+    padding: 8px 10px;
+    transition: border .1s linear;
+}
+
+.my-input:focus {
+    border-color: #4c5357;
+    box-shadow: none;
+}
+
+.my-input:hover {
+    border-color: #4c5357;
+}
+
+h1 {
+    font-size: 31px;
+    line-height: 40px;
+    font-weight: 600;
+    color: #4c5357;
+}
+
+h2 {
+    color: #5e8396;
+    font-size: 21px;
+    line-height: 32px;
+    font-weight: 400;
+}
+
+textarea {
+    min-height: 350px;
+    white-space: pre;
+    overflow: hidden;
+    resize: none;
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 800px;
+    }
+}
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 mx-auto p-3 mt-4 text-center">
+                <div class="header-title">
+                    <h1 class="wv-heading--title">
+                        Bookmarks HTML Generator
+                    </h1>
+                    <h2 class="wv-heading--subtitle p-3">
+                        This tool exports a list of URLs into a "bookmarks.html" file so you can then import it on any browser, on any device! 
+                    </h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 mx-auto">
+                <div class="form-group">
+                    <input type="text" name="folder-name" class="form-control my-input rounded-0" autocomplete="off"
+                        id="folder-name" placeholder="Folder Name (Optional)">
+                </div>
+            </div>
+        </div>
+        <div class="row no-gutters">
+            <div class="col-sm-6 mx-auto">
+                <textarea class="form-control my-input rounded-0" id="bookmark-urls" placeholder=""></textarea>
+            </div>
+            <div class="col-sm-6 mx-auto">
+                <textarea class="form-control my-input rounded-0"" id="bookmark-names" placeholder=""></textarea>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 mx-auto mb-5">
+                <button class=" btn btn-block send-button tx-tfm text-center" id="download-button"
+                    onclick="download()">Download Bookmarks</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        function download() {
+
+    var folderName = document.getElementById("folder-name").value;
+    var bookmarkUrls = document.getElementById("bookmark-urls").value.split("\n");
+    var bookmarkNames = document.getElementById("bookmark-names").value.split("\n");
+
+    var output = `<!DOCTYPE NETSCAPE-Bookmark-file-1>
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <TITLE>Bookmarks</TITLE>
+    <H1>Bookmarks</H1>
+    <DL><p>`
+
+    // Only add Folder to output if folder name specified
+    if (folderName != "") {
+        output = output.concat(`
+        <DT><H3>${folderName}</H3>
+        <DL><p>`)
+    }
+
+    for (var i = 0; i < bookmarkUrls.length; i++) {
+
+        // Skip blank lines
+        if (bookmarkUrls[i] == "") {
+            continue;
+        }
+
+        // Default bookmark name to url string if name not specified
+        if (bookmarkNames[i] == "" || typeof bookmarkNames[i] == 'undefined') {
+            bookmarkNames[i] = bookmarkUrls[i];
+        }
+
+        // Add individual bookmark to output
+        var bookmark = `
+        <DT><A HREF="${bookmarkUrls[i]}">${bookmarkNames[i]}</A>`
+        output = output.concat(bookmark)
+    }
+
+    // Only close folder tag if folder name specified
+    if (folderName != "") {
+        output = output.concat(`
+        </DL><p>`)
+    }
+
+    // Close final tag
+    output = output.concat(`
+        </DL><p>`);
+
+    // Build downloadable .html file with content from output variable
+    var element = document.createElement('a');
+    element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(output));
+    element.setAttribute('download', "bookmarks.html");
+
+    element.style.display = 'none';
+    document.body.appendChild(element);
+
+    element.click();
+
+    document.body.removeChild(element);
+}
+
+document.getElementById("bookmark-urls").placeholder = `https://github.com/
+https://stackoverflow.com/
+https://www.reddit.com/
+`;
+
+document.getElementById("bookmark-names").placeholder = `GitHub
+Stack Overflow
+Reddit
+`;
+    </script>
+</body>

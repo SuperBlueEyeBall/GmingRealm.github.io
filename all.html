@@ -55,7 +55,66 @@
     }
 
     .copy-button {
-      margin-left: 10px;
+      margin: 10px;
+      padding: 10px 20px;
+      background-color: #7a7a7a;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .copy-button:hover {
+      background-color: #a1a1a1;
+    }
+
+    .copyButton {
+      margin: 10px;
+      padding: 10px 20px;
+      background-color: #7a7a7a;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .copyButton:hover {
+      background-color: #a1a1a1;
+    }
+
+
+    .edpuzzlebutton {
+      margin: 10px;
+      padding: 10px 20px;
+      background-color: #7a7a7a;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .edpuzzlebutton:hover {
+      background-color: #a1a1a1;
+    }
+
+
+    .shh {
+      margin: 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #2c1655;
+      color: rgb(0, 135, 212);
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .shh:hover {
+      background-color: #1a0d33;
     }
   </style>
 </head>
@@ -91,53 +150,106 @@
         onclick="window.location.href='https://sites.google.com/students.nisd.net/classy/home?authuser=1'">Google
         Site</button>
       <button class="nav-button" onclick="window.location.href='dizzy.html'">Discord</button>
-      <button class="nav-button" onclick="hidey()">Hide Tab</button>
       <button class="nav-button" onclick="window.location.href='savman.html'">Settings</button>
       <button class="nav-button" onclick="window.location.href='feedback.html'">Feedback/Requests</button>
       <button class="nav-button" onclick="window.location.href='sites.html'">Sites</button>
       <button class="nav-button" onclick="window.location.href='coderunner.html'">Code executor (python, js,
         HTML)</button>
       <button class="nav-button" onclick="window.location.href='credits.html'">Credits</button>
-      <button class="nav-button" onclick="window.location.href='FREEDOM.html'">Shhh...</button>
       <button class="nav-button" onclick="window.location.href='roblos.html'">RobIox stuff</button>
+      <button class="nav-button" onclick="window.location.href='bookmarksgenerator.html'">Bookmark HTML file
+        generator</button>
+      <br>
+      <p>Tutorials:</p>
+      <button class="nav-button" onclick="window.location.href='tutorials\makeyourownlink.html'">How to make a pr0xy link</button>
+      <button class="nav-button" onclick="window.location.href='tutorials\runjavascript.html'">How to enable & run javascript on sites</button>
     </div>
 
-    <p>Long characters:</p>
     <div>
-      <p>﷽ <button class="copy-button" onclick="copyText('﷽')">Copy</button></p>
-      <p>𒐫 <button class="copy-button" onclick="copyText('𒐫')">Copy</button></p>
-      <p>𒈙 <button class="copy-button" onclick="copyText('𒈙')">Copy</button></p>
-      <p>꧅ <button class="copy-button" onclick="copyText('꧅')">Copy</button></p>
-      <p>ဪ <button class="copy-button" onclick="copyText('ဪ')">Copy</button></p>
+      <h3>Straight up interesting characters:</h3><br>
+      <p>⎛⎝ ≽ > ⩊ < ≼ ⎠⎞ <button class="copy-button" onclick="copyText('⎛⎝ ≽  >  ⩊   < ≼ ⎠⎞')">Copy</button></p>
       <p>𒅒 <button class="copy-button" onclick="copyText('𒅒')">Copy</button></p>
       <p>𒈔 <button class="copy-button" onclick="copyText('𒈔')">Copy</button></p>
       <p>𒇫 <button class="copy-button" onclick="copyText('𒇫')">Copy</button></p>
       <p>𒄆 <button class="copy-button" onclick="copyText('𒄆')">Copy</button></p>
       <p>𒀱 <button class="copy-button" onclick="copyText('𒀱')">Copy</button></p>
+      <br>
+      <h3>Longest characters going from top to bottom (Longest to shortest)</h3>
+      <p>﷽ <button class="copy-button" onclick="copyText('﷽')">Copy</button></p>
+      <p>BTW this may look short on some devices, but for some reason,<br>some characters count as 2 characters, meaning
+        that
+        technically,<br>some of the characters are just two characters you cant seperate,<br>while this one (the one
+        above) is
+        the longest single
+        character, in that sense.</p><br>
+      <p>𒐫 <button class="copy-button" onclick="copyText('𒐫')">Copy</button></p>
+      <p>𒈙 <button class="copy-button" onclick="copyText('𒈙')">Copy</button></p>
+      <p>꧅ <button class="copy-button" onclick="copyText('꧅')">Copy</button></p>
+      <p>ဪ <button class="copy-button" onclick="copyText('ဪ')">Copy</button></p>
+      <br>
+      <h3>Interesting characters that are a little more normal than the ones above:</h3>
       <p>🃜🃚🃖🃁🂭🂺 <button class="copy-button" onclick="copyText('🃜🃚🃖🃁🂭🂺')">Copy</button></p>
       <p>ᶻ 𝗓 𐰁 <button class="copy-button" onclick="copyText('ᶻ 𝗓 𐰁')">Copy</button></p>
       <p>⫘⫘⫘ <button class="copy-button" onclick="copyText('⫘⫘⫘')">Copy</button></p>
+      <br>
+      <p>/̵͇̿̿/’̿’̿ ̿ ̿̿ ̿̿ ̿̿ <button class="copy-button" onclick="copyText('/̵͇̿̿/’̿’̿ ̿ ̿̿ ̿̿ ̿̿')">Copy</button></p>
+      <p>⛆ <button class="copy-button" onclick="copyText('⛆')">Copy</button></p>
+      <p>ඞ𐐘 <button class="copy-button" onclick="copyText('ඞ𐐘')">Copy</button></p>
+      <p>⚠︎ <button class="copy-button" onclick="copyText('⚠︎')">Copy</button></p>
+      <br>
+      <h3>0ffensive characters:</h3>
       <p>☭ <button class="copy-button" onclick="copyText('☭')">Copy</button></p>
       <p>☭⃢ <button class="copy-button" onclick="copyText('☭⃢')">Copy</button></p>
       <p>卐 <button class="copy-button" onclick="copyText('卐')">Copy</button></p>
       <p>卍 <button class="copy-button" onclick="copyText('卍')">Copy</button></p>
-      <p>⎛⎝ ≽ > ⩊ < ≼ ⎠⎞ <button class="copy-button" onclick="copyText('⎛⎝ ≽  >  ⩊   < ≼ ⎠⎞')">Copy</button></p>
       <br>
-      <p>Some combining characters below (it combines with the character to a side of it (usually the character to its
-        left))</p>
-      <p>⃟ <button class="copy-button" onclick="copyText('⃟')">Copy</button></p>
-
-      <p>/̵͇̿̿/’̿’̿ ̿ ̿̿ ̿̿ ̿̿ <button class="copy-button" onclick="copyText('/̵͇̿̿/’̿’̿ ̿ ̿̿ ̿̿ ̿̿')">Copy</button></p>
-      <p>⛆ <button class="copy-button" onclick="copyText('⛆')">Copy</button></p>
-      <p>⚠︎ <button class="copy-button" onclick="copyText('⚠︎')">Copy</button></p>
-      <br>
-      <p>(Right to left override below)</p>
+      <h3>Ok... now its getting interesting...</h3>
+      <p>(RIGHT TO LEFT override below)</p>
       <p>‮ <button class="copy-button" onclick="copyText('‮')">Copy</button></p>
+      <br>
+      <p>(LEFT TO RIGHT override below)</p>
+      <p>‭ <button class="copy-button" onclick="copyText('‭')">Copy</button></p>
       <br>
       <p>(Zero width space aka a nothing character below)</p>
       <p>​ <button class="copy-button" onclick="copyText('​')">Copy</button></p>
-      <p>⚠︎ <button class="copy-button" onclick="copyText('⚠︎')">Copy</button></p>
-
+      <br>
+      <p>(Invisible character that may or may not have any width)</p>
+      <p>͏ <button class="copy-button" onclick="copyText(͏)">Copy</button></p>
+      <br>
+      <p>(Invisible Plus, and yes, thats the literal name of the character.)</p>
+      <p>⁤ <button class="copy-button" onclick="copyText('⁤')">Copy</button></p><br>
+      <h3>Some combining characters below (it combines with the character to a side of it (usually the character to its
+        left))</h3>
+      <p>⃟ <button class="copy-button" onclick="copyText('⃟')">Copy</button></p>
+      <p>⃤ <button class="copy-button" onclick="copyText('⃤')">Copy</button></p>
+      <p>⃣ <button class="copy-button" onclick="copyText('⃣')">Copy</button></p>
+      <p>̴ <button class="copy-button" onclick="copyText('̴')">Copy</button></p>
+      <p>̶ <button class="copy-button" onclick="copyText('̶')">Copy</button></p>
+      <p>͠ <button class="copy-button" onclick="copyText('͠')">Copy</button></p>
+      <p>͡ <button class="copy-button" onclick="copyText('͡')">Copy</button></p>
+      <p>͝ <button class="copy-button" onclick="copyText('͝')">Copy</button></p>
+      <p>͜ <button class="copy-button" onclick="copyText('͜')">Copy</button></p>
+      <p>⃝ <button class="copy-button" onclick="copyText('⃝')">Copy</button></p>
+      <p>⃞ <button class="copy-button" onclick="copyText('⃞')">Copy</button></p>
+      <p>⃠ <button class="copy-button" onclick="copyText('⃠')">Copy</button></p>
+      <p>⃫ <button class="copy-button" onclick="copyText('⃫')">Copy</button></p>
+      <p>⃦ <button class="copy-button" onclick="copyText('⃦')">Copy</button></p>
+      <p>⃕ <button class="copy-button" onclick="copyText('⃕')">Copy</button></p>
+      <p>⃔ <button class="copy-button" onclick="copyText('⃔')">Copy</button></p>
+      <p>⃢ <button class="copy-button" onclick="copyText('⃢')">Copy</button></p>
+      <p>᪲ <button class="copy-button" onclick="copyText('᪲')">Copy</button></p>
+      <p>᪶ <button class="copy-button" onclick="copyText('᪶')">Copy</button></p>
+      <p>᷍ <button class="copy-button" onclick="copyText('᷍')">Copy</button></p>
+      <p>ᷓ <button class="copy-button" onclick="copyText('ᷓ')">Copy</button></p>
+      <p>᷼ <button class="copy-button" onclick="copyText('᷼')">Copy</button></p>
+      <p>⛉ <button class="copy-button" onclick="copyText('⛉')">Copy</button></p>
+      <p>⛊ <button class="copy-button" onclick="copyText('⛊')">Copy</button></p>
+      <p>⚝ <button class="copy-button" onclick="copyText('⚝')">Copy</button></p>
+      <p>⚍ <button class="copy-button" onclick="copyText('⚍')">Copy</button></p>
+      <p>▶ <button class="copy-button" onclick="copyText('▶')">Copy</button></p>
+      <p>▩ <button class="copy-button" onclick="copyText('▩')">Copy</button></p>
+      <p≯ <button class="copy-button" onclick="copyText('̸')">Copy</button></p>
+      <br>
       <p>Willy wonkas and shoulder boulders below for you weirdos:</p>
       <p>Ɑ͞ ̶͞ ̶͞ ̶͞ لں͞ <button class="copy-button" onclick="copyText('Ɑ͞ ̶͞ ̶͞ ̶͞ لں͞')">Copy</button></p>
       <p>ूाीू <button class="copy-button" onclick="copyText('ूाीू')">Copy</button></p>
@@ -147,17 +259,48 @@
       <p>𓂒𓂒 <button class="copy-button" onclick="copyText('𓂒𓂒')">Copy</button></p>
       <p>( ๏ 人 ๏ ) <button class="copy-button" onclick="copyText('( ๏ 人 ๏ )')">Copy</button></p>
       <p>( ͜. ㅅ ͜. ) <button class="copy-button" onclick="copyText('( ͜. ㅅ ͜. )')">Copy</button></p>
-      <p>(‿ˠ‿) <button class="copy-button" onclick="copyText('(‿ˠ‿))">Copy</button></p>
+      <p>(‿ˠ‿) <button class="copy-button" onclick="copyText('(‿ˠ‿)')">Copy</button></p>
     </div>
 
-    <p>Working bl00ket h@cks</p>
+    <br>
+    <h1>H4CKS (REALLY USEFUL)</h1>
+    <h2>BIooket hacks below:</h2>
     <div class="button-container">
-      <button id="copyButton">Copy Code</button>
+      <button id="copyButton" class="copyButton">Copy Code from V1 (Better I think)</button>
+      <button id="copyButton2" class="copyButton">Copy Code from V2 (Pretty sure it's skidded)</button>
     </div>
-    <p>If the copy text doesnt work, just go to <a href="bh.txt">superblueeyeball.github.io/bh.txt</a> and press ctrl+a
-      and then ctrl+c to select it all and then copy it all.</p>
-    <p>Paste it into the console through developer tools (right click) it works in microsoft edge if you have a windows
-      computer but not chromebooks cause they disabled dev tools.</p>
+    <p>If the copy text doesnt work, just go to <a href="bh.txt">superblueeyeball.github.io/bh.txt</a> or <a
+        href="bh3.txt">superblueeyeball.github.io/bh3.txt</a> and press ctrl+a
+      and then ctrl+c to select it all and then copy it all.</p><br>
+    <p>Paste it into the console through developer tools (right click then scroll down in the popup) to execute it.</p>
+    <p>It works in microsoft edge if you have the windows operating system on the
+      computer you're trying to use it on but not school chromebooks cause they disabled dev tools.</p>
+    <p>(Hint: If you're atleast in middle school, then you can do this in your computer science class if you have one)
+    </p><br>
+    <p>You can also just make a new bookmark in the bookmarks but, but replace the URL with "javascript:" and then
+      directly paste in the code after this.</p>
+    <p>BTW dont add the quotes in "javascript:" for my dumb people when making the bIooket cheats bookmarklet.</p>
+    <br>
+    <h2>EDPUZZLE H4CKS</h2>
+    <h3>This works for the official edpuzzle site, canvas, and schoology.</h3>
+    <p>Not gonna lie, this one is very well developed, THANK YOU ading2210</p>
+    <p>Also if it doesn't work, then it means it got deleted for a lawsuit or something</p>
+    <p>and if that happens, just tell me because I have a backup of it just in case, like</p>
+    <p>how I had a backup when the bIooket ch3ats got deleted.</p><br>
+    <h4 style="margin-top: 16px; margin-bottom: 8px">To use this, just drag this button into your bookmarks bar and
+      click it when on an Edpuzzle assignment. If you're on Firefox, right click on the button, then select "bookmark
+      link."</h4>
+    <p>Again, this works for the official edpuzzle site, canvas, and schoology.</p>
+    <div class="button-container">
+      <a
+        href='javascript: fetch("https://cdn.jsdelivr.net/gh/ading2210/edpuzzle-answers@latest/script.js").then(r => r.text()).then(r => eval(r))'>
+        <button class="edpuzzlebutton">
+          Get Answers
+        </button>
+      </a>
+    </div>
+    <br><br><br><br>
+    <button class="shh" onclick="window.location.href='FREEDOM.html'">Shhh...</button>
   </div>
 
   <script>
@@ -168,7 +311,22 @@
         const text = await response.text();
 
         // Copy the text to the clipboard
-        await navigator.clipboard.writeText(text);
+        await navigator.clipboard.writeText(response);
+        alert('Text copied to clipboard!');
+      } catch (err) {
+        console.error('Failed to copy text: ', err);
+        alert('Failed to copy text');
+      }
+    });
+
+    document.getElementById('copyButton2').addEventListener('click', async () => {
+      try {
+        // Fetch the text file
+        const response = await fetch("bh3.txt");
+        const text = await response.text();
+
+        // Copy the text to the clipboard
+        await navigator.clipboard.writeText(response);
         alert('Text copied to clipboard!');
       } catch (err) {
         console.error('Failed to copy text: ', err);

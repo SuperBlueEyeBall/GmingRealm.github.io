@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Freedom Project Selection Page</title>
+    <style>
+        @font-face {
+            font-family: 'Unique';
+            src: url('unique.ttf');
+        }
+    
+        body {
+            font-family: asb;
+            background-color: #000;
+            color: #FFFFFF;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        button {
+            margin: 10px;
+            padding: 10px;
+            font-size: 1em;
+            background-color: #004400;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #006600;
+        }
+    
+        #webframe {
+            width: 100%;
+            height: calc(100vh - 250px); /* Adjusted to fit the entire screen below buttons */
+            border: none;
+        }
+    
+        #url-display {
+            margin: 20px 0;
+            font-size: 1.5em;
+            color: #00FF00;
+            text-shadow: 0 0 10px #00FF00;
+        }
+    
+        #url-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 30px;
+            font-size: 1.2em;
+            color: #00FF00;
+        }
+
+        .checkmark {
+            font-size: 1.5em;
+            background-color: #004400;
+            color: #00FF00;
+            border: 2px solid #00FF00;
+            padding: 10px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+    
+        .checkmark:hover {
+            background-color: #006600;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="home">Freedom Project Home-page</button>
+    <button id="gotourl"> Go to current site </button><br>
+    <button id="back"> Back </button> | 
+    <button id="next"> Next </button>
+
+    <iframe id="webframe" src="https://applications.napalmn.space"></iframe>
+    <div id="url-display">Current URL: <span id="current-url"></span></div>
+    <button class="checkmark" id="toggle-url">✔ Add to List</button>
+    <ul id="url-list">
+        <!-- List of selected URLs will appear here -->
+    </ul><br><br><br><br>
+
+    <script>
+        const iframe = document.getElementById('webframe');
+        const currentUrlDisplay = document.getElementById('current-url');
+        const toggleUrlButton = document.getElementById('toggle-url');
+        const homeButton = document.getElementById('home');
+        const urlList = document.getElementById('url-list');
+
+        const urls = [
+            'https://resources.learningwith.buzz',
+            'https://analytics.formengineer.org',
+            'https://pdf.edulastic.one',
+            'https://learning.fallinginto.space',
+            'https://edu.napalmn.space',
+            'https://boppin.formengineer.org',
+            'https://ideas.learningwith.buzz',
+            'https://applications.napalmn.space',
+            'https://tools.napalmn.space',
+            'https://submit.formengineer.org',
+            'https://wake.sleeping.sbs',
+            'https://guides.learningwith.buzz',
+            'https://tools.sleeping.sbs',
+            'https://who.karmanasked.space',
+            'https://junk.karmanasked.space',
+            'https://login.edulastic.one',
+            'https://login.formengineer.org',
+            'https://materials.edulastic.one',
+            'https://tools.learningwith.buzz',
+            'https://citations.fallinginto.space/',
+            'https://test.fallinginto.space/',
+            'https://zzz.sleeping.sbs/',
+            'https://line.karmanasked.space/',
+            'https://home.edulasting.cloud',
+            'https://rand.formengineer.org',
+            'https://buy.stationerycrafts.shop/',
+            'https://0xdc.icu',
+            'https://fr.provend.tech',
+            'https://hx.illuminx.live',
+            'https://page.57150.co'
+        ];
+
+        let currentIndex = 0;
+        let selectedUrls = [];
+
+        // Function to update the displayed current URL
+        function updateUrlDisplay() {
+            const currentUrl = urls[currentIndex];
+            currentUrlDisplay.textContent = currentUrl;
+
+              if (selectedUrls.includes(currentUrl)) {
+                // Remove from list
+                selectedUrls = selectedUrls.filter(url => url !== currentUrl);
+                toggleUrlButton.textContent = '✖ Remove from List ✖';
+            } else {
+                // Add to list
+                selectedUrls.push(currentUrl);
+                toggleUrlButton.textContent = '✔ Add to List ✔';
+            }
+        }
+
+        // Add or remove URL from the selected list
+        toggleUrlButton.addEventListener('click', () => {
+            const currentUrl = urls[currentIndex];
+
+            if (selectedUrls.includes(currentUrl)) {
+                // Remove from list
+                selectedUrls = selectedUrls.filter(url => url !== currentUrl);
+                toggleUrlButton.textContent = '✔ Add to List ✔';
+            } else {
+                // Add to list
+                selectedUrls.push(currentUrl);
+                toggleUrlButton.textContent = '✖ Remove from List ✖';
+            }
+
+            updateUrlListDisplay();
+        });
+
+        // Update the list at the bottom of the page
+        function updateUrlListDisplay() {
+            urlList.innerHTML = '';
+            selectedUrls.forEach(url => {
+                const listItem = document.createElement('li');
+                listItem.textContent = url;
+                urlList.appendChild(listItem);
+            });
+        }
+
+        document.getElementById('next').addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % urls.length;
+            iframe.src = urls[currentIndex];
+            updateUrlDisplay();
+        });
+
+        document.getElementById('back').addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + urls.length) % urls.length;
+            iframe.src = urls[currentIndex];
+            updateUrlDisplay();
+        });
+
+        document.getElementById('home').addEventListener('click', () => {
+            window.location.href='index.html'
+        });
+
+        document.getElementById('gotourl').addEventListener('click', () => {
+            window.location.href=urls[currentIndex]
+        });
+
+        // Initialize the URL display
+        updateUrlDisplay();
+    </script>
+</body>
+
+</html>

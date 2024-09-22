@@ -1,7 +1,11 @@
-# Credits
+# GmingRealm Reborn
+## Welcome!
+This my gaming site but reborn and better!
+I  used to have a gaming site on replit, but it broke down for some reason, and got blocked. Replit later became horrible anyways because you can't even host anything besides a temporary replit.dev site.
+I have finally gathered the courage to restart it, ands it better than ever.
 
-This is NOT a copy of ShadowGmes, better yet just used as a template for my redo of my site. All credits and licence to ShadowGmes.
+## Credits
+The owner of this repository is SuperBlueEyeball, who has made pretty much everything.
+Also, thank you SipSup3314 for letting me use ShadowGmes as a template for website. It has helped me learned the ways of HTML5 and become a better developer.
 
-Donate to the template creator, SipSup3314, using the button below.  
-  
-<a href="https://www.buymeacoffee.com/sipsup3314" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 40px" ></a>
+This is NOT a copy of ShadowGmes, better yet just used as a template for my redo of my site. Credits and licence to ShadowGmes / SipSup3314.

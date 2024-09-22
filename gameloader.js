@@ -70,7 +70,27 @@ function gameHide(gamePath) {
 var gamesText = `{
     "games":[
         {
-            "name":"Web-NES",
+            "name":"leaf browser V2 (I tried fixin it)",
+            "img":"gfiles/leafbrowser/artwork/logo/webstore-tile-1400.png",
+            "path":"gfiles/leaf2/"
+        },
+        {
+            "name":"Google Snake Modded",
+            "img":"img/gsm1.png",
+            "path":"gfiles/gsm/"
+        },
+        {
+            "name":"BTD5 (fixed)",
+            "img":"img/btd5.webp",
+            "path":"gfiles/btd5fixed/"
+        },
+        {
+            "name":"Markdown Interpeter",
+            "img":"img/markdown.png",
+            "path":"gfiles/markdowninterpreter/docs/index.html"
+        },
+        {
+            "name":"Web-NES (broken)",
             "img":"img/webnes.png",
             "path":"gfiles/WebNES-master/project/index_app.html"
         },
@@ -118,11 +138,6 @@ var gamesText = `{
             "name":"Better S.A.M. (TTS)",
             "img":"img/bettersam.png",
             "path":"gfiles/better-sam/"
-        },
-        {
-            "name":"leaf browser (broken)",
-            "img":"gfiles/leafbrowser/artwork/logo/webstore-tile-1400.png",
-            "path":"gfiles/leafbrowser/"
         },
         {
             "name":"roblox V3",
@@ -213,11 +228,6 @@ var gamesText = `{
             "name":"Bloons Tower Defense 3",
             "img":"img/btd3.jpg",
             "path":"gfiles/btd3/"
-        },
-        {
-            "name":"Bloons Tower Defense 5",
-            "img":"img/btd5.jpg",
-            "path":"gfiles/btd5/"
         },
         {
             "name":"Blue",
@@ -625,11 +635,6 @@ var gamesText = `{
             "path":"gfiles/spinningrat/"
         },
         {
-            "name":"Subway Surfers",
-            "img":"img/subwaysurfers.png",
-            "path":"gfiles/subway-surfers/"
-        },
-        {
             "name":"Super Smash Flash",
             "img":"img/ssf.png",
             "path":"gfiles/ssf/"
@@ -746,22 +751,18 @@ for (i in gameObject.games) {
     let elem1 = document.createElement("div");
     elem1.className = "game-button";
     document.getElementById("gameSelect").appendChild(elem1);
-    console.log("div made");
     let elem2 = document.createElement("a");
 
     elem2.href = gameObject.games[i].path;
 
     elem1.appendChild(elem2);
-    console.log("a made");
     let elem3 = document.createElement("img");
     elem3.src = gameObject.games[i].img;
     elem3.alt = gameObject.games[i].name;
     elem2.appendChild(elem3);
-    console.log("img made");
     let elem4 = document.createElement("p");
     elem4.innerHTML = gameObject.games[i].name;
     elem2.appendChild(elem4);
-    console.log("p made");
 }
 const gamesContainer = document.getElementById("gameSelect");
 const searchBar = document.getElementById("search");

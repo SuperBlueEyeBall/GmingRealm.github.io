@@ -1,0 +1,298 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Freedom-Project Link Page</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <style>
+@font-face {
+    font-family: 'Unique';
+    src:url('unique.ttf');
+}
+body {
+    font-family: asb;
+    background-color: #000;
+    color: #FFFFFF;
+    text-align: center;
+}
+header {
+    background-color: #000;
+    padding: 20px;
+    border-bottom: 1px solid #004400;
+}
+header h1 {
+    font-size: 2em;
+    margin: 0;
+    color: #FFFFFF; 
+    font-family: 'Unique'; 
+    text-shadow: 0px 0px 10px #00FF00; 
+}
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+.mirrors {
+    background-color: #000; 
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 128, 0, 0.2); 
+}
+.mirror-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.mirror {
+    background-color: #004400; 
+    padding: 10px 20px;
+    border: 2px solid #00FF00; 
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1.7em;
+    color: #FFFFFF; 
+    font-family: 'typewriter'; 
+    box-shadow: 0 0 10px rgba(0, 128, 0, 0.2), 0 0 20px rgba(0, 255, 0, 0.4);
+    transition: all 0.2s ease-in-out;
+    margin: 10px;
+}
+.mirror:hover {
+    background-color: #006600; 
+    box-shadow: 0 0 15px rgba(0, 128, 0, 0.5), 0 0 30px rgba(0, 255, 0, 0.6); 
+    transform: scale(1.1); 
+}
+.hpmirror {
+    background-color: #421653; 
+    padding: 10px 20px;
+    border: 2px solid #f700ff; 
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 2em;
+    color: #FFFFFF; 
+    font-family: 'typewriter'; 
+    box-shadow: 0 0 10px rgba(0, 128, 0, 0.2), 0 0 20px rgb(188 0 185 / 50%);
+    transition: all 0.2s ease-in-out;
+    margin: 25px;
+}
+.hpmirror:hover {
+    background-color: #79289a; 
+    box-shadow: 0 0 15px rgba(255, 0, 251, 0.5), 0 0 30px rgba(255, 0, 251, 0.5); 
+    transform: scale(1.25); 
+}
+.beta {
+    background-color: #a75900;
+    padding: 10px 20px;
+    border: 2px solid #FFAC1C; 
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1.5em;
+    color: #FFFFFF;
+    font-family: 'typewriter'; 
+    box-shadow: 0 0 10px rgba(255, 140, 0, 0.5), 0 0 20px rgba(255, 140, 0, 0.6);
+    transition: all 0.2s ease-in-out;
+    margin: 25px;
+}
+
+.beta:hover {
+    background-color: #FFAC1C;
+    box-shadow: 0 0 15px rgba(255, 165, 0, 0.5), 0 0 30px rgba(255, 165, 0, 0.6);
+    transform: scale(1.25); 
+}
+.discord {
+    margin-top: 20px;
+}
+.discord-btn {
+    background-color: #000066;
+    padding: 10px 20px;
+    border: 2px solid #0000FF;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1.7em;
+    color: #FFFFFF;
+    font-family: 'ussb';
+    box-shadow: 0 0 10px rgba(0, 0, 255, 0.2), 0 0 20px rgba(0, 0, 255, 0.4);
+    transition: all 0.2s ease-in-out;
+}
+.discord-btn:hover {
+    background-color: #000077;
+    box-shadow: 0 0 15px rgba(0, 0, 255, 0.5), 0 0 30px rgba(0, 0, 255, 0.6);
+    transform: scale(1.1);
+}
+.bypasses {
+    margin-top: 20px;
+}
+.bypass {
+    background-color: #404040f8; 
+    padding: 10px 20px;
+    border: 2px solid #b9b9b9; 
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1.15em;
+    color: #FFFFFF;
+    box-shadow: 0 0 10px rgba(0, 128, 0, 0.2); 
+    transition: all 0.2s ease-in-out;
+    margin: 5px;
+    font-family: 'typewriter';
+}
+.bypass:hover {
+    background-color: #404040f8;
+    box-shadow: 0 0 15px rgba(0, 128, 0, 0.4); 
+    transform: scale(1.1); 
+}
+.announcements {
+    margin-top: 20px;
+    background-color: #000;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 128, 0, 0.2);
+}
+.announcements h2 {
+    margin-top: 0;
+    color: #FFFFFF;
+}
+.announcements ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.announcements li {
+    padding: 10px;
+    border-bottom: 1px solid #004400;
+}
+.announcements li:last-child {
+    border-bottom: none;
+}
+@media only screen and (max-width: 768px) {
+    main {
+        padding: 10px;
+    }
+    .mirror-list {
+        flex-direction: column;
+    }
+    .mirror {
+        margin: 10px 0;
+    }
+}
+@font-face {
+    font-family: 'typewriter';
+    src:url('typewriter.ttf');
+}
+@font-face {
+    font-family: 'minecraft';
+    src:url('minecraft.ttf');
+}
+@font-face {
+    font-family: 'bandits';
+    src:url('bandits.ttf');
+}
+@font-face {
+    font-family: 'asb';
+    src:url('asb.ttf');
+}
+.donate-btn {
+    background-color: #000066;
+    padding: 10px 20px;
+    border: 2px solid #0000FF;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1.2em;
+    color: #FFFFFF;
+    font-family: 'ussb';
+    box-shadow: 0 0 10px rgba(0, 0, 255, 0.2), 0 0 20px rgba(0, 0, 255, 0.4);
+    transition: all 0.2s ease-in-out;
+}
+.donate-btn:hover {
+    background-color: #000077;
+    box-shadow: 0 0 15px rgba(0, 0, 255, 0.5), 0 0 30px rgba(0, 0, 255);
+    transform: scale(1.1);
+}
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Freedom-Project Link Listing</h1>
+    </header>
+    <main>
+        <section class="mirrors">
+            <div class="mirror-list">
+                <button class="mirror" onclick="window.location.href='https://resources.learningwith.buzz';">1 | .buzz</button>
+                <button class="mirror" onclick="window.location.href='https://analytics.formengineer.org';">2 | .org</button>
+                <button class="mirror" onclick="window.location.href='https://pdf.edulastic.one';">3 | .one</button>
+                <button class="mirror" onclick="window.location.href='https://learning.fallinginto.space';">4 | .space</button>
+                <button class="mirror" onclick="window.location.href='https://edu.napalmn.space';">5 | .space</button>
+                <button class="mirror" onclick="window.location.href='https://boppin.formengineer.org';">6 | .org</button>
+                <button class="mirror" onclick="window.location.href='https://ideas.learningwith.buzz';">7 | .buzz</button>
+                <button class="mirror" onclick="window.location.href='https://applications.napalmn.space';">8 | .space</button>
+                <button class="mirror" onclick="window.location.href='https://tools.napalmn.space';">9 | .space</button>
+                <button class="mirror" onclick="window.location.href='https://submit.formengineer.org';">10 | .org</button>
+                <button class="mirror" onclick="window.location.href='https://wake.sleeping.sbs';">11 | .sbs</button>
+                <button class="mirror" onclick="window.location.href='https://guides.learningwith.buzz';">12 | .buzz</button>
+                <button class="mirror" onclick="window.location.href='https://tools.sleeping.sbs';">13 | .sbs</button>
+                <button class="mirror" onclick="window.location.href='https://who.karmanasked.space';">14 | .space</button>
+                <button class="mirror" onclick="window.location.href='https://junk.karmanasked.space';">15 | .space</button>
+                <button class="mirror" onclick="window.location.href='https://login.edulastic.one';">16 | .one</button>
+                <button class="mirror" onclick="window.location.href='https://login.formengineer.org';">17 | .org</button>
+                <button class="mirror" onclick="window.location.href='https://materials.edulastic.one';">18 | .one</button>
+                <button class="mirror" onclick="window.location.href='https://tools.learningwith.buzz';">19 | .buzz</button>
+                <button class="mirror" onclick="window.location.href='https://citations.fallinginto.space/';">20 | .space</button>
+                <button class="mirror" onclick="window.location.href='https://test.fallinginto.space/';">21 | .space</button>
+                <button class="mirror" onclick="window.location.href='https://zzz.sleeping.sbs/';">22 | .sbs</button>
+                <button class="mirror" onclick="window.location.href='https://line.karmanasked.space/';">23 | .space</button>
+            </div>
+            <div class="mirror-list">
+                <button class="hpmirror" onclick="window.location.href='https://home.edulasting.cloud';">Link Listing .cloud</button>
+                <button class="hpmirror" onclick="window.location.href='https://rand.formengineer.org';">Link Listing .org</button>
+                <button class="hpmirror" onclick="window.location.href='https://buy.stationerycrafts.shop/';">Link Listing .shop</button>
+            </div><br>
+            <button class="mirror" onclick="window.location.href='https://applications.napalmn.space';">Currently only working & unbIocked link for Northisde ISD | 8 | .space</button>
+            <br> <div> 
+            
+            </div>
+        </section>
+        <section class="discord">
+            <button class="discord-btn" onclick="window.location.href='https://discord.gg/jMm65ktMCz';">|- Discord Server -|</button>
+        </section>
+        <section class="bypasses">
+            <h2>Bypasses</h2>
+            <button class="bypass" onclick="copyEvent('copy')">Copy Bypass Script</button>
+            <button class="bypass" onclick="copyEvent('copy2')">Copy Bypass Script V2</button>
+            <a href="freedom.html" download="freedom"><button class="bypass">Local Bypass</button></a>
+            <a href="freedom-custom.html" download="freedom-custom"><button class="bypass">Custom Local Bypass</button></a>
+            <a href="byp4ss.html"><button class="bypass">How to use bypasses</button></a>
+            <a href="gs.html"><button class="bypass">Google Sites Bypass</button></a>
+            <a href="select.html"><button class="bypass">Embed View</button></a>
+            <a href="crsh.html"><button class="bypass">Chromebook crash bug</button></a>
+        </section>
+        <section class="announcements">
+            <h2>Messages and Changelogs</h2>
+            <ul>
+                <li>2 Domains will be rotated, 1511 and pseudolo</li>
+                <li>3 New discord exclusive proxy links</li>
+                <li>Join the discord for more proxy mirrors, homepage mirrors, privacy and security tools, and a lot more!</li>
+                <li>Cloudflare byp4ss removed</li>
+            </ul>
+        </section>
+        <section class="info">
+            <h4><i>For any inquiries, email fp@0xdc.icu or join the discord</i></h4>
+            <h4><i>Every so often, the mirror sites will change or go down, join the dlscord (for more mirrors too) or have the main site (0xdc.icu) saved</i></h4>
+        </section>
+    </main>
+    <h6 style="font-size:0px;" id="copy">
+        javascript:((function(){ var a,b,c;c="https://0xdc.icu", b=document.createElement("iframe"), b.setAttribute("src",c),b.setAttribute("id","rusic-modal"), b.setAttribute("style","position: fixed; width: 100%; height: 100%; top: 0; left: 0; right: 0; bottom: 0; z-index: 99999999999; background-color: #fff;"), a=document.getElementsByTagName("body")[0], a.appendChild(b)})).call(this)
+    </h6>
+    <h6 style="font-size:0px;" id="copy2">
+data:text/html;charset=utf-8,%3C%21DOCTYPE%20html%3E%0A%3Chtml%3E%0A%3Chead%3E%0A%3Cstyle%3E%0Abody%20%7B%0A%20%20%20%20text-align%3A%20center%3B%0A%20%20%20%20color%3A%20white%3B%0A%20%20%20%20background-color%3A%20%23202020%3B%0A%20%20%20%20font-family%3A%20sans-serif%3B%0A%20%20%20%20background-color%3A%20black%3B%0A%7D%0A%0Ainput%5Btype%3D%22text%22%5D%20%7B%0A%20%20%20%20background%3A%20rgb%28119%2C221%2C119%29%3B%0A%20%20%20%20height%3A%2050px%3B%0A%20%20%20%20width%3A%20400px%3B%0A%20%20%20%20font-size%3A%2020px%3B%0A%20%20%20%20color%3A%20black%3B%0A%20%20%20%20border%3A%20none%3B%0A%20%20%20%20padding-left%3A%2010px%3B%0A%7D%0A%0Ainput%5Btype%3D%22text%22%5D%3A%3Aplaceholder%20%7B%0A%20%20%20%20color%3A%20black%3B%0A%7D%0A%0Ainput%5Btype%3D%22text%22%5D%3Afocus%20%7B%0A%20%20%20%20outline%3A%20none%3B%0A%7D%0A%3C/style%3E%0A%3C/head%3E%0A%3Cbody%3E%0A%3Cbr%3E%0A%3Ccenter%3E%0A%20%20%20%20%3Ch1%3EFreedom-Project%20Local%20Script%20Bypass%3C/h1%3E%0A%20%20%20%20%3Cbr%3E%3Cbr%3E%0A%20%20%20%20%3Cinput%20type%3D%22text%22%20id%3D%22urlInput%22%20placeholder%3D%22Enter%20URL%22%20required%3E%0A%20%20%20%20%3Cbr%3E%3Cbr%3E%0A%20%20%20%20%3Cbutton%20style%3D%22background%3A%20rgb%28119%2C221%2C119%29%3Bheight%3A200px%3Bwidth%3A400px%3Bfont-size%3A40px%3B%22%3EBypass%3C/button%3E%0A%3C/center%3E%0A%3Cscript%3E%0A%20%20%20%20var%20win%3B%0A%0A%20%20%20%20document.querySelector%28%27button%27%29.onclick%20%3D%20function%28%29%20%7B%0A%20%20%20%20%20%20%20%20var%20urlInput%20%3D%20document.getElementById%28%27urlInput%27%29%3B%0A%20%20%20%20%20%20%20%20var%20url%20%3D%20urlInput.value%3B%0A%0A%20%20%20%20%20%20%20%20if%20%28%21url.startsWith%28%22https%3A//%22%29%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20url%20%3D%20%22https%3A//%22%20%2B%20url%3B%0A%20%20%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%20%20if%20%28url%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20if%20%28win%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20win.focus%28%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%20else%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20win%20%3D%20window.open%28%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20win.document.body.style.margin%20%3D%20%270%27%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20win.document.body.style.height%20%3D%20%27100vh%27%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20var%20iframe%20%3D%20win.document.createElement%28%27iframe%27%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20iframe.style.border%20%3D%20%27none%27%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20iframe.style.width%20%3D%20%27100%25%27%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20iframe.style.height%20%3D%20%27100%25%27%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20iframe.style.margin%20%3D%20%270%27%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20iframe.src%20%3D%20url%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20win.document.body.appendChild%28iframe%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20document.querySelector%28%27button%27%29.style.background%20%3D%20%27%23FF6D6A%27%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20document.querySelector%28%27button%27%29.innerHTML%20%3D%20%22Local-Page%20Opened%21%22%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%3B%0A%3C/script%3E%0A%3C/body%3E%0A%3C/html%3E%0A
+    </h6>
+    <script>
+        function copyEvent(id) {
+            var str = document.getElementById(id);
+            window.getSelection().selectAllChildren(str);
+            document.execCommand("Copy");
+            alert("Copied, now right click bookmarks bar and paste (Change the link in the bypass to one of the mirrors)");
+        }
+    </script>
+</body>
+</html>
