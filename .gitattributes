@@ -1,2 +1,6 @@
 # *.unityweb filter=lfs diff=lfs merge=lfs -text
 # this is a comment. Just delete the "# " to add git LFS back.
+# I do not recommend adding git LFS back as it turns a file into
+# text that points to the actuall file. Its pretty much only usefull
+# for if you wanna store something to download later.
+# You cant use LFS for github pages so ye sad.

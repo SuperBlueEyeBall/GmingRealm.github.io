@@ -2,116 +2,42 @@
 <html lang="en">
 
 <head>
-  <!-- Google Tag Manager -->
-  <script>(function (w, d, s, l, i) {
-      w[l] = w[l] || []; w[l].push({
-        'gtm.start':
-          new Date().getTime(), event: 'gtm.js'
-      }); var f = d.getElementsByTagName(s)[0],
-        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-    })(window, document, 'script', 'dataLayer', 'GTM-KPPLFQP2');</script>
-  <!-- End Google Tag Manager -->
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-B9R93ESZH8"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-
-    gtag('config', 'G-B9R93ESZH8');
-  </script>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta property="og:title" content="Gming Realm Reborn" />
-  <meta property="og:description" content="The best place to procrastinate!" />
-  <meta property="og:url" content="https://superblueeyeball.github.io" />
-  <link rel="shortcut icon" href="https://google.com/favicon.ico" type="image/x-icon" />
-  <title>Google</title>
-  <link rel="stylesheet" href="style.css" />
-  <meta name="keywords"
-    content="games,unblocked,unblocked games,school,school bypass,tab hider,tab cloaker,school games,hidden games,best unblocked games,superblueeyeball,SuperBlueEyeBall,superblueeyeball.github.io," />
-  <meta name="description" content="The most educational site on opposite day" />
-  <link rel="manifest" href="manifest.json" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom Settings</title>
+  <link rel="stylesheet" href="style.css">
   <style>
     body {
-      transition: background-color 0.5s, color 0.5s;
-      text-align: center;
-    }
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    transition: all 0.3s;
+}
 
-    .settings-container {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 20px;
-      border: 2px solid #ddd;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
+#background {
+    background-size: cover;
+    background-attachment: var(--background-attachment, scroll);
+    background-position: center;
+    transition: all 0.3s;
+}
 
-    .hiddenUpload {
-      display: none;
-    }
+.settings-panel {
+    padding: 20px;
+    background-color: rgba(36, 59, 85, 1);
+}
 
-    .button {
-      padding: 10px 20px;
-      border: none;
-      border-radius: 5px;
-      background-color: #007bff;
-      color: #fff;
-      cursor: pointer;
-      font-size: 16px;
-    }
-
-    .button:hover {
-      background-color: #0056b3;
-    }
-
-    .preset-backgrounds img {
-      width: 100px;
-      height: 100px;
-      cursor: pointer;
-      margin: 5px;
-      border: 2px solid transparent;
-    }
-
-    .preset-backgrounds img.selected {
-      border-color: #000;
-    }
-
-    input[type="color"],
-    input[type="text"] {
-      padding: 5px;
-      border-radius: 5px;
-      border: 1px solid #ddd;
-      margin: 5px;
-    }
-
-    .gradient-input {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .gradient-input input {
-      margin: 0 5px;
-    }
-
-    #backgroundImageUrl {
-      width: 300px;
-    }
+.btn {
+    padding: 10px;
+    cursor: pointer;
+    border: none;
+    margin: 5px;
+    background-color: #333;
+    color: #fff;
+}
   </style>
 </head>
 
 <body>
-  <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KPPLFQP2" height="0" width="0"
-      style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
-  <p id="desc">
-    The most educational site on opposite day! This site contains tons of things to do in your free time, with my vast
-    collection of gam- I mean uh boredness reducers!
-  </p>
   <header>
     <a href="/" class="icon"><img src="img/logo.png" class="icon" /></a>
     <a class="linkmenu" href="/">Gming Realm</a>
@@ -123,235 +49,230 @@
     <a class="linkmenu" href="sites.html">Sites</a>
     <button class="linkmenu" id="plus-button" onclick="handlePlusClick()">+</button>
   </header>
-  <h1 class="title">Gming Realm | Settings</h1>
-
-  <div class="settings-container">
-    <h2>Background Settings</h2>
-    <p>Upload Background Image:</p>
-    <input id="backgroundUpload" type="file" accept="image/*" class="button" />
-    <p>Or Enter Background Image URL:</p>
-    <input type="text" id="backgroundImageUrl" placeholder="Enter image URL" class="button" />
-    <button class="button" onclick="setBackgroundFromUrl()">Set Background from URL</button>
-
-    <p>Choose a Preset Background:</p>
-    <div class="preset-backgrounds">
-      <img src="img/mariobg.png" onclick="setBackground('img/mariobg.png')" />
-      <img src="img/mariobg.png" onclick="setBackground('img/mariobg.png')" />
-      <img src="img/mariobg.png" onclick="setBackground('img/mariobg.png')" />
-    </div>
-
-    <h2>Color Settings</h2>
-    <label for="headerColor">Header Color:</label>
-    <input type="color" id="headerColor" onchange="setHeaderColor(event)" />
-
-    <label for="textColor">Text Color:</label>
-    <input type="color" id="textColor" onchange="setTextColor(event)" />
-
-    <h2>Background Color</h2>
-    <label for="backgroundColor">Background Color:</label>
-    <input type="color" id="backgroundColor" onchange="setBackgroundColor(event)" />
-
-    <h2>Background Gradient</h2>
-    <label for="backgroundColor1">Background Color 1:</label>
-    <input type="color" id="backgroundColor1" onchange="setBackgroundGradient(event)" />
-
-    <label for="backgroundColor2">Background Color 2:</label>
-    <input type="color" id="backgroundColor2" onchange="setBackgroundGradient(event)" />
-
-    <div class="saveContainer">
-      <p>Download Settings:</p>
-      <button class="button" onclick="exportSettings()">Download Settings</button>
-      <p>Upload Settings:</p>
-      <input id="importSettingsInput" class="hiddenUpload" type="file" accept=".settings📃" />
-      <button class="button" onclick="document.getElementById('importSettingsInput').click()">Import Settings</button>
-      <button class="button" onclick="resetToDefault()">Reset to Default Settings</button>
-      <div class="uploadResult"></div>
-    </div>
+  <div class="settings-panel" id="settingsPanel">
+    <button class="btn" id="setBgFromURL">Set Background Img from URL</button>
+    <button class="btn" id="uploadBg">Upload Background Img</button>
+    <button class="btn" id="toggleScrollStatic">Toggle Background Scroll/Fixed<br>
+      <div id="scrollModeStatus">Current Mode: </div>
+    </button> |
+    <button class="btn" id="resetSettings">Reset Settings</button>
+    <button class="btn" id="import">Import Settings</button>
+    <button class="btn" id="export">Export Settings</button><br>
+    <button class="btn">Set Header Color
+      <input type="color" id="headerColor" value="#0c1320" oninput="setHeaderColor()">
+    </button>
+    <button class="btn">Set Font Color
+      <input type="color" id="fontColor" value="#ffffff" oninput="setFontColor()">
+    </button>
+    <button class="btn">Set Background Color
+      <input type="color" id="backgroundColor" value="#243B55" oninput="setBackgroundColor()">
+    </button>
+    <button class="btn">Background Gradient
+      <input type="color" id="gradient-color1" value="#243B55" oninput="setGradient()">
+      <input type="color" id="gradient-color2" value="#141E30" oninput="setGradient()"><br>
+      Gradient Direction <input type="range" id="gradient-angle" min="0" max="360" value="0" oninput="setGradient()">
+    </button>
+    <button class="btn">Set Gradient/Image Size<br>
+      <input type="range" id="imageSize" min="0.1" max="100" value="0" oninput="setImageSize()">
+    </button>
+    <button class="btn" id="toggleFit">Toggle Fit to Screen<br>
+      <div id="fitStatus">Mode: </div>
+    </button>
   </div>
-
-
-  <!-- JavaScript to handle settings -->
+  <button class="btn" id="menutoggle">Toggle settings menu</button><br><br><br><br>
   <script>
+    const settings = {
+      backgroundURL: '',
+      backgroundAttachment: 'fixed',
+      gradient: '',
+      headerColor: '#0c1320',
+      fontColor: '#fff',
+      imageSize: 100,
+      fitToViewport: false
+    };
 
-    function setBackgroundFromUrl() {
-      const url = document.getElementById('backgroundImageUrl').value;
-      if (url) {
-        document.body.style.backgroundImage = `url('${url}')`;
-        localStorage.setItem('backgroundImage', url);
+    const applySettings = () => {
+      document.body.style.backgroundImage = settings.gradient
+        ? `linear-gradient(${settings.gradient})`
+        : settings.backgroundURL ? `url(${settings.backgroundURL})` : '';
+
+      document.body.style.backgroundAttachment = settings.backgroundAttachment;
+      document.querySelector('header').style.backgroundColor = settings.headerColor;
+      document.querySelector('header').style.color = settings.fontColor;
+
+            // Update the status displays
+      document.getElementById('fitStatus').textContent = `Mode: ${settings.fitToViewport ? 'On' : 'Off'}`;
+      document.getElementById('scrollModeStatus').textContent = `Mode: ${settings.backgroundAttachment.charAt(0).toUpperCase() + settings.backgroundAttachment.slice(1)}`;
+
+      if (!settings.gradient && !settings.backgroundURL) {
+        document.body.style.backgroundColor = settings.backgroundColor;
       }
-    }
 
-    function setBackgroundColor(event) {
-      document.body.style.backgroundColor = event.target.value;
-      localStorage.setItem('backgroundColor', event.target.value);
-    }
+      document.body.style.backgroundSize = settings.fitToViewport ? '100% auto' : `${settings.imageSize}%`;
+    };
 
-    function setBackgroundGradient(event) {
-      const color1 = document.getElementById('backgroundColor1').value;
-      const color2 = document.getElementById('backgroundColor2').value;
-      if (color1 && color2) {
-        document.body.style.background = `linear-gradient(${color1}, ${color2})`;
-        localStorage.setItem('backgroundGradient', `linear-gradient(${color1}, ${color2})`);
+    const saveSettings = () => {
+      localStorage.setItem('latestSettings', JSON.stringify(settings));
+    };
+
+    const loadInitialSettings = () => {
+      const savedSettings = JSON.parse(localStorage.getItem('latestSettings'));
+      if (savedSettings) {
+        Object.assign(settings, savedSettings);
+        applySettings();
+
+        document.getElementById('headerColor').value = settings.headerColor;
+        document.getElementById('fontColor').value = settings.fontColor;
+        document.getElementById('backgroundColor').value = settings.backgroundColor;
+
+        const gradientColors = settings.gradient ? settings.gradient.split(', ') : [];
+        document.getElementById('gradient-color1').value = gradientColors[1] || '#243B55';
+        document.getElementById('gradient-color2').value = gradientColors[2] || '#141E30';
+        document.getElementById('gradient-angle').value = gradientColors[0] ? gradientColors[0].replace('deg', '') : 0;
+        document.getElementById('imageSize').value = settings.imageSize;
       }
-    }
+    };
 
-    function resetToDefault() {
-      localStorage.removeItem('backgroundImage');
-      localStorage.removeItem('backgroundColor');
-      localStorage.removeItem('backgroundGradient');
-      localStorage.removeItem('headerColor');
-      localStorage.removeItem('textColor');
+    const setHeaderColor = () => {
+      settings.headerColor = document.getElementById('headerColor').value;
+      saveSettings();
+      applySettings();
+    };
 
-      document.body.style.backgroundImage = '';
-      document.body.style.backgroundColor = '';
-      document.body.style.background = '';
-      document.querySelector('header').style.backgroundColor = '';
-      document.body.style.color = '';
+    const setFontColor = () => {
+      settings.fontColor = document.getElementById('fontColor').value;
+      saveSettings();
+      applySettings();
+    };
 
-      document.getElementById('headerColor').value = '#000000'; // default color
-      document.getElementById('textColor').value = '#000000'; // default color
-      document.getElementById('backgroundColor').value = '#FFFFFF'; // default color
-      document.getElementById('backgroundColor1').value = '#FFFFFF'; // default color
-      document.getElementById('backgroundColor2').value = '#000000'; // default color
-    }
+    const setBackgroundColor = () => {
+      settings.backgroundColor = document.getElementById('backgroundColor').value;
+      settings.gradient = '';
+      settings.backgroundURL = ''; // Clear the background image when color is set
+      saveSettings();
+      applySettings();
+    };
 
-    function handlePlusClick() {
-      window.location.href = 'all.html';
-    }
+    const setGradient = () => {
+      const color1 = document.getElementById('gradient-color1').value;
+      const color2 = document.getElementById('gradient-color2').value;
+      const angle = document.getElementById('gradient-angle').value;
+      settings.gradient = `${angle}deg, ${color1}, ${color2}`;
+      settings.backgroundURL = ''; // Clear the background image when gradient is set
+      // settings.fitToViewport = true;
+      saveSettings();
+      applySettings();
+    };
 
-    function hidey() {
-      document.body.style.display = 'none';
-    }
+    const setImageSize = () => {
+      settings.imageSize = document.getElementById('imageSize').value;
+      saveSettings();
+      applySettings();
+    };
 
-    function setBackground(imageUrl) {
-      document.body.style.backgroundImage = `url('${imageUrl}')`;
-      localStorage.setItem('backgroundImage', imageUrl);
-    }
-
-    function setBackgroundFromUrl() {
-      const url = document.getElementById('backgroundImageUrl').value;
-      if (url) {
-        document.body.style.backgroundImage = `url('${url}')`;
-        localStorage.setItem('backgroundImage', url);
-      }
-    }
-
-    document.getElementById('backgroundUpload').addEventListener('change', function (event) {
-      const file = event.target.files[0];
-      if (file) {
-        const reader = new FileReader();
-        reader.onload = function (e) {
-          document.body.style.backgroundImage = `url('${e.target.result}')`;
-          localStorage.setItem('backgroundImage', e.target.result);
-        };
-        reader.readAsDataURL(file);
-      }
-    });
-
-    function setBackgroundColor(event) {
-      document.body.style.backgroundColor = event.target.value;
-      localStorage.setItem('backgroundColor', event.target.value);
-    }
-
-    function setGradientBackground() {
-      const color1 = document.getElementById('gradientColor1').value;
-      const color2 = document.getElementById('gradientColor2').value;
-      document.body.style.background = `linear-gradient(to right, ${color1}, ${color2})`;
-      localStorage.setItem('background', `linear-gradient(to right, ${color1}, ${color2})`);
-    }
-
-    function setHeaderColor(event) {
-      document.querySelector('header').style.backgroundColor = event.target.value;
-      localStorage.setItem('headerColor', event.target.value);
-    }
-
-    function setTextColor(event) {
-      document.body.style.color = event.target.value;
-      localStorage.setItem('textColor', event.target.value);
-    }
-
-    function exportSettings() {
-      const settings = {
-        backgroundImage: localStorage.getItem('backgroundImage'),
-        backgroundColor: localStorage.getItem('backgroundColor'),
-        headerColor: localStorage.getItem('headerColor'),
-        textColor: localStorage.getItem('textColor'),
-        gradient: localStorage.getItem('background')
-      };
-
-      const settingsText = Object.entries(settings)
-        .map(([key, value]) => `${key} : !${value}i`)
-        .join(' | ');
-
-      const blob = new Blob([settingsText], { type: 'text/plain' });
-      const url = URL.createObjectURL(blob);
-
+    document.getElementById('export').addEventListener('click', () => {
+      const file = new Blob([JSON.stringify(settings)], { type: 'application/json' });
+      const url = URL.createObjectURL(file);
       const a = document.createElement('a');
       a.href = url;
       a.download = 'settings.📃';
-      document.body.appendChild(a);
-      a.click(); document.body.removeChild(a);
-    }
-    function importSettings(event) {
-      const file = event.target.files[0];
-      if (!file) return;
+      a.click();
+      URL.revokeObjectURL(url);
+    });
 
-      const reader = new FileReader();
-      reader.onload = function (e) {
-        const settingsText = e.target.result;
-        const settings = settingsText.split(' | ').reduce((acc, item) => {
-          const [key, value] = item.split(' : !');
-          if (key && value) acc[key] = value.replace('i', '');
-          return acc;
-        }, {});
+    document.getElementById('import').addEventListener('click', () => {
+      const input = document.createElement('input');
+      input.type = 'file';
+      input.accept = '.📃';
 
-        if (settings.backgroundImage) {
-          document.body.style.backgroundImage = `url('${settings.backgroundImage}')`;
-          localStorage.setItem('backgroundImage', settings.backgroundImage);
-        }
-        if (settings.backgroundColor) {
-          document.body.style.backgroundColor = settings.backgroundColor;
-          localStorage.setItem('backgroundColor', settings.backgroundColor);
-        }
-        if (settings.headerColor) {
-          document.querySelector('header').style.backgroundColor = settings.headerColor;
-          localStorage.setItem('headerColor', settings.headerColor);
-        }
-        if (settings.textColor) {
-          document.body.style.color = settings.textColor;
-          localStorage.setItem('textColor', settings.textColor);
-        }
-        if (settings.gradient) {
-          document.body.style.background = settings.gradient;
-          localStorage.setItem('background', settings.gradient);
-        }
+      input.onchange = (event) => {
+        const reader = new FileReader();
+        reader.onload = (e) => {
+          try {
+            const importedSettings = JSON.parse(e.target.result);
+            Object.assign(settings, importedSettings);
+            applySettings();
+            saveSettings(); // Save imported settings to local storage
+          } catch (error) {
+            alert('Failed to import settings. Please ensure the file is valid.');
+          }
+        };
+        reader.readAsText(event.target.files[0]);
       };
-      reader.readAsText(file);
-    }
 
-    document.getElementById('importSettingsInput').addEventListener('change', importSettings);
+      input.click(); // Open the file chooser dialog
+    });
 
-    // Load settings on page load
-    window.onload = function () {
-      const backgroundImage = localStorage.getItem('backgroundImage');
-      const backgroundColor = localStorage.getItem('backgroundColor');
-      const headerColor = localStorage.getItem('headerColor');
-      const textColor = localStorage.getItem('textColor');
-      const gradient = localStorage.getItem('background');
+    document.getElementById('menutoggle').addEventListener('click', () => {
+        const panel = document.getElementById('settingsPanel');
 
-      if (backgroundImage) {
-        document.body.style.backgroundImage = `url('${backgroundImage}')`;
-      }
-      if (backgroundColor) {
-        document.body.style.backgroundColor = backgroundColor;
-      }
-      if (headerColor) {
-        document.querySelector('header').style.backgroundColor = headerColor;
-      }
-      if (textColor) {
-        document.body.style.color = textColor;
-      }
-      if (gradient) {
-        document.body.style.background = gradient;
-      }
+        // Toggle the display property between 'none' and 'block'
+        if (panel.style.display === 'none' || panel.style.display === '') {
+          panel.style.display = 'block';
+        } else {
+          panel.style.display = 'none';
+        }
+      });
+
+    document.getElementById('setBgFromURL').addEventListener('click', () => {
+      const url = prompt('Enter Background URL:');
+      settings.backgroundURL = url;
+      settings.gradient = ''; // Clear gradient when image is set
+      saveSettings();
+      applySettings();
+    });
+
+    document.getElementById('uploadBg').addEventListener('click', () => {
+      const input = document.createElement('input');
+      input.type = 'file';
+      input.accept = 'image/*';
+      input.onchange = (e) => {
+        const file = e.target.files[0];
+        const reader = new FileReader();
+        reader.onload = (readerEvent) => {
+          settings.backgroundURL = readerEvent.target.result; // Store base64 string
+          settings.gradient = ''; // Clear gradient when image is set
+          saveSettings(); // Save the uploaded image URL to local storage
+          applySettings();
+        };
+        reader.readAsDataURL(file); // Convert to base64
+      };
+      input.click();
+    });
+
+    document.getElementById('toggleScrollStatic').addEventListener('click', () => {
+      settings.backgroundAttachment = settings.backgroundAttachment === 'scroll' ? 'fixed' : 'scroll';
+      saveSettings();
+      applySettings();
+    });
+
+    document.getElementById('resetSettings').addEventListener('click', () => {
+      Object.assign(settings, {
+        backgroundURL: '',
+        backgroundAttachment: 'fixed',
+        gradient: '',
+        headerColor: '#0c1320',
+        fontColor: '#fff',
+        imageSize: 100,
+        fitToViewport: false
+      });
+      document.getElementById('fitStatus').textContent = `Mode: On`;
+      document.getElementById('scrollModeStatus').textContent = `Mode: Fixed`;
+      saveSettings();
+      applySettings();
+    });
+
+    document.getElementById('toggleFit').addEventListener('click', () => {
+      settings.fitToViewport = !settings.fitToViewport;
+      saveSettings();
+      applySettings();
+    });
+
+    window.onload = () => {
+      loadInitialSettings();
+      applySettings();
     };
+  </script>
+</body>
+
+</html>
