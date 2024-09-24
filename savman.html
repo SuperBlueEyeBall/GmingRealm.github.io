@@ -48,6 +48,7 @@
     <a class="linkmenu" href="feedback.html">Feedback/Requests</a>
     <a class="linkmenu" href="sites.html">Sites</a>
     <button class="linkmenu" id="plus-button" onclick="handlePlusClick()">+</button>
+    <input type="text" id="search" placeholder="Search Games" />
   </header>
   <div class="settings-panel" id="settingsPanel">
     <button class="btn" id="setBgFromURL">Set Background Img from URL</button>
@@ -64,7 +65,10 @@
     <button class="btn">Set Font Color
       <input type="color" id="fontColor" value="#ffffff" oninput="setFontColor()">
     </button>
-    <button class="btn">Set Background Color
+    <button class="btn">Title color (Soon to be Game-Box's Font Color)
+      <input type="color" id="gameblockFontColor" value="#ffffff" oninput="setGameFontColor()">
+    </button>
+    <button class="btn">Set Background Color (Broken)
       <input type="color" id="backgroundColor" value="#243B55" oninput="setBackgroundColor()">
     </button>
     <button class="btn">Background Gradient
@@ -79,7 +83,12 @@
       <div id="fitStatus">Mode: </div>
     </button>
   </div>
-  <button class="btn" id="menutoggle">Toggle settings menu</button><br><br><br><br>
+  <button class="btn" id="menutoggle">Toggle settings menu</button>
+  <h1 class="title">Gming Realm | Settings</h1>
+  <div class="game-container"></div>
+    <div class="game-select" id="gameSelect"></div>
+  </div>
+  <script src="examplegameloader.js"></script>
   <script>
     const settings = {
       backgroundURL: '',
@@ -88,17 +97,28 @@
       headerColor: '#0c1320',
       fontColor: '#fff',
       imageSize: 100,
-      fitToViewport: false
+      fitToViewport: false,
+      gameblockFontColor: '#fff',
+      backgroundColor: "#243B55"
     };
 
     const applySettings = () => {
+      console.log("e")
       document.body.style.backgroundImage = settings.gradient
         ? `linear-gradient(${settings.gradient})`
-        : settings.backgroundURL ? `url(${settings.backgroundURL})` : '';
+        : settings.backgroundURL ? `url(${settings.backgroundURL})` : 'none';
+
+      document.body.style.backgroundColor = (!settings.gradient && !settings.backgroundURL)
+        ? settings.backgroundColor
+        : '';  // Only set backgroundColor if no gradient or background URL
+
 
       document.body.style.backgroundAttachment = settings.backgroundAttachment;
       document.querySelector('header').style.backgroundColor = settings.headerColor;
-      document.querySelector('header').style.color = settings.fontColor;
+      document.querySelectorAll('.linkmenu').forEach(link => {
+        link.style.color = settings.fontColor;
+      });
+
 
             // Update the status displays
       document.getElementById('fitStatus').textContent = `Mode: ${settings.fitToViewport ? 'On' : 'Off'}`;
@@ -109,6 +129,18 @@
       }
 
       document.body.style.backgroundSize = settings.fitToViewport ? '100% auto' : `${settings.imageSize}%`;
+
+      // Apply gameblock font color to all elements with class 'gameblock'
+      const gameblockElements = document.querySelectorAll('.gameblock');
+      gameblockElements.forEach(el => {
+        el.style.color = settings.gameblockFontColor;
+      });
+
+      // Apply gameblock font color to the first <h1> with class "title"
+      const titleElement = document.querySelectorAll('title');
+      titleElement.forEach(el => {
+        el.style.color = settings.gameblockFontColor;
+      });
     };
 
     const saveSettings = () => {
@@ -123,6 +155,8 @@
 
         document.getElementById('headerColor').value = settings.headerColor;
         document.getElementById('fontColor').value = settings.fontColor;
+        document.getElementById('gameblockFontColor').value = settings.gameblockFontColor;
+    
         document.getElementById('backgroundColor').value = settings.backgroundColor;
 
         const gradientColors = settings.gradient ? settings.gradient.split(', ') : [];
@@ -144,6 +178,13 @@
       saveSettings();
       applySettings();
     };
+
+     const setGameFontColor = () => {
+        settings.gameblockFontColor = document.getElementById('gameblockFontColor').value;
+        saveSettings();
+        applySettings();
+      };
+
 
     const setBackgroundColor = () => {
       settings.backgroundColor = document.getElementById('backgroundColor').value;
@@ -254,7 +295,8 @@
         headerColor: '#0c1320',
         fontColor: '#fff',
         imageSize: 100,
-        fitToViewport: false
+        fitToViewport: false,
+        backgroundColor: "#243B55"
       });
       document.getElementById('fitStatus').textContent = `Mode: On`;
       document.getElementById('scrollModeStatus').textContent = `Mode: Fixed`;

@@ -21,7 +21,7 @@
 
     gtag('config', 'G-B9R93ESZH8');
   </script>
-  <script src="settingsloaderforheader.js" defer></script>
+  <script src="settingsloader.js" defer></script>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -29,6 +29,43 @@
   <meta property="og:description" content="The best place to procrastinate!" />
   <meta property="og:url" content="https://superblueeyeball.github.io" />
   <link rel="shortcut icon" href="https://google.com/favicon.ico" type="image/x-icon" />
+  <style>
+    
+    .center {
+      text-align: center;
+    }
+
+    .button {
+      margin: 10px;
+      padding: 10px 20px;
+      background-color: #7a7a7a;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .button:hover {
+      background-color: #a1a1a1;
+    }
+
+    .tbox {
+      margin: 10px;
+      padding: 10px 20px;
+      background-color: #dbc9c9;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .tbox:hover {
+      background-color: #f0f0f0;
+    }
+
+  </style>
   <title>Google</title>
   <link rel="stylesheet" href="style.css" />
   <meta name="keywords"
@@ -97,6 +134,18 @@
   <br>
   <h1>PR0XYS (Unblocks all sites)</h1>
   <p>I will add tutorials on how to make the word above soon!</p>
+  <div class="center">
+    <input type="text" id="urlInput" placeholder="Enter URL" class="tbox" /><br>
+    <button id="openCacheBtn" class="button">Open Google Cache UnbIock Method <br>(Works sometimes, also can be an unbIocked search engine)</button>
+  </div>
+  <script>
+    document.getElementById('openCacheBtn').addEventListener('click', function () {
+      const urlInput = document.getElementById('urlInput').value;
+      const cacheUrl = 'http://webcache.googleusercontent.com/search?q=cache:' + encodeURIComponent(urlInput);
+      window.open(cacheUrl, '_blank');
+    });
+  </script>
+
   <p>(Hint: I made all of the thingies below, also for faster ones, you gotta ask me since they are private)</p>
   <p><a id="github-link" href="https://edu.amberwithcamera.com/">Shadow Tabbed (really good)</a></p>
   <p><a id="github-link" href="https://edu.68913.com">Shadow Tabbed (really good)</a></p>

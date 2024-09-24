@@ -174,12 +174,11 @@ p {
 }
 
 .game-button {
-  background: #141E30;
-  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #1b2c40, #0b111d);
-  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #1b2c40, #0b111d);
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(3px);
+    /* Apply blur to the background */
+    -webkit-backdrop-filter: blur(3px);
+    /* Support for Safari */
   border-radius: 10px;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;

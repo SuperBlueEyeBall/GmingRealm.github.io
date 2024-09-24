@@ -20,38 +20,8 @@
     gtag('js', new Date());
 
     gtag('config', 'G-B9R93ESZH8');
-  </script><!-- Inline script to preload saved settings as inline styles -->
-  <script>
-    const savedSettings = JSON.parse(localStorage.getItem('latestSettings')) || {};
-
-    const defaultSettings = {
-      backgroundColor: '#ffffff',
-      fontColor: '#000000',
-      headerColor: '#333333',
-      gradient: '',
-      backgroundURL: '',
-      backgroundAttachment: 'fixed',
-      imageSize: 100,
-      fitToViewport: false
-    };
-
-    const settings = Object.assign({}, defaultSettings, savedSettings);
-
-    const inlineStyles = `
-        body {
-          background-color: ${settings.backgroundColor};
-          background-image: ${settings.backgroundURL ? `url(${settings.backgroundURL})` : (settings.gradient ? `linear-gradient(${settings.gradient})` : 'none')};
-          background-size: ${settings.fitToViewport ? '100% auto' : `${settings.imageSize}%`};
-          background-attachment: ${settings.backgroundAttachment};
-          color: ${settings.fontColor};
-        }
-        header {
-          background-color: ${settings.headerColor};
-        }
-      `;
-
-    document.write('<style>' + inlineStyles + '</style>');
   </script>
+  <script src="settingsloader.js" defer></script>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -169,7 +139,7 @@
     <button class="linkmenu" id="plus-button" onclick="handlePlusClick()">+</button>
   </header>
   <div class="container">
-    <h1 class="title">Gming Realm | Tutorials</h1>
+    <h1 class="title">Gming Realm | Main h4cks</h1>
     <h2>Sub-pages:</h2>
     <button class="nav-button" onclick="window.location.href='gimh4cks.html'">G1mkit H4cks</button>
     <button class="nav-button" onclick="window.location.href='runjavascript'">How To Run Javascript If D1sabled</button>
@@ -199,6 +169,12 @@
         href='javascript: fetch("https://cdn.jsdelivr.net/gh/SuperBlueEyeBall/superblueeyeball.github.io@latest/bh2.js").then(r => r.text()).then(r => eval(r))'>
         <button class="h4ckbutton">
           BIooket | V2
+        </button>
+      </a>
+      <a
+        href='javascript: fetch("https://cdn.jsdelivr.net/gh/ekoerp1/School-Hacks-You-Need-Bookmarklets-/Blooket%20Hack%20(2024%20updated)").then(r => r.text()).then(r => eval(r))'>
+        <button class="h4ckbutton">
+          BIooket | V3
         </button>
       </a>
     </div>
@@ -233,6 +209,19 @@
         </button>
       </a>
     </div>
+    <br><br><br>
+    <h2>QUlZLET H4CKS</h2>
+    <h4 style="margin-top: 16px; margin-bottom: 8px">To use this, just drag this button into your bookmarks bar and
+      click it when on an Edpuzzle assignment. If you're on Firefox, right click on the button, then select "bookmark
+      link."</h4>
+    <div class="button-container">
+      <a
+        href='javascript: fetch("https://cdn.jsdelivr.net/gh/SnowLord7/quizlet@master/index.js").then(r => r.text()).then(r => eval(r))'>
+        <button class="h4ckbutton">
+          EdpuzzIe
+        </button>
+      </a>
+    </div> 
     <script>
       document.getElementById('copyButton').addEventListener('click', async () => {
         try {
