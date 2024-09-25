@@ -1,3 +1,4 @@
+
 if (!window.top.location.href.startsWith("https://skybase-alpha.github.io/")) {
     document.querySelector("title").innerHTML = "Google";
     function hidey() {
@@ -125,7 +126,7 @@ var gamesText = `{
             "path":"gfiles/better-sam/"
         },
         {
-            "name":"roblox V3",
+            "name":"roblox V3 (Beta)",
             "img":"img/roblox.png",
             "path":"roblos.html"
         },
@@ -731,101 +732,47 @@ var gamesText = `{
         }
     ]
 }`;
-
 var gameObject = JSON.parse(gamesText);
-
-// Create CSS styles
-const style = document.createElement('style');
-style.innerHTML = `
-    #gameSelect {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    .game-button {
-        position: relative;
-        width: 150px;
-        margin: 10px;
-        text-align: center;
-        border: 1px solid #ccc;
-        border-radius: 8px;
-        overflow: hidden;
-    }
-    .game-button img {
-        width: 100%;
-        border-radius: 8px;
-    }
-    .favorite-icon {
-        position: absolute;
-        top: 5px;
-        right: 5px;
-        width: 20px;
-        height: 20px;
-    }
-    h2 {
-        text-align: center;
-    }
-`;
-document.head.appendChild(style);
-
-// Create favorited games section
-const favoritedGames = document.createElement('div');
-favoritedGames.id = 'favoritedGames';
-favoritedGames.innerHTML = '<h2>Favorited Games:</h2>';
-document.getElementById("gameSelect").appendChild(favoritedGames);
-
-// Create all games section
-const allGames = document.createElement('div');
-allGames.id = 'allGames';
-allGames.innerHTML = '<h2>All Games:</h2>';
-document.getElementById("gameSelect").appendChild(allGames);
-
-// Loop through games
-for (let game of gameObject.games) {
+for (i in gameObject.games) {
     let elem1 = document.createElement("div");
     elem1.className = "game-button";
-
+    document.getElementById("gameSelect").appendChild(elem1);
     let elem2 = document.createElement("a");
-    elem2.href = game.path;
+
+    elem2.href = gameObject.games[i].path;
+
     elem1.appendChild(elem2);
-
     let elem3 = document.createElement("img");
-    elem3.src = game.img;
-    elem3.alt = game.name;
+    elem3.src = gameObject.games[i].img;
+    elem3.alt = gameObject.games[i].name;
     elem2.appendChild(elem3);
-
     let elem4 = document.createElement("p");
-    elem4.innerHTML = game.name;
+    elem4.innerHTML = gameObject.games[i].name;
     elem2.appendChild(elem4);
-
-    // Create favorite icon
-    let starIcon = document.createElement("img");
-    starIcon.src = "https://www.google.com/favicon.ico"; // Temporary star icon
-    starIcon.className = "favorite-icon";
-    starIcon.style.opacity = game.favorited ? "1" : "0.5"; // Set opacity based on favorite status
-    elem1.appendChild(starIcon);
-
-    // Append game button to the appropriate section
-    if (game.favorited) {
-        favoritedGames.appendChild(elem1);
-    } else {
-        allGames.appendChild(elem1);
-    }
 }
-
-// Search functionality
 const gamesContainer = document.getElementById("gameSelect");
 const searchBar = document.getElementById("search");
-
+// Listen for input event on the search bar
 searchBar.addEventListener("input", (e) => {
     const query = searchBar.value.trim().toLowerCase();
-    favoritedGames.style.display = "none"; // Hide favorited games during search
-    allGames.style.display = "block"; // Show all games
 
-    for (let game of allGames.children) {
+    // Loop through all the games in the container and show/hide them depending on whether they match the search query
+    for (let game of gamesContainer.children) {
         if (game instanceof Element) {
-            const gameName = game.querySelector("p").innerText.trim().toLowerCase();
-            game.style.display = gameName.includes(query) ? "block" : "none";
+            if (query) {
+                const gameName = game.querySelector("p").innerText.trim().toLowerCase();
+                if (gameName.includes(query)) {
+                    game.removeAttribute("hidden");
+                } else {
+                    game.setAttribute("hidden", "");
+                }
+            } else {
+                game.removeAttribute("hidden");
+            }
         }
     }
 });
+// if (localStorage.getItem("hidden") == "y") {
+//   hidey();
+//   console.log("fff");
+// }
