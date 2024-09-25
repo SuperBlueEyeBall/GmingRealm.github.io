@@ -143,14 +143,15 @@
     <h2>Sub-pages:</h2>
     <button class="nav-button" onclick="window.location.href='mainh4cks.html'">Main H4cks Page</button>
     <button class="nav-button" onclick="window.location.href='gimh4cks.html'">G1mkit H4cks</button>
-    <button class="nav-button" onclick="window.location.href='runjavascript'">How To Run Javascript If D1sabled</button>
-    <button class="nav-button" onclick="window.location.href='makeyourownlink'">How To Make Your Own Pr0xy L1nk</button>
-    <br><button class="nav-button" onclick="window.location.href='makeyourownlink'">How to get WiFi password (Works for all networks, even school WiFi)</button>
+    <button class="nav-button" onclick="window.location.href='runjavascript.html'">How To Run Javascript If D1sabled</button>
+    <button class="nav-button" onclick="window.location.href='makeyourownlink.html'">How To Make Your Own Pr0xy L1nk</button>
+    <br><button class="nav-button" onclick="window.location.href='wifipass.html'">How to get WiFi password (Works for all networks, even school WiFi)</button>
     </div>
     <script>
       document.getElementById('copyButton').addEventListener('click', async () => {
         try {
           // Fetch the text file
+          alert("this is beta so uh may not work for this version just use V2")
           const response = await fetch("bh.txt");
           const text = await response.text();
 
