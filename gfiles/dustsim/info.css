@@ -1,0 +1,37 @@
+
+#info {
+	position:absolute;
+	left:300px;
+	top:0;
+	margin:5px;
+	padding:0;
+	width:calc(100% - 5px * 2 - 300px);
+	pointer-events:none;
+}
+#info.hidden {
+	display:none;
+}
+
+#info > span {
+	display:inline-block;
+	margin:0;
+	padding:0;
+	width:50%;
+	vertical-align:top;
+}
+
+#info > span > p {
+	display:block;
+	margin:0;
+	padding:0;
+	font-family:Arial, sans-serif;
+	font-size:14px;
+	color:#eee;
+	text-shadow:1px 1px 0 #000, 0 1px 0 #000, 1px 0 0 #000;
+}
+#info > span > p.red {
+	color:#d63333;
+}
+#info > span.right > p {
+	text-align:right;
+}

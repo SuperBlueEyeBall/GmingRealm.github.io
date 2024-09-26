@@ -1,0 +1,15 @@
+
+#version {
+	position:absolute;
+	left:300px;
+	bottom:0;
+	margin:5px;
+	padding:0;
+	text-decoration:none;
+	font-family:Arial, sans-serif;
+	font-size:14px;
+	color:#333;
+}
+#version.hidden {
+	display:none;
+}

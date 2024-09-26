@@ -147,11 +147,7 @@ Game.loadAssets = function(completeCallback, progressCallback, PRELOADER){
 
 		// Is MP3. Leave it to Howler.
 		if(src.slice(-4)==".mp3"){
-			var sound = new Howl({ src:[
-				src.slice(0, src.length-4)+".opus",
-				src.slice(0, src.length-4)+".m4a",
-				src
-			] });
+			var sound = new Howl({ src:[src] });
 			_soundsToLoad++;
 			sound.once('load', _onSoundLoad);
 			Game.sounds[key] = sound;

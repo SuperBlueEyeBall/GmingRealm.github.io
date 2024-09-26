@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<title>DustSim</title>
+
+		<style>
+			html, body {
+				margin:0;
+				padding:0;
+				background:#000;
+				overflow:hidden;
+
+				-webkit-touch-callout:none;
+				-webkit-user-select:none;
+				-khtml-user-select:none;
+				-moz-user-select:none;
+				-ms-user-select:none;
+				user-select:none;
+				cursor:default;
+			}
+
+			#screen {
+				position:absolute;
+				left:300px;
+				top:0;
+			}
+			#screen.full {
+				left:0;
+			}
+
+			#screen > canvas {
+				position:absolute;
+				left:0;
+				top:0;
+				background-color:#000;
+			}
+
+			#ui {
+				margin:0;
+				padding:0;
+				width:300px;
+				min-height:100vh;
+				background:#051c35;
+				box-shadow:inset -10px 0 10px -10px #000;
+			}
+			#ui.hidden {
+				display:none;
+			}
+		</style>
+		<link rel="stylesheet" type="text/css" href="dialog.css">
+		<link rel="stylesheet" type="text/css" href="fonts.css">
+		<link rel="stylesheet" type="text/css" href="info.css">
+		<link rel="stylesheet" type="text/css" href="loading.css">
+		<link rel="stylesheet" type="text/css" href="error_ui.css">
+		<link rel="stylesheet" type="text/css" href="navigation.css">
+		<link rel="stylesheet" type="text/css" href="scenario.css">
+		<link rel="stylesheet" type="text/css" href="tab.css">
+		<link rel="stylesheet" type="text/css" href="version.css">
+	</head>
+	<body class="show-focus">
+		<div id="screen"></div>
+		<div id="ui"></div>
+		<div id="loading"><img src="images/loading.svg"><p>LOADING</p><div class="bar"><div></div></div></div>
+		<div id="info"></div>
+		<a id="version" href="https://www.kodub.com/" target="_blank">Kodub.com v1.03</a>
+
+		<script src="js/three.min.js" defer></script>
+		<script src="js/pako.min.js" defer></script>
+
+		<script src="main.js" defer></script>
+	</body>
+</html>

@@ -1,0 +1,99 @@
+
+.dialog {
+	position:absolute;
+	left:0;
+	top:0;
+	margin:0;
+	padding:0;
+	width:100%;
+	height:100%;
+	background-color:rgba(20,20,20,0.5);
+}
+
+.dialog > div {
+	position:relative;
+	top:calc(50% - 600px / 2);
+	margin:6px auto;
+	padding:0;
+	width:500px;
+	border-radius:5px;
+	background:#051c35;
+	box-shadow:inset 0 0 10px 0 #000;
+}
+
+.dialog > div > p {
+	margin:0;
+	padding:16px;
+	font-size:20px;
+	font-family:EspressoDolce, Arial, sans-serif;
+	color:#fff;
+}
+
+.dialog.exporter > div {
+	padding:16px 0;
+}
+
+.dialog.exporter > div > textarea {
+	display:block;
+	margin:16px;
+	padding:2px;
+	width:calc(100% - 2 * 16px - 2 * 2px);
+	height:350px;
+	min-width:calc(100% - 2 * 16px - 2 * 2px);
+	max-width:calc(100% - 2 * 16px - 2 * 2px);
+	font-size:18px;
+	border:none;
+	border-radius:6px;
+	box-shadow:0 0 2px #000 inset;
+	opacity:0.8;
+	word-break:break-all;
+	resize:none;
+}
+
+.dialog.exporter > div > button:nth-of-type(1), .dialog.exporter > div > button:nth-of-type(2), .dialog.exporter > div > button:nth-of-type(3) {
+	font-size:20px;
+}
+.dialog.exporter > div > button {
+	width:calc((100% - 2 * 16px - 2 * 8px) / 3);
+}
+.dialog.exporter > div > button:nth-of-type(3n + 1) {
+	margin:0 0 0 16px;
+}
+.dialog.exporter > div > button:nth-of-type(3n + 2) {
+	margin:0 8px 0 8px;
+}
+.dialog.exporter > div > button:nth-of-type(3n + 3) {
+	margin:0 16px 0 0;
+}
+
+.dialog > div.message {
+	padding:0;
+	height:0;
+	overflow:hidden;
+	animation:4.3s ease-in-out 0s 1 alternate dialog-message;
+}
+.dialog > div.message > p {
+	margin:0;
+	padding:16px;
+	text-align:center;
+	font-size:26px;
+	font-family:EspressoDolce, Arial, sans-serif;
+	color:#fff;
+}
+.dialog > div.message > p.error {
+	color:#ea2d2d;
+}
+@keyframes dialog-message {
+	0% {
+		height:0;
+	}
+	3.488% {
+		height:65px;
+	}
+	96.512% {
+		height:65px;
+	}
+	100% {
+		height:0;
+	}
+}

@@ -1,0 +1,50 @@
+
+.scenario {
+	display:inline-block;
+	position:relative;
+	margin:0;
+	padding:0;
+	width:50%;
+	height:150px;
+	vertical-align:top;
+	border-bottom:2px solid #113;
+	cursor:pointer;
+}
+.scenario.left {
+	border-left:2px solid #113;
+	border-right:1px solid #113;
+}
+.scenario.right {
+	border-left:1px solid #113;
+	border-right:2px solid #113;
+}
+.scenario:focus {
+	z-index:1;
+}
+
+.scenario > canvas {
+	position:absolute;
+	left:0;
+	top:0;
+	margin:0;
+	padding:0;
+	width:100%;
+	height:100%;
+	background-color:#000;
+}
+.scenario:hover > canvas {
+	-webkit-filter:brightness(130%);
+	filter:brightness(130%);
+}
+
+.scenario > h2 {
+	position:absolute;
+	left:0;
+	top:0;
+	margin:0 !important;
+	padding:4px !important;
+	font-size:14px !important;
+	background:rgba(50,50,150,0.3);
+	text-shadow:0 0 8px #000;
+	pointer-events:none;
+}

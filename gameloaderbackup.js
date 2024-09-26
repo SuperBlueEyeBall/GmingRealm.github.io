@@ -71,6 +71,61 @@ function gameHide(gamePath) {
 var gamesText = `{
     "games":[
         {
+            "name":"Scratch Emulator",
+            "img":"img/scratch.png",
+            "path":"gfiles/scratchemu/"
+        },
+        {
+            "name":"Getting Over It",
+            "img":"img/goi.png",
+            "path":"gfiles/goi/"
+        },
+        {
+            "name":"Geometry Dash",
+            "img":"img/gd.jpg",
+            "path":"gfiles/geodash/"
+        },
+        {
+            "name":"Dreader",
+            "img":"img/dreader.png",
+            "path":"gfiles/dreader/"
+        },
+        {
+            "name":"Dustsim",
+            "img":"img/dustsim.jpg",
+            "path":"gfiles/dustsim/"
+        },
+        {
+            "name":"Help! No Brake",
+            "img":"img/hnb.png",
+            "path":"gfiles/help-no-brake/"
+        },
+        {
+            "name":"Platformer Toolkit",
+            "img":"img/pt.jpg",
+            "path":"gfiles/platformer-toolkit/"
+        },
+        {
+            "name":"Sandtrix",
+            "img":"img/sandtrix.png",
+            "path":"gfiles/sandtrix/"
+        },
+        {
+            "name":"terraria demake",
+            "img":"img/terra.jpg",
+            "path":"gfiles/terra-a-terraria-demake/"
+        },
+        {
+            "name":"Wood Worm",
+            "img":"img/woodworm.png",
+            "path":"gfiles/woodworm/"
+        },
+        {
+            "name":"WBWWB (English Now)",
+            "img":"img/wbwwb.png",
+            "path":"gfiles/wbwwb/"
+        },
+        {
             "name":"Slither.io clone",
             "img":"img/slither-io.png",
             "path":"gfiles/slither-io/"
@@ -709,11 +764,6 @@ var gamesText = `{
             "name":"Waterworks!",
             "img":"img/waterworks.png",
             "path":"gfiles/waterworks/"
-        },
-        {
-            "name":"WBWWB",
-            "img":"img/wbwwb.png",
-            "path":"gfiles/wbwwb/"
         },
         {
             "name":"Weave Silk",

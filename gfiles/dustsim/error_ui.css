@@ -1,0 +1,25 @@
+
+.error_ui {
+	margin:0;
+	padding:0;
+	position:relative;
+	overflow:hidden;
+}
+
+.error_ui h1 {
+	margin:14px 14px 0 14px;
+	padding:0;
+	text-align:center;
+	font-size:30px;
+	font-family:EspressoDolce, Arial, sans-serif;
+	font-weight:normal;
+	color:#c53d2e;
+}
+
+.error_ui p {
+	margin:0 20px;
+	padding:0;
+	font-size:18px;
+	font-family:EspressoDolce, Arial, sans-serif;
+	color:#c53d2e;
+}
