@@ -2,8 +2,8 @@
 <html>
     <head>
         <title>DON'T YOU LECTURE ME WITH YOUR THIRTY DOLLAR WEBSITE</title>
-        <link rel="stylesheet" href="🎨.css?v=3" charset="UTF-8" />
-        <link rel="icon" href="assets/🗿.png"></link>
+        <link rel="stylesheet" href="🎨.css?v=7a" charset="UTF-8">
+        <link rel="icon" href="assets/🗿.png">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=820">
         <meta property="og:title" content="DON'T YOU LECTURE ME WITH YOUR THIRTY DOLLAR WEBSITE">
@@ -13,10 +13,9 @@
 
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-7YF7WH8ESJ"></script>
         <script>window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', 'G-7YF7WH8ESJ');</script>
-        <script src="lib/jquery.min.js"></script>
-        <script src="lib/jquery-ui.min.js"></script>
-        <script src="lib/jquery.ui.touch-punch.min.js"></script>
-        <script src="lib/howler.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
     </head>
 
     <body style="text-align: center">
@@ -25,10 +24,10 @@
         
         <h1 class="title" id="caption">DON'T YOU LECTURE ME WITH YOUR THIRTY DOLLAR WEBSITE</h1>
 
-        <div id="main" style="width: 1140px;">
+        <div id="main">
 
             <div class="sideboxes">
-                <div class="innersidebox" id="icons_container" style="width: 824px">
+                <div class="innersidebox" id="icons_container">
                     <div class="infobox">
                         <h1 id="soundText">Sounds</h1>
                         <h1 id="soundInfo" style="display: none; color: var(--greenfont); white-space: nowrap;">
@@ -86,7 +85,7 @@
                         <p class="nomobile">Right click to preview</p>
                         <p class="nomobile">Shift click to clone</p>
                         <p mobile="Swipe to change pitch">Scroll to change pitch</p>
-                        <p class="nomobile">Ctrl+scroll to change volume (NEW)</p>
+                        <p class="nomobile">Ctrl+scroll to change volume</p>
                         <!-- <p mobile="Drag to rearrange">Drag to rearrange</p> -->
                     </span>
                 </div>
@@ -146,8 +145,8 @@
             </div>
 
             <div>           
-                <p class="multiline" style="margin-bottom: 16px">
-                    <b>NEW: </b> Ctrl+scroll over a sound to change the volume
+                <!-- <p class="multiline" style="margin-bottom: 16px"> -->
+                    <!-- <b>NEW: </b> 12 new sounds for all your particle accelerator needs</p> -->
                 <p>Check out my other silly projects over at <a style="color: white !important" target="_blank" href="https://gdcolon.com?f=30">gdcolon.com</a></p>
             </div>
 
@@ -183,7 +182,7 @@
                 <div class="hotbarTab" tab="recent" desc="Recent">
                     <img src="./assets/tab_recent.svg">
                 </div>
-                <!-- <div class="hotbarBat" tab="favorite" desc="Favorites">
+                <!-- <div class="hotbarTab" tab="favorite" desc="Favorites">
                     <img src="./assets/tab_favorites.svg">
                 </div> -->
                 <div class="hotbarTab" tab="notes" desc="Notes">
@@ -210,7 +209,7 @@
                 <div class="popupinput"> <input id="bpmAmount" value="300" type="number"><p> BPM</p> </div>
                 <div style="margin-top: 25px">
                     <button onclick="addAction('speed', '#bpmAmount', 'add')" style="background: var(--emojigreen)">Add</button>
-                    <button onclick="addAction('speed', '#bpmAmount', 'set')" style="font-weight: bold; background: var(--emojiblue)">Set to</button>
+                    <button onclick="addAction('speed', '#bpmAmount', 'set')" style="font-weight: bold; background: var(--emojiblue)" actionConfirm="true">Set to</button>
                     <button onclick="addAction('speed', '#bpmAmount', 'multiply')" style="background: var(--emojigreen)">Multiply</button>
                 </div>
             </div>
@@ -224,7 +223,7 @@
                 <div class="popupinput"> <input id="volumeAmount" value="100" type="number"><p>%</p> </div>
                 <div style="margin-top: 25px">
                     <button onclick="addAction('volume', '#volumeAmount', 'add')" style="background: var(--emojigreen)">Add</button>
-                    <button onclick="addAction('volume', '#volumeAmount', 'set')" style="font-weight: bold; background: var(--emojiblue)">Set to</button>
+                    <button onclick="addAction('volume', '#volumeAmount', 'set')" style="font-weight: bold; background: var(--emojiblue)" actionConfirm="true">Set to</button>
                     <button onclick="addAction('volume', '#volumeAmount', 'multiply')" style="background: var(--emojigreen)">Multiply</button>
                 </div>
             </div>
@@ -237,7 +236,7 @@
                 <p class="skippableAction"></p>
                 <div class="popupinput"> <input id="pauseAmount" value="4" type="number"><p> beats</p> </div>
                 <div style="margin-top: 25px">
-                    <button onclick="addAction('stop', '#pauseAmount')" style="font-weight: bold; background: var(--emojiblue)">OK</button>
+                    <button onclick="addAction('stop', '#pauseAmount')" style="font-weight: bold; background: var(--emojiblue)" actionConfirm="true">OK</button>
                 </div>
             </div>
         </div>
@@ -249,7 +248,7 @@
                 <p class="skippableAction"></p>
                 <div class="popupinput"> <input id="loopAmount" value="4" type="number"><p> loops</p> </div>
                 <div style="margin-top: 25px">
-                    <button onclick="addAction('loopmany', '#loopAmount')" style="font-weight: bold; background: var(--emojiblue)">OK</button>
+                    <button onclick="addAction('loopmany', '#loopAmount')" style="font-weight: bold; background: var(--emojiblue)" actionConfirm="true">OK</button>
                 </div>
             </div>
         </div>
@@ -261,7 +260,7 @@
                 <p class="skippableAction"></p>
                 <div class="popupinput"> <input id="transposeAmount" value="1" type="number"><p> semitones</p> </div>
                 <div style="margin-top: 25px">
-                    <button onclick="addAction('transpose', '#transposeAmount', 'set')" style="font-weight: bold; background: var(--emojiblue)">Set to</button>
+                    <button onclick="addAction('transpose', '#transposeAmount', 'set')" style="font-weight: bold; background: var(--emojiblue)" actionConfirm="true">Set to</button>
                     <button onclick="addAction('transpose', '#transposeAmount', 'add')" style="background: var(--emojigreen)">Add</button>
                 </div>
             </div>
@@ -270,12 +269,12 @@
         <div class="popup" id="action_pulse" style="display: none">
             <div class="popupbox">
                 <h1>Pulse</h1>
-                <p class="popupdesc">Pulses the screen a certain amount of times.<br>Only one pulse action can be active at a timne.<br>Ignores tempo changes.</p>
+                <p class="popupdesc">Pulses the screen a certain amount of times.<br>Only one pulse action can be active at a time.<br>Ignores tempo changes.</p>
                 <p class="skippableAction"></p>
                 <div class="popupinput"> <p style="width: 100px; text-align: right; margin-right: 15px">Pulses:</p> <input id="pulseAmount" value="1" type="number"> <p>(total amount)</p> </div>
                 <div class="popupinput"> <p style="width: 100px; text-align: right; margin-right: 15px">Frequency:</p> <input id="pulseInterval" value="2" type="number"> <p>(every X beats)</p> </div>
                 <div style="margin-top: 25px">
-                    <button onclick="addAdvancedAction('pulse', [$('#pulseAmount').val(), $('#pulseInterval').val()])" style="background: var(--emojigreen)">Add</button>
+                    <button onclick="addAdvancedAction('pulse', [$('#pulseAmount').val(), $('#pulseInterval').val()])" style="background: var(--emojigreen)" actionConfirm="true">Add</button>
                 </div>
             </div>
         </div>
@@ -293,7 +292,7 @@
                 <div class="popupinput"> <p style="width: 100px; text-align: right; margin-right: 15px">Fade time:</p> <input id="bgFadetime" value="0.5" type="number"> <p>secs</p> </div>
                 <div style="margin-top: 25px">
                     <button onclick="$('#bgColor').val(defaultBG).trigger('input')" style="background: var(--emojired)">Reset</button>
-                    <button onclick="addAdvancedAction('bg', [$('#bgColor').val(), $('#bgFadetime').val()])" style="background: var(--emojigreen)">Add</button>
+                    <button onclick="addAdvancedAction('bg', [$('#bgColor').val(), $('#bgFadetime').val()])" style="background: var(--emojigreen)" actionConfirm="true">Add</button>
                 </div>
             </div>
         </div>
@@ -315,7 +314,7 @@
                 <p id="settingHelp" style="height: 36px; opacity: 50%" mobile="(tap on a setting for information)">(hover over a setting for information)</p>
                 <p id="settingInfo" style="height: 36px; display: none; padding: 0px 30px"></p>
                 <div class="settingList">
-                    <div class="extraSetting nomobile" title="Disables placing actions using single-key shortcuts"><input class="settingBox" inverted="true" type="checkbox" setting="noActionShortcuts"><p>Action shortcuts</p></div>
+                    <div class="extraSetting nomobile" title="Enables placing actions using single-key shortcuts"><input class="settingBox" inverted="true" type="checkbox" setting="noActionShortcuts"><p>Action shortcuts</p></div>
                     <div class="extraSetting" title="Disables most animations on the page (bouncing, pulsing, flashing, etc). Enable if playback is lagging"><input class="settingBox" type="checkbox" setting="noAnimations"><p>Disable Animations</p></div>
                     <div class="extraSetting" title="Automatically scrolls the screen during playback"><input class="settingBox" type="checkbox" setting="autoScroll"><p>Auto-scroll</p></div>
                     <div class="extraSetting" title="Pins the section buttons to the bottom of the screen"><input class="settingBox" type="checkbox" setting="pinSectionButtons"><p>Pin section controls</p></div>
@@ -342,6 +341,7 @@
                     <div class="shortcutSection">
                         <p class="groupName"><b>Action list</b></p>
                         <p><b>Left click:</b> Place action</p>
+                        <p><b>Right click:</b> Edit action</p>
                         <p><b>Shift + left click:</b> Place action at start</p>
                         <p><b>Right click:</b> Place action, skip popups</p>
                     </div>
@@ -353,7 +353,7 @@
                         <p><b>Drag:</b> Move icon</p>
 
                         <p><b>Shift + left click:</b> Duplicate (directly after)</p>
-                        <p><b>Shift + right click:</b> Duplicate (end of sequence)</p>
+                        <p><b>Shift (or alt) + right click:</b> Duplicate (end of sequence)</p>
                         <p><b>Shift + drag:</b> Duplicate to position</p>
 
                         <p><b>Scroll:</b> Adjust pitch or action</p>
@@ -397,7 +397,7 @@
 
     </body>
     
-    <script type="text/javascript" src="🗿.js?v=3" charset="UTF-8"></script>
-    <script type="text/javascript" src="▶.js?v=3" charset="UTF-8"></script>
-    <script type="text/javascript" src="💾.js?v=3" charset="UTF-8"></script>
+    <script type="text/javascript" src="🗿.js?v=7" charset="UTF-8"></script>
+    <script type="text/javascript" src="▶.js?v=7" charset="UTF-8"></script>
+    <script type="text/javascript" src="💾.js?v=7" charset="UTF-8"></script>
 </html>

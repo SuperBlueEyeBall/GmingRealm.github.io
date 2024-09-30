@@ -190,7 +190,8 @@ function loadSequence(data) {
                         element.append(`<p>${pitchVal > 0 ? "+" : ""}${pitchVal}</p>`)
                     }
 
-                    if (volVal) {
+                    if (volVal || volVal === 0
+                        ) {
                         element.attr('vol', volVal)
                         element.append(`<vol>${volVal}%</vol>`)
                     }

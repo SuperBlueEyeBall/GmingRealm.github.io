@@ -1,0 +1,24 @@
+<html lang="en">
+  <head>
+    <title>BitLife | GmingRealm</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: black;
+      }
+    </style>
+	<script src="TemplateData/UnityProgress.js"></script>
+    <script src="Build/UnityLoader.js"></script>
+    <script type="application/javascript" src="/js/main.js"></script>
+    <script>
+      var unityInstance = UnityLoader.instantiate("gameContainer", "Build/BitLife.json", {onProgress: UnityProgress});
+    </script>
+  </head>
+  <body>
+  <div class="webgl-content">
+      <div id="gameContainer" style="width: 100%; height: 100%;"></div>
+    </div>
+  </body>
+</html>

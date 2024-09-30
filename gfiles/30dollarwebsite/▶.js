@@ -1,5 +1,7 @@
 // hi hello this is the code for actually preloading and playing sequences
 
+let MAX_BPM_LIMIT = 20_000      // wow this seems suspiciously easy to redefine 
+
 // convert sequence to json
 function getSequenceData() {
     let sequenceData = $('#sequence div').map(function (index) {
@@ -123,7 +125,7 @@ function preloadSequence(sequence=getSequenceData()) {
                 // ⏩ change BPM
                 case "speed":
                     bpm = modifyNumber(bpm, val, x.operator)
-                    bpm = Number(clamp(bpm, 10, 10000).toFixed(4))
+                    bpm = Number(clamp(bpm, 5, MAX_BPM_LIMIT).toFixed(4))
                     actionObj.bpm = bpm
                     break;
 

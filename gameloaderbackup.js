@@ -1,60 +1,55 @@
+document.querySelector("title").innerHTML = "Google";
 
-if (!window.top.location.href.startsWith("https://skybase-alpha.github.io/")) {
-    document.querySelector("title").innerHTML = "Google";
-    function hidey() {
-        var theURL = prompt(
-            "Please enter a URL to show in your history instead of Shadow's Games\r\nMake sure to include https:// or http://\r\nLeave blank for Google Classroom"
-        );
-        var tabBar = prompt(
-            "Please select a tab disguise by typing the corresponding letter\r\nLeave blank for Google Classroom\r\nc - Google Classroom\r\ng - Google\r\nb - Blank\r\nt - Custom"
-        );
-        if (tabBar !== "c" && tabBar !== "g" && tabBar !== "t" && tabBar !== "b") {
-            var tabIcon = "https://ssl.gstatic.com/classroom/favicon.png";
-            var tabName = "Classes";
-        } else if (tabBar == "c") {
-            var tabIcon = "https://ssl.gstatic.com/classroom/favicon.png";
-            var tabName = "Classes";
-        } else if (tabBar == "g") {
-            var tabIcon = "https://google.com/favicon.ico";
-            var tabName = "Google";
-        } else if (tabBar == "t") {
-            var tabIcon = prompt("URL for icon:");
-            var tabName = prompt("Tab Name");
-        } else if (tabBar == "" || tabBar == null) {
-            var tabIcon = "https://ssl.gstatic.com/classroom/favicon.png";
-            var tabName = "Classes";
-        } else if (tabBar == "b") {
-            var tabIcon =
-                "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Antonia_Sautter_Creations.png/120px-Antonia_Sautter_Creations.png";
-            var tabName = "&lrm;";
-        }
-        function inFrame() {
-            try {
-                return window.self !== window.top;
-            } catch (e) {
-                return !0;
-            }
-        }
-        if (1 != inFrame()) {
-            var a = window.open("about:blank", "_blank");
-            a.document.documentElement.innerHTML =
-                "<!DOCTYPE html><html><title>" +
-                tabName +
-                '</title><link rel="icon" type="image/png" href=' +
-                tabIcon +
-                '><style>body {margin:0;}</style><body><iframe height="100%" width="100%" src="' +
-                window.location.href +
-                '"frameborder="0" allowfullscreen></iframe></body></html>';
-            if (theURL == "" || theURL == null) {
-                window.location.replace("https://classroom.google.com/h");
-            } else {
-                window.location.replace(theURL);
-            }
+function hidey() {
+    var theURL = prompt(
+        "Please enter a URL to show in your history instead of Shadow's Games\r\nMake sure to include https:// or http://\r\nLeave blank for Google Classroom"
+    );
+    var tabBar = prompt(
+        "Please select a tab disguise by typing the corresponding letter\r\nLeave blank for Google Classroom\r\nc - Google Classroom\r\ng - Google\r\nb - Blank\r\nt - Custom"
+    );
+    if (tabBar !== "c" && tabBar !== "g" && tabBar !== "t" && tabBar !== "b") {
+        var tabIcon = "https://ssl.gstatic.com/classroom/favicon.png";
+        var tabName = "Classes";
+    } else if (tabBar == "c") {
+        var tabIcon = "https://ssl.gstatic.com/classroom/favicon.png";
+        var tabName = "Classes";
+    } else if (tabBar == "g") {
+        var tabIcon = "https://google.com/favicon.ico";
+        var tabName = "Google";
+    } else if (tabBar == "t") {
+        var tabIcon = prompt("URL for icon:");
+        var tabName = prompt("Tab Name");
+    } else if (tabBar == "" || tabBar == null) {
+        var tabIcon = "https://ssl.gstatic.com/classroom/favicon.png";
+        var tabName = "Classes";
+    } else if (tabBar == "b") {
+        var tabIcon =
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Antonia_Sautter_Creations.png/120px-Antonia_Sautter_Creations.png";
+        var tabName = "&lrm;";
+    }
+    function inFrame() {
+        try {
+            return window.self !== window.top;
+        } catch (e) {
+            return !0;
         }
     }
-} else {
-    alert("this site is poopoo");
-    window.close();
+    if (1 != inFrame()) {
+        var a = window.open("about:blank", "_blank");
+        a.document.documentElement.innerHTML =
+            "<!DOCTYPE html><html><title>" +
+            tabName +
+            '</title><link rel="icon" type="image/png" href=' +
+            tabIcon +
+            '><style>body {margin:0;}</style><body><iframe height="100%" width="100%" src="' +
+            window.location.href +
+            '"frameborder="0" allowfullscreen></iframe></body></html>';
+        if (theURL == "" || theURL == null) {
+            window.location.replace("https://classroom.google.com/h");
+        } else {
+            window.location.replace(theURL);
+        }
+    }
 }
 function gameHide(gamePath) {
     var a = window.open("about:blank", "_blank");
@@ -71,6 +66,151 @@ function gameHide(gamePath) {
 var gamesText = `{
     "games":[
         {
+            "name": "Win11React",
+            "img": "img/win11react.png",
+            "path": "gfiles/win11react/"
+        },
+        {
+            "name": "v86 (GREAT EMULATOR)",
+            "img": "img/v86.png",
+            "path": "gfiles/v86/"
+        },
+        {
+            "name": "Pick Crafter",
+            "img": "img/pickcrafter.jpg",
+            "path": "gfiles/pickcrafter/"
+        },
+        {
+            "name": "Happy Wheels",
+            "img": "img/happywheels.png",
+            "path": "gfiles/happywheels/"
+        },
+        {
+            "name": "Adofai",
+            "img": "img/adofai.png",
+            "path": "gfiles/adofai/"
+        },
+        {
+            "name": "xx142-b2.exe",
+            "img": "img/virusgame.jpg",
+            "path": "gfiles/xx142-b2.exe/"
+        },
+        {
+            "name": "Knife Hit",
+            "img": "img/knifehit.jpg",
+            "path": "gfiles/knifehit/"
+        },
+        {
+            "name": "Death Run 3D",
+            "img": "img/dr3d.webp",
+            "path": "gfiles/deathrun3d/"
+        },
+        {
+            "name": "Minecraft Classic",
+            "img": "img/mcc.webp",
+            "path": "gfiles/mcclassic/"
+        },
+        {
+            "name": "Sandtrix",
+            "img": "img/sandtrix.png",
+            "path": "gfiles/sandtrix/"
+        },
+        {
+            "name": "Hole Io",
+            "img": "img/holeio.png",
+            "path": "gfiles/holeio/"
+        },
+        {
+            "name": "Geometry Dash Lite",
+            "img": "img/gdl.jpg",
+            "path": "gfiles/gdlite/"
+        },
+        {
+            "name": "Sonic The Hedgehog",
+            "img": "img/s1.png",
+            "path": "gfiles/sonicthehedgehog/"
+        },
+        {
+            "name": "Sonic The Hedgehog 2",
+            "img": "img/s2.png",
+            "path": "gfiles/sonicthehedgehog2/"
+        },
+        {
+            "name": "Sonic The Hedgehog 3",
+            "img": "img/s3.jpg",
+            "path": "gfiles/sonicthehedgehog3/"
+        },
+        {
+            "name": "Precision Client",
+            "img": "img/ps.png",
+            "path": "gfiles/precisionclient/"
+        },
+        {
+            "name": "State Io",
+            "img": "img/stateio.png",
+            "path": "gfiles/stateio/"
+        },
+        {
+            "name": "Time Shooter 1",
+            "img": "img/ts1.png",
+            "path": "gfiles/timeshooter1/"
+        },
+        {
+            "name": "Osu!Mania",
+            "img": "img/osu.jpg",
+            "path": "gfiles/osumania/"
+        },
+        {
+            "name": "Bad Time Simulator",
+            "img": "img/bts.jpg",
+            "path": "gfiles/badtimesimulator/"
+        },
+        {
+            "name": "Tron",
+            "img": "img/tron.jpg",
+            "path": "gfiles/tron/"
+        },
+        {
+            "name": "Bit Life",
+            "img": "img/bitlife.png",
+            "path": "gfiles/bitlife/"
+        },
+        {
+            "name": "Jetpack Joyride",
+            "img": "img/jetpackjoyride.png",
+            "path": "gfiles/jetpackjoyride/"
+        },
+        {
+            "name": "Fruit Ninja",
+            "img": "img/fruitninja.jpg",
+            "path": "gfiles/fruitninja/"
+        },
+        {
+            "name": "There Is No Game",
+            "img": "img/nogame.png",
+            "path": "gfiles/thereisnogame/"
+        },
+        {
+            "name": "Bloxorz",
+            "img": "img/bloxorz.png",
+            "path": "gfiles/bloxorz/"
+        },
+        {
+            "name": "Rise Higher",
+            "img": "img/risehigher.jpg",
+            "path": "gfiles/risehigher/"
+        },
+        {
+            "name": "Stack",
+            "img": "img/stack.png",
+            "path": "gfiles/stack/"
+        },
+        {
+            "name": "Worlds Hardest Game 2",
+            "img": "img/worldshardestgame2.png",
+            "path": "gfiles/worldshardestgame2/"
+        },
+        {
             "name":"Scratch Emulator",
             "img":"img/scratch.png",
             "path":"gfiles/scratchemu/"
@@ -81,7 +221,7 @@ var gamesText = `{
             "path":"gfiles/goi/"
         },
         {
-            "name":"Geometry Dash",
+            "name":"Scratch Geometry Dash",
             "img":"img/gd.jpg",
             "path":"gfiles/geodash/"
         },
@@ -104,11 +244,6 @@ var gamesText = `{
             "name":"Platformer Toolkit",
             "img":"img/pt.jpg",
             "path":"gfiles/platformer-toolkit/"
-        },
-        {
-            "name":"Sandtrix",
-            "img":"img/sandtrix.png",
-            "path":"gfiles/sandtrix/"
         },
         {
             "name":"terraria demake",
@@ -799,7 +934,42 @@ for (i in gameObject.games) {
     let elem4 = document.createElement("p");
     elem4.innerHTML = gameObject.games[i].name;
     elem2.appendChild(elem4);
+
+    // Add favorite icon
+    let favoriteIcon = document.createElement("div");
+    favoriteIcon.className = "favorite-icon";
+    elem2.appendChild(favoriteIcon);
+
+    // Add SVG icon
+    let svgIcon = document.createElement("img");
+    svgIcon.src = "img/star-off.svg"; // replace with your unfavorite svg path
+    svgIcon.className = "favorite-svg";
+    favoriteIcon.appendChild(svgIcon);
+
+    // Add event listener to toggle favorite state
+    favoriteIcon.addEventListener("click", function (event) {
+        event.stopPropagation(); // prevent the click event from propagating to the underlying link
+        event.preventDefault(); // prevent the default link behavior
+        if (favoriteIcon.classList.contains("favorited")) {
+            favoriteIcon.classList.remove("favorited");
+            svgIcon.src = "img/star-off.svg"; // replace with your unfavorite svg path
+            // Remove game data from local storage
+            let favorites = JSON.parse(localStorage.getItem("favorites"));
+            favorites = favorites.filter(function (game) {
+                return game.name !== gameObject.games[i].name;
+            });
+            localStorage.setItem("favorites", JSON.stringify(favorites));
+        } else {
+            favoriteIcon.classList.add("favorited");
+            svgIcon.src = "img/star-on.svg"; // replace with your favorite svg path
+            // Add game data to local storage
+            let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+            favorites.push(gameObject.games[i]);
+            localStorage.setItem("favorites", JSON.stringify(favorites));
+        }
+    });
 }
+
 const gamesContainer = document.getElementById("gameSelect");
 const searchBar = document.getElementById("search");
 // Listen for input event on the search bar
@@ -822,6 +992,7 @@ searchBar.addEventListener("input", (e) => {
         }
     }
 });
+
 // if (localStorage.getItem("hidden") == "y") {
 //   hidey();
 //   console.log("fff");

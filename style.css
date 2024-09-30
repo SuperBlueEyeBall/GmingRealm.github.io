@@ -117,6 +117,14 @@ header a:hover {
   text-decoration: none;
 }
 
+.hidetab {
+  text-decoration: none;
+}
+
+.hidetab:hover  {
+  cursor: pointer;
+  
+}
 
 #plus-button {
   border-radius: 10px;
@@ -136,6 +144,7 @@ header a:hover {
 
 #plus-button:hover {
   color: rgb(178, 201, 52);
+  cursor: pointer;
   /* Change color on hover */
 }
 
@@ -171,6 +180,7 @@ p {
   gap: 3%;
   flex-wrap: wrap;
   max-width: 100%;
+  stroke: yellow;
 }
 
 .game-button {
@@ -314,4 +324,50 @@ p {
 
 .nav-button:hover {
   background-color: #a1a1a1;
+}
+
+.game-button-container {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.favorite-icon {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-bottom: 65px;
+  margin-right: 10px;
+  width: 30px;
+  height: 30px;
+  background-size: 300% 300%;
+  border-radius: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(3px);
+    /* Apply blur to the background */
+  -webkit-backdrop-filter: blur(3px);
+    /* Support for Safari */
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+.favorite-svg {
+  width: 24px;
+  height: 24px;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.favorited .favorite-svg {
+  width: 24px;
+    height: 24px;
+    max-width: 100%;
+    max-height: 100%;
 }

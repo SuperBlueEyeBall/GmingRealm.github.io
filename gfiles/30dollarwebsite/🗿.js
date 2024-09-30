@@ -35,22 +35,23 @@ const actions = [
 actions.forEach(x => { $('#actions').append(`<div class="action" action="${x.name}" info="${x.action}" key="${x.shortcut.toUpperCase()}"><img action="${x.name}" alt="${x.action}" src="${x.image}">${x.amount ? "<p>+</p>" : ""}</div>`) })
 
 let soundList = []
-fetch("./sounds.json?a=1").then(x => x.json()).then(list => {
+fetch("./sounds.json?v=6").then(x => x.json()).then(list => {
     soundList = list
     $('#iconboxLoading').hide()
     $('#icons').removeClass('loadingIcons')
     list.forEach(x => {
-        let imageLink = (!x.emoji && x.id.match(/[a-z0-9]/i)) ? `icons/${x.img || x.id}.png` : `icons/${(x.emoji || x.id).codePointAt(0).toString(16)}.svg`
+        let imageLink = (!x.emoji && x.id.match(/[a-z0-9]/i)) ? `icons/${x.img || x.id}.png` : `https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/${(x.emoji || x.id).codePointAt(0).toString(16)}.svg`
         $('#icons').append(`<div class="sound" soundName="${x.name}" soundOrigin="${x.source || ""}" sound="sounds/${x.id}.wav" str="${x.id}" ${(x.tags || []).map(x => "tag_" + x).join(" ")}><img alt="${x.name}" src="${imageLink}"></div>`)
         lastGroup = x.group
-
-        if (settings.proMode) {
-            $('.hotbarTab').first().trigger('click')
-            $('#proHotbar').show()
-            $('#extraPadding').show()
-            buildHotbar()
-        }
     })
+
+    if (settings.proMode) {
+        $('.hotbarTab').first().trigger('click')
+        $('#proHotbar').show()
+        $('#extraPadding').show()
+        buildHotbar()
+    }
+
 }).catch((e) => {
     console.error(e)
     $('#icons img').hide()
@@ -104,7 +105,7 @@ $('#sequence').sortable({
     delay: mobile ? 1500 : 0,
     forcePlaceholderSize: true, forceHelperSize: true,
     start: function(event, ui) {
-        cloneSort = shiftHeld
+        cloneSort = shiftHeld || altHeld
         if (cloneSort) ui.item.addClass('shiftPlaceholder')
         ui.placeholder.html(ui.item.html())
     },
@@ -153,7 +154,7 @@ $(document).on('mouseleave', '#actions div', function () {
 })
 
 $(document).on('mouseover', '#sequence div', function () {
-    if (shiftHeld) $(this).addClass('holdingShift')
+    if (shiftHeld || altHeld) $(this).addClass('holdingShift')
 })
 
 $(document).on('mouseleave', '#sequence div', function () {
@@ -234,17 +235,29 @@ $(document).on('click contextmenu', '#actions div, #hotbarNotes div.action', fun
         }
         else {
             if (shiftHeld) stash.attr("addToStart", true)
-            return $(`#action_${actionName}`).css('display', 'flex')
+            let actionPopup = $(`#action_${actionName}`)
+            actionPopup.css('display', 'flex')
+
+            // action editing - fill values
+            if (replaceAction && replaceAction.attr("action") == actionName) {
+                if (action.twoValues) {
+                    $(actionPopup.find('input').first().val(replaceAction.attr("val1"))).trigger('input')
+                    $(actionPopup.find('input').last().val(replaceAction.attr("val2"))).trigger('input')
+                }
+                else $(actionPopup.find('input').first().val(replaceAction.attr("amount"))).trigger('input')
+            }
+
+            return
         }
     }
     else if (action.isTarget) {
         let nextFree = 1
         while ($(`.action[action=jump][amount=${nextFree}]`).length && $(`.action[action=target][amount=${nextFree}]`).length) nextFree++
-        added.attr("amount", nextFree).attr("min", action.set[0]).attr("max", action.set[1]).append(`<p>${nextFree}</p>`)
+        added.attr("amount", nextFree).append(`<p>${nextFree}</p>`)
     }
     else if (action.set) {
         if (action.showPlus) added.attr("num", "plus")
-        added.attr("amount", action.default).attr("min", action.set[0]).attr("max", action.set[1]).append(`<p>${getPrefix(added.attr("num"), action.default)}${action.default}</p>`)
+        added.attr("amount", action.default).append(`<p>${getPrefix(added.attr("num"), action.default)}${action.default}</p>`)
     }
     if (action.stopSounds) stopSounds()
     if (!settings.noAnimations) added.addClass('placed')
@@ -293,13 +306,15 @@ function addAction(action, input, num="set", element=stash, dontAppend=false) {
     amount = clamp(amount, actionData[0], actionData[1])
     let prefix = getPrefix(num, amount)
     let amountStr = prefix + String(amount) + (actionData[3] || "")
-    element.attr("min", actionData[0]).attr("max", actionData[1])
+    //element.attr("min", actionData[0]).attr("max", actionData[1])
     if (num != "set") element.attr("num", num)
     if (!isNaN(actionData[2])) element.attr("step", actionData[2])
     if (actionData[3]) element.attr("suffix", actionData[3])
     if (!settings.noAnimations) element.addClass('placed')
     element.attr("amount", amount).find('p').text(amountStr)
-    if (!dontAppend) addToSequence(element)
+
+    if (replaceAction) editAction(element)
+    else if (!dontAppend) addToSequence(element)
     else return element
     updateRecent("." + action)
     if (stash) stash = null
@@ -322,10 +337,17 @@ function addAdvancedAction(action, inputs, element=stash, dontAppend=false) {
     if (foundAction.colorMode) element.find('p').html(`<span style="color: ${cleanInputs[0]}; margin-right: 2.5px">⬤</span> <span>${cleanInputs[1]}<span>`)
     else element.find('p').text(`${cleanInputs[0]}, ${cleanInputs[1]}`)
 
-    if (!dontAppend) addToSequence(element)
+    if (replaceAction) editAction(element)
+    else if (!dontAppend) addToSequence(element)
     else return element
     if (stash) stash = null
     $('.popup').hide()
+}
+
+function editAction(element) {
+    replaceAction.replaceWith(element)
+    replaceAction.runAnimation('placed')
+    replaceAction = null
 }
 
 function syncSections() {
@@ -427,7 +449,7 @@ $(document).on('click contextmenu', '#sequence section', function (e) {
 $(document).on('click', '#sequence div', function () {
     if (ctrlHeld) return
     cancel()
-    if (shiftHeld) {
+    if (shiftHeld || altHeld) {
         let copy = $(this).clone()
         if (!settings.noAnimations) copy.addClass('placed')
         copy.insertAfter($(this))
@@ -441,20 +463,33 @@ $(document).on('click', '#sequence div', function () {
 })
 
 $(document).on('contextmenu', '#sequence div', function () {
+    if (ctrlHeld || active) return false
+
     let snd = $(this).attr("sound")
-    if (ctrlHeld) return
-    else if (shiftHeld) { // clone and append to end
+    let acn = $(this).attr("action")
+    if (shiftHeld || altHeld) { // clone and append to end
         let copy = $(this).clone()
         if (!settings.noAnimations) copy.addClass('placed')
         addToSequence(copy, true, Number($(this).parent().attr("group")))
         playSound(snd, { pitch: getPitch($(this)), volume: getVolume($(this)), stopPrevious: true})
+        return false
     }
 
-    if (!active && snd) {
+    else if ($(this).hasClass("action") && acn) {
+        let foundAction = actions.find(x => x.name == acn)
+        if (!foundAction || !foundAction.amount) return false
+        replaceAction = $(this)
+        let actionBtn = $(`#actions div[action="${acn}"]`)
+        if (!actionBtn.length) return
+        actionBtn.trigger("click")
+        return false
+    }
+
+    else if (!active && snd) {
         if (!settings.noAnimations) $(this).runAnimation('placed')
         playSound(snd, { pitch: getPitch($(this)), volume: getVolume($(this)), stopPrevious: true})
+        return false
     }
-    return false
 })
 
 // hotbar tabs
@@ -616,8 +651,19 @@ function stopIntro() {
     activeIntro = null
 }
 
-document.addEventListener('scroll', function (event) { if ($(event.target).is("#sequence div")) $(event.target).scrollTop(200) }, true);
-$('#sequence').on('DOMSubtreeModified', function(event) { $('#sequence div').scrollTop(200) });
+// stolen from tempooptimizer who fixed scrolling years ago and never told me, LMAO
+// code prevents scrolling on icons from scrolling the whole page
+// i could not tell you how this works. i didnt even know javascript had fucking "void"
+const sequenceDiv = document.getElementById("sequence");
+$(sequenceDiv).off("DOMSubtreeModified");
+sequenceDiv.addEventListener("wheel", (ev) => {
+    var amogus;
+    if (ev.target instanceof HTMLElement &&
+        (ev.target.classList.contains("sound") || ev.target.classList.contains("action") ||
+            ((amogus = ev.target.parentElement) === null || amogus === void 0 ? void 0 : (amogus.classList.contains("sound") || amogus.classList.contains("action"))))) {
+        ev.preventDefault();
+    }
+});
 
 // https://stackoverflow.com/a/45036752
 $.fn.runAnimation = function(className) {
@@ -630,6 +676,7 @@ $.fn.runAnimation = function(className) {
 }
 
 let stash = null
+let replaceAction = null
 let defaultTempo = 300
 let defaultVolume = 100
 
@@ -748,7 +795,7 @@ async function fetchSound(name) {
 }
 
 async function playSound(name, soundSettings={}) {
-    if (name == "sounds/_pause.wav") return
+    if (!name || name == "sounds/_pause.wav") return
     if (currentlyFetching[name] && !soundSettings.playAt) return
     if (!sounds[name]) await fetchSound(name)
     let snd = new AudioBufferSourceNode(soundcloud, { buffer: sounds[name], playbackRate: soundSettings.pitch || 1 })
@@ -857,9 +904,17 @@ $(document).on('keydown', function(e) {
         }
     }
 
-    else if (e.which == 27) { // esc
-        $('.popup:not(.importantPopup)').hide()
+    // popups
+    else {
+        if (e.which == 27) { // esc
+            $('.popup:not(.importantPopup)').hide()
+        }
+
+        else if (e.which == 13) { // enter
+            $('button[actionConfirm=true]:visible').first().click()
+        }
     }
+
 });
 
 function updateKeys(e) {
@@ -868,7 +923,7 @@ function updateKeys(e) {
     shiftHeld = e.shiftKey;
     altHeld = e.altKey;
     ctrlHeld = e.ctrlKey;
-    $('#sequence div:hover').trigger(shiftHeld ? 'mouseover' : 'mouseleave')
+    $('#sequence div:hover').trigger((shiftHeld || altHeld) ? 'mouseover' : 'mouseleave')
     $('#sequence section:not(.ctrlHeld):hover').trigger(ctrlHeld ? 'mouseover' : 'mouseleave')
 }
 
@@ -879,6 +934,7 @@ $(document).on('click', '.popup:not(.importantPopup)', function(e) {
     if ($(e.target).is('.popup')) {
         $('.popup').hide();
         stash = null
+        replaceAction = null
     }
 });
 
@@ -925,7 +981,7 @@ $(document).on('change click', '.settingBox', function() {
     localStorage["🗿"] = JSON.stringify(settings)
 
     if (settingName == "oldSaving") {
-        if (sexySaving) disableNewSaving()
+        if (val) disableNewSaving()
         else enableNewSaving()
     }
 

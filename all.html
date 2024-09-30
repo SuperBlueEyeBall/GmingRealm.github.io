@@ -115,6 +115,37 @@
     .shh:hover {
       background-color: #1a0d33;
     }
+
+
+    .game-button {
+      background: rgba(255, 255, 255, 0.3);
+      backdrop-filter: blur(3px);
+      /* Apply blur to the background */
+      -webkit-backdrop-filter: blur(3px);
+      /* Support for Safari */
+      transition-duration: 0.3s;
+      transform: translate(0px, 0px);
+      height: 75px;
+      width: 200px;
+      font-size: 15px;
+      object-fit: cover;
+    }
+
+    .game-button img {
+      height: 75px;
+      width: 200px;
+      font-size: 15px;
+      object-fit: cover;
+    }
+
+    .game-button a {
+      text-decoration: none;
+    }
+
+    .game-button:hover {
+      transition-duration: 0.3s;
+      transform: translate(0px, -10px);
+    }
   </style>
 </head>
 
@@ -132,7 +163,7 @@
     <a class="linkmenu" href="/">Gming Realm</a>
     <a class="linkmenu" href="https://sites.google.com/students.nisd.net/classy/home?authuser=1">Google Site</a>
     <a class="linkmenu" href="dizzy.html">Discord</a>
-    <a class="linkmenu" onclick="hidey()">Hide Tab</a>
+    <a class="hidetab" onclick="hidey()">Hide Tab</a>
     <a class="linkmenu" href="savman.html">Settings</a>
     <a class="linkmenu" href="feedback.html">Feedback/Requests</a>
     <a class="linkmenu" href="sites.html">Sites</a>
@@ -145,35 +176,42 @@
     </div>
     <div class="button-container">
       <h1>Some random stuff:</h1>
-      <button class="nav-button" onclick="window.location.href='devtooIs/'">Dev TooIs Emulators and Enablers</button>
-      <button class="nav-button" onclick="window.location.href='copyandpaste.html'">Copy & Paste Stuff (Very cool, you should check it out.)</button>
-      <button class="nav-button" onclick="window.location.href='coderunner.html'">Code executor (python, js,
+      <button class="game-button" onclick="window.location.href='devtooIs/'">Dev TooIs Emulators and Enablers</button>
+      <button class="game-button" onclick="window.location.href='copyandpaste.html'">Copy & Paste Stuff (Very cool, you
+        should check it out.)</button>
+      <button class="game-button" onclick="window.location.href='coderunner.html'">Code executor (python, js,
         HTML)</button>
-      <button class="nav-button" onclick="window.location.href='credits.html'">Credits</button>
-      <button class="nav-button" onclick="window.location.href='roblos.html'">RobIox stuff</button>
-      <button class="nav-button" onclick="window.location.href='bookmarksgenerator.html'">Bookmark HTML file
+      <button class="game-button" onclick="window.location.href='credits.html'">Credits</button>
+      <button class="game-button" onclick="window.location.href='roblos.html'">RobIox stuff</button>
+      <button class="game-button" onclick="window.location.href='bookmarksgenerator.html'">Bookmark HTML file
         generator</button>
-      <button class="nav-button" onclick="window.location.href='zalgotextgenerator.html'">Zalgo text generator (Experimental + Beta Testing)</button>
+      <button class="game-button" onclick="window.location.href='zalgotextgenerator.html'">Zalgo text generator
+        (Experimental + Beta Testing)</button>
       <br>
       <h1>Tutorials:</h1>
-      <button class="nav-button" onclick="window.location.href='tutorials/index.html'">Main Tutorials Page</button>
-      <button class="nav-button" onclick="window.location.href='tutorials/mainh4cks.html'">Main H4CKS page (gimkit, blooket, edpuzzle, and more)</button>
-      <button class="nav-button" onclick="window.location.href='tutorials/makeyourownlink.html'">How to make a pr0xy link</button>
-      <button class="nav-button" onclick="window.location.href='tutorials/runjavascript.html'">How to enable & run javascript on sites</button>
-      <br><button class="nav-button" onclick="window.location.href='tutorials/wifipass.html'">How to get WiFi password (Works for all
+      <button class="game-button" onclick="window.location.href='tutorials/index.html'">Main Tutorials Page</button>
+      <button class="game-button" onclick="window.location.href='tutorials/mainh4cks.html'">Main H4CKS page (gimkit,
+        blooket, edpuzzle, and more)</button>
+      <button class="game-button" onclick="window.location.href='tutorials/makeyourownlink.html'">How to make a pr0xy
+        link</button>
+      <button class="game-button" onclick="window.location.href='tutorials/runjavascript.html'">How to enable & run
+        javascript on sites</button>
+      <br><button class="game-button" onclick="window.location.href='tutorials/wifipass.html'">How to get WiFi password
+        (Works for all
         networks, even school WiFi)</button>
     </div>
-    <br><div>
+    <br>
+    <div>
       <h1>Stuff thats already on the top bar</h1>
-      <button class="nav-button" onclick="window.location.href='/'">Home page</button>
-      <button class="nav-button" onclick="window.location.href='tutorials/index.html'">Tutorials (NEW)</button>
-      <button class="nav-button"
+      <button class="game-button" onclick="window.location.href='/'">Home page</button>
+      <button class="game-button" onclick="window.location.href='tutorials/index.html'">Tutorials (NEW)</button>
+      <button class="game-button"
         onclick="window.location.href='https://sites.google.com/students.nisd.net/classy/home?authuser=1'">Google
         Site</button>
-      <button class="nav-button" onclick="window.location.href='dizzy.html'">Discord</button>
-      <button class="nav-button" onclick="window.location.href='savman.html'">Settings</button>
-      <button class="nav-button" onclick="window.location.href='feedback.html'">Feedback/Requests</button>
-      <button class="nav-button" onclick="window.location.href='sites.html'">Sites</button>
+      <button class="game-button" onclick="window.location.href='dizzy.html'">Discord</button>
+      <button class="game-button" onclick="window.location.href='savman.html'">Settings</button>
+      <button class="game-button" onclick="window.location.href='feedback.html'">Feedback/Requests</button>
+      <button class="game-button" onclick="window.location.href='sites.html'">Sites</button>
     </div>
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     <button class="shh" onclick="window.location.href='FREEDOM/index.html'">Shhh...</button>
@@ -185,16 +223,17 @@
         });
       </script>
     </div>
-  <script>
-    window.addEventListener('scroll', function () {
-      if (window.scrollY > 0) {
-        document.body.classList.add('scrolled');
-      } else {
-        document.body.classList.remove('scrolled');
-      }
-    });
-  </script>
-  <script src="settingsloader.js" defer></script>
+    <script>
+      window.addEventListener('scroll', function () {
+        if (window.scrollY > 0) {
+          document.body.classList.add('scrolled');
+        } else {
+          document.body.classList.remove('scrolled');
+        }
+      });
+    </script>
+    <script src="settingsloader.js" defer></script>
+    <script src="hidey.js"></script>
 </body>
 
 </html>

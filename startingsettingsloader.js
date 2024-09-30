@@ -34,6 +34,21 @@
   backgroundDiv.style.transform = `rotate(${settings.rotate}deg)`;  // Apply rotation
   backgroundDiv.style.backgroundSize = settings.fitToViewport ? '100% auto' : `${settings.imageSize}%`;
 
+  // ...
+
+  // Apply header color
+  document.querySelector('header').style.backgroundColor = settings.headerColor;
+  // document.querySelector('header').style.boxShadow = 0,2px,5px,rgba(0, 0, 0, 0.1);
+
+
+  // Apply header font color (using font color settings)
+  document.querySelector('header').style.color = settings.fontColor;
+
+  // Apply game block font color to the body
+  document.body.style.color = settings.gameblockFontColor;
+
+  // ...
+
   // Apply background image or gradient to the #background div
   if (settings.backgroundURL) {
     backgroundDiv.style.backgroundImage = `url(${settings.backgroundURL})`;
