@@ -47,6 +47,8 @@
   // Apply game block font color to the body
   document.body.style.color = settings.gameblockFontColor;
 
+  document.body.style.color = settings.mainFontColor || settings.gameblockFontColor;
+
   // ...
 
   // Apply background image or gradient to the #background div
