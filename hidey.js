@@ -43,7 +43,7 @@ function hidey() {
         window.location.replace(theURL);
     }
 }
-
+/*
 // Set tab name and favicon
 
 // Function to set tab name
@@ -103,3 +103,4 @@ function setTabFavicon() {
 // Call functions
 setTabName();
 setTabFavicon();
+*/
