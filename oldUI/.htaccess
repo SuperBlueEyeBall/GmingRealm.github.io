@@ -1,0 +1,2 @@
+AddType application/octet-stream unityweb
+AddType application/json json

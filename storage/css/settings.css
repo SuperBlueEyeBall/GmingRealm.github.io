@@ -1,37 +1,37 @@
-@import url('/storage/css/themes.css');
+@import url('themes.css');
 
 :root {
-    --background-image: url('/images/backgrounds/seraph/settingsbg.jpg');
+    --background-image: url('../../images/backgrounds/GmingRealm/settingsbg.jpg');
 }
 :root.theme-azurite {
-    --background-image: url('/images/backgrounds/azure/settingsbg.jpg');
+    --background-image: url('../../images/backgrounds/azure/settingsbg.jpg');
 }
 :root.theme-retro {
-    --background-image: url('/images/backgrounds/retro/settingsbg.jpg');
+    --background-image: url('../../images/backgrounds/retro/settingsbg.jpg');
 }
 :root.theme-cosmic {
-    --background-image: url('/images/backgrounds/cosmic/settingsbg.jpg');
+    --background-image: url('../../images/backgrounds/cosmic/settingsbg.jpg');
 }
 :root.theme-molten {
-    --background-image: url('/images/backgrounds/molten/settingsbg.jpg');
+    --background-image: url('../../images/backgrounds/molten/settingsbg.jpg');
 }
 :root.theme-amethyst {
-    --background-image: url('/images/backgrounds/amethyst/settingsbg.jpg');
+    --background-image: url('../../images/backgrounds/amethyst/settingsbg.jpg');
 }
 :root.theme-ethereal {
-    --background-image: url('/images/backgrounds/ethereal/settingsbg.jpg');
+    --background-image: url('../../images/backgrounds/ethereal/settingsbg.jpg');
 }
 :root.theme-misinformation {
-    --background-image: url('/images/backgrounds/misinformation/settingsbg.gif');
+    --background-image: url('../../images/backgrounds/misinformation/settingsbg.gif');
 }
 :root.theme-subzero {
-    --background-image: url('/images/backgrounds/subzero/settingsbg.jpg');
+    --background-image: url('../../images/backgrounds/subzero/settingsbg.jpg');
 }
 :root.theme-metro {
-    --background-image: url('/images/backgrounds/metro/settingsbg.jpg');
+    --background-image: url('../../images/backgrounds/metro/settingsbg.jpg');
 }
 :root.theme-ghostly {
-    --background-image: url('/images/backgrounds/ghostly/settingsbg.jpg');
+    --background-image: url('../../images/backgrounds/ghostly/settingsbg.jpg');
 }
 
 html, body {

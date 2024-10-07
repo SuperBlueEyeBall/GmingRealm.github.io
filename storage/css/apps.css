@@ -1,38 +1,38 @@
-@import url('/storage/css/themes.css');
+@import url('themes.css');
 
 :root {
-    --background-image: url('/images/backgrounds/seraph/appsbg.jpg');
+    --background-image: url('../../images/backgrounds/GmingRealm/appsbg.jpg');
     --hover-color: #a19b9b;
 }
 :root.theme-azurite {
-    --background-image: url('/images/backgrounds/azure/appsbg.jpg');
+    --background-image: url('../../images/backgrounds/azure/appsbg.jpg');
 }
 :root.theme-retro {
-    --background-image: url('/images/backgrounds/retro/appsbg.jpg');
+    --background-image: url('../../images/backgrounds/retro/appsbg.jpg');
 }
 :root.theme-cosmic {
-    --background-image: url('/images/backgrounds/cosmic/appsbg.jpg');
+    --background-image: url('../../images/backgrounds/cosmic/appsbg.jpg');
 }
 :root.theme-molten {
-    --background-image: url('/images/backgrounds/molten/appsbg.jpg');
+    --background-image: url('../../images/backgrounds/molten/appsbg.jpg');
 }
 :root.theme-amethyst {
-    --background-image: url('/images/backgrounds/amethyst/appsbg.jpg');
+    --background-image: url('../../images/backgrounds/amethyst/appsbg.jpg');
 }
 :root.theme-ethereal {
-    --background-image: url('/images/backgrounds/ethereal/appsbg.jpg');
+    --background-image: url('../../images/backgrounds/ethereal/appsbg.jpg');
 }
 :root.theme-misinformation {
-    --background-image: url('/images/backgrounds/misinformation/appsbg.gif');
+    --background-image: url('../../images/backgrounds/misinformation/appsbg.gif');
 }
 :root.theme-subzero {
-    --background-image: url('/images/backgrounds/subzero/appsbg.jpg');
+    --background-image: url('../../images/backgrounds/subzero/appsbg.jpg');
 }
 :root.theme-metro {
-    --background-image: url('/images/backgrounds/metro/appsbg.jpg');
+    --background-image: url('../../images/backgrounds/metro/appsbg.jpg');
 }
 :root.theme-ghostly {
-    --background-image: url('/images/backgrounds/ghostly/appsbg.jpg');
+    --background-image: url('../../images/backgrounds/ghostly/appsbg.jpg');
     --hover-color: #d2c4c4;
 }
 

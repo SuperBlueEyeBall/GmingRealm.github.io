@@ -55,7 +55,7 @@ The owner of this repository is SuperBlueEyeball, who has made pretty much every
 
 ### Other contributors
 
-* Seraph V10
+* GmingRealm V10
 > Inspiration, games, and code support (code not directly taken)
 ---
 * 3kh0

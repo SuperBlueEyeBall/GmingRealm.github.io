@@ -1,6 +1,20 @@
 <!DOCTYPE html>
 <html lang="en" _manifest="main.appcache">
   <head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7FN7LEVWXD"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-7FN7LEVWXD');
+    </script>
+
+    <title>Wall Smash | GmingRealm</title>
+    <link rel="shortcut icon" href="../../images/ico.ico" type="image/x-icon">
+    <script src="../../storage/js/cloak.js"></script>
+
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="viewport" content="initial-scale=1.0" />
@@ -21,7 +35,8 @@
       property="og:description"
       content="WallSmash is a completely free, multi-ball infite brick breaker game with global high scores. Compete with thousands of users for your spot on the leader board." />
 
-    <title>WALLSMASH | The best game you've ever seen.</title>
+    <title>Wall Smash</title>
+		<style>.chat{display:none;opacity:0;}#header{display:none;opacity:0;}#header_toggle{display:none;opacity:0;}#chat_toggle{display:none;opacity:0;}</style>
   </head>
   <body>
     <div class="game">
@@ -60,8 +75,8 @@
           <div>Personal Best: <span id="record">0</span></div>
           <div class="spacer"></div>
           <div class="button" id="end_button">End Turn Early</div>
-          <div class="button" id="header_toggle">Hide Header</div>
-          <div class="button" id="chat_toggle">Hide Chat</div>
+          <div class="button" id="header_toggle"></div>
+          <div class="button" id="chat_toggle">H</div>
         </div>
       </div>
       <div class="canvas-chat-wrap">
@@ -84,7 +99,7 @@
 						<b>see the stars</b>?</div> -->
       </div>
     </div>
-    <script type="text/javascript" src="./bundle.804bae11.js"></script>
+    <script type="text/javascript" src="bundle.804bae11.js"></script>
     <script>
       (function (i, s, o, g, r, a, m) {
         i["GoogleAnalyticsObject"] = r;
@@ -102,7 +117,7 @@
         window,
         document,
         "script",
-        "https://www.google-analytics.com/analytics.js",
+        "",
         "ga"
       );
 

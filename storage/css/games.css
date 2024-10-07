@@ -1,38 +1,38 @@
-@import url('/storage/css/themes.css');
+@import url('themes.css');
 
 :root {
-    --background-image: url('/images/backgrounds/seraph/gamebg.jpg');
+    --background-image: url('../../images/backgrounds/GmingRealm/gamebg.jpg');
     --border-color1: #a19b9b;
 }
 :root.theme-azurite {
-    --background-image: url('/images/backgrounds/azure/gamesbg.jpg');
+    --background-image: url('../../images/backgrounds/azure/gamesbg.jpg');
 }
 :root.theme-retro {
-    --background-image: url('/images/backgrounds/retro/gamesbg.jpg');
+    --background-image: url('../../images/backgrounds/retro/gamesbg.jpg');
 }
 :root.theme-cosmic {
-    --background-image: url('/images/backgrounds/cosmic/gamesbg.jpg');
+    --background-image: url('../../images/backgrounds/cosmic/gamesbg.jpg');
 }
 :root.theme-molten {
-    --background-image: url('/images/backgrounds/molten/gamesbg.jpg');
+    --background-image: url('../../images/backgrounds/molten/gamesbg.jpg');
 }
 :root.theme-amethyst {
-    --background-image: url('/images/backgrounds/amethyst/gamesbg.jpg');
+    --background-image: url('../../images/backgrounds/amethyst/gamesbg.jpg');
 }
 :root.theme-ethereal {
-    --background-image: url('/images/backgrounds/ethereal/gamesbg.jpg');
+    --background-image: url('../../images/backgrounds/ethereal/gamesbg.jpg');
 }
 :root.theme-misinformation {
-    --background-image: url('/images/backgrounds/misinformation/gamesbg.gif');
+    --background-image: url('../../images/backgrounds/misinformation/gamesbg.gif');
 }
 :root.theme-subzero {
-    --background-image: url('/images/backgrounds/subzero/gamesbg.jpg');
+    --background-image: url('../../images/backgrounds/subzero/gamesbg.jpg');
 }
 :root.theme-metro {
-    --background-image: url('/images/backgrounds/metro/gamesbg.jpg');
+    --background-image: url('../../images/backgrounds/metro/gamesbg.jpg');
 }
 :root.theme-ghostly {
-    --background-image: url('/images/backgrounds/ghostly/gamesbg.jpg');
+    --background-image: url('../../images/backgrounds/ghostly/gamesbg.jpg');
     --border-color1: #d2c4c4;
 }
 
