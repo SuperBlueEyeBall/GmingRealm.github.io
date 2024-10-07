@@ -1,64 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no"/>
 
-<!doctype html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<title>Classes</title>
-		<link rel="stylesheet" href="cubefield.css">
-    <!-- THREE.JS -->
-		<script src="three.js"></script>
-    <!-- CLASSES -->
-		<script src="cube.js"></script>
-		<link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
-		<link rel="icon" href="https://ssl.gstatic.com/classroom/favicon.png">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7FN7LEVWXD"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-7FN7LEVWXD');
+    </script>
+
+    <title>Cubefield | GmingRealm</title>
+    <link rel="shortcut icon" href="../../images/ico.ico">
+    <script src="../../storage/js/cloak.js"></script>
+
+    <style>
+        body {
+            background-color: black;
+        }
+    </style>
+  
+
+    <link rel="stylesheet" href="assets/app.css" type="text/css"/>
 </head>
 <body>
-  <button class="newGame" id="newGame" type="button" onclick="gameReset()">just press space</button>
-  <div class="score" id="score">0.0</div>
-  <div class="highscore">Highscore:<br><span id="highScore">15.0</span></div>
-  <div class="instr">Press P to pause<br>Press esc to leave<br>Press space to reset</div>
-  <div class="info" id="info">
-	  <br><p style="font-family: 'Raleway';"><br><br><br><br></p>
-  </div>
-  <div class="settings settingsVis" id="settings">
-    <div style="margin:0 auto;height:150px;width:100%;max-width:1398px">
-        <div class="group" id="difficulty">
-            <h3>Difficulty</h3>
-            <div class="select focus" onmousedown="updateDiff(0)" style="background-color:rgb(26, 139, 113)">Rookie</div>
-            <div class="select" onmousedown="updateDiff(1)" style="background-color:rgb(100, 215, 80);color:black;">Skilled</div>
-            <div class="select" onmousedown="updateDiff(2)" style="background-color:rgb(11, 67, 88)">Master</div>
-        </div>
-        <div class="group" id="camera">
-            <h3>Camera</h3>
-            <div class="select focus" onmousedown="updateCam(0)" style="background-color:rgb(26, 139, 113)">3rd Person</div>
-            <div class="select" onmousedown="updateCam(1)" style="background-color:rgb(100, 215, 80);color:black;">2nd Person?</div>
-            <div class="select" onmousedown="updateCam(2)" style="background-color:rgb(11, 67, 88)">1st Person</div>
-        </div>
-        <div class="group" id="pauseImage">
-            <h3>Pause</h3>
-            <div class="select focus" onmousedown="pauseImage(0)" style="background-color:rgb(26, 139, 113)">Classroom</div>
-            <div class="select" onmousedown="pauseImage(1)" style="background-color:rgb(100, 215, 80);color:black;">SIS</div>
-            <div class="select" onmousedown="pauseImage(2)" style="background-color:rgb(11, 67, 88)">Spanish</div>
-        </div>
-        <div class="group" id="block">
-            <h3>Blocks</h3>
-            <div class="select focus" onmousedown="updateBlock(0)" style="background-color:rgb(26, 139, 113)">Normal</div>
-            <div class="select" onmousedown="updateBlock(1)" style="background-color:rgb(100, 215, 80);color:black;">Falling</div>
-            <div class="select" onmousedown="updateBlock(2)" style="background-color:rgb(11, 67, 88)">Pop up</div>
-        </div>
-        <div class="group" id="bounce">
-            <h3>Bounce</h3>
-            <div class="select focus" onmousedown="updateBounce(0)" style="background-color:rgb(26, 139, 113)">None</div>
-            <div class="select" onmousedown="updateBounce(1)" style="background-color:rgb(100, 215, 80);color:black;">Enough</div>
-            <div class="select" onmousedown="updateBounce(2)" style="background-color:rgb(11, 67, 88)">Broken</div>
-        </div>
-    </div>
-  </div>
-  <div class="pause" id="pause">
-      <div class="menu" onmousedown="returnToMenu()">Return to Menu</div>
-      <div class="unpause" onmousedown="pauseGameScreen()">Resume</div>
-  </div>
-  <!-- js code -->
-  <script src="main.js"></script>
+<div id="gameContainer"></div>
+<div id="gui"></div>
+
+<script type="text/javascript">
+    var gameName = "cubefield.min.js";
+
+    //This all here is for cache busting;
+    function addScript(src, buster, callback) {
+        var s = document.createElement('script');
+        s.setAttribute('src', src + '?v=' + buster);
+        if (typeof callback === 'function') {
+            s.onload = callback;
+        }
+        document.body.appendChild(s);
+    }
+
+    addScript('version.js', Date.now(), function () {
+        addScript(gameName, version, function () {
+            /**
+             * Here we create the game
+             */
+            ga = () => {};
+        })
+    })
+</script>
+    <script src="/js/tab_cloak.js"></script>
+
 </body>
 </html>

@@ -1,2 +1,1 @@
-AddType application/octet-stream unityweb
-AddType application/json json
+ErrorDocument 404 /404.html

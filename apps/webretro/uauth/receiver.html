@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-7FN7LEVWXD"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-7FN7LEVWXD');
+        </script>
+
+		<title>Choose a File</title>
+	</head>
+	<body>
+		<h2>Receiver is loaded.</h2>
+		<h2>I'm supposed to be an invisible iframe... (you shouldn't see this)</h2>
+		<script>
+		let uauthBC = new BroadcastChannel("uauth");
+		window.addEventListener("message", function(e) {
+			uauthBC.postMessage({fwOrigin: e.origin, webretro: e.data.webretro});
+			window.parent.postMessage("acknowledged", "*");
+		}, false);
+		</script>
+	</body>
+</html>
