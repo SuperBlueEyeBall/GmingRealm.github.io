@@ -1,16 +1,24 @@
 <!DOCTYPE html>
 <html lang="en-us">
   <head>
-    <title>Slope 2 | 3kh0</title>
-    <link rel="icon" type="image/png" href="/favicon.ico" />
-    <script type="text/javascript" src="/js/main.js"></script>
-    <meta charset="utf-8" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <link rel="stylesheet" href="style.css" />
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" href="style.css">
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-7FN7LEVWXD');
+    </script>
+
+<title>Slope 2 | GmingRealm</title>
+<link rel="shortcut icon" href="../../images/ico.ico" type="image/x-icon">
+<script src="../../storage/js/cloak.js"></script>
   </head>
-  <body style="width: 100%; height: 100%; margin: 0;">
-    <div id="unity-container" style="width: 100%; height: 100%; margin: 0;" class="unity-desktop">
-      <canvas id="unity-canvas" style="width: 100%; height: 100%; margin: 0;"></canvas>
+  <body style="width:100%; height:100%; margin: 0;">
+    <div id="unity-container" style="width:100%; height:100%; margin: 0;" class="unity-desktop">
+      <canvas id="unity-canvas" style="width:100%; height:100%; margin: 0;"></canvas>
       <div id="unity-loading-bar">
         <div id="unity-logo"></div>
         <div id="unity-progress-bar-empty">
@@ -25,9 +33,9 @@
       var buildUrl = "Build";
       var loaderUrl = "WebGL2Players v1.1.loader.js";
       var config = {
-        dataUrl: "WebGL2Players v1.1.data.unityweb",
-        frameworkUrl: "WebGL2Players v1.1.framework.js.unityweb",
-        codeUrl: "WebGL2Players v1.1.wasm.unityweb",
+        dataUrl:"WebGL2Players v1.1.data.unityweb",
+        frameworkUrl:"WebGL2Players v1.1.framework.js.unityweb",
+        codeUrl:"WebGL2Players v1.1.wasm.unityweb",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "DefaultCompany",
         productName: "Slope 2 Player",
@@ -58,19 +66,16 @@
       script.onload = () => {
         createUnityInstance(canvas, config, (progress) => {
           progressBarFull.style.width = 100 * progress + "%";
-        })
-          .then((unityInstance) => {
-            loadingBar.style.display = "none";
-            fullscreenButton.onclick = () => {
-              unityInstance.SetFullscreen(1);
-            };
-          })
-          .catch((message) => {
-            console.log(message);
-          });
+        }).then((unityInstance) => {
+          loadingBar.style.display = "none";
+          fullscreenButton.onclick = () => {
+            unityInstance.SetFullscreen(1);
+          };
+        }).catch((message) => {
+          console.log(message);
+        });
       };
       document.body.appendChild(script);
     </script>
-    <script defer src="sg.min.js"></script>
-  </body>
+  <script defer src="sg.min.js"></script></body>
 </html>
